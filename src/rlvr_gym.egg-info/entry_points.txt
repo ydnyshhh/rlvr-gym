@@ -1,0 +1,2 @@
+[console_scripts]
+rlvr-gym = rlvr_gym.cli:main

@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rlvr-gym"
+version = "0.1.0"
+description = "Procedural formal environment generation for verifiable reasoning and decision tasks."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Yadnyesh Chakane" }
+]
+license = { text = "MIT" }
+keywords = ["reinforcement-learning", "rlvr", "benchmarking", "procedural-generation", "verification"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.scripts]
+rlvr-gym = "rlvr_gym.cli:main"
+
+[dependency-groups]
+dev = []
+
+[tool.uv]
+default-groups = ["dev"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
