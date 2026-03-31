@@ -31,10 +31,7 @@ RLVR-Gym is built for research workflows such as RLVR, online RL, offline RL, SF
 
 ## Installation
 
-RLVR-Gym supports two straightforward setup paths:
-
-- `uv` for managed environments and reproducible local setup
-- `pip` for a standard editable Python installation
+RLVR-Gym uses `uv` for environment management and local development.
 
 ### Prerequisites
 
@@ -42,7 +39,7 @@ Before installing, make sure you have:
 
 - Python 3.10 or newer
 - `git`
-- either `uv` or `pip`
+- `uv`
 
 You can verify your Python version with:
 
@@ -50,9 +47,7 @@ You can verify your Python version with:
 python --version
 ```
 
-### Option 1: Install with `uv`
-
-This is the recommended setup path for local development and day-to-day usage.
+### Setup with `uv`
 
 1. Clone the repository:
 
@@ -85,51 +80,6 @@ uv run rlvr-gym list-families
 uv run python -B -m unittest discover -s tests -v
 ```
 
-### Option 2: Install with `pip`
-
-Use this if you prefer a standard editable install.
-
-1. Clone the repository:
-
-```bash
-git clone <your-repo-url>
-cd rlvr-gym
-```
-
-2. Create and activate a virtual environment:
-
-On Windows PowerShell:
-
-```bash
-python -m venv .venv
-.venv\Scripts\Activate.ps1
-```
-
-On macOS/Linux:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-```
-
-3. Install the package in editable mode:
-
-```bash
-python -m pip install -e .
-```
-
-4. Verify that the CLI works:
-
-```bash
-rlvr-gym list-families
-```
-
-5. Run the test suite:
-
-```bash
-python -B -m unittest discover -s tests -v
-```
-
 ### Common first-run commands
 
 After installation, these are good first checks:
@@ -152,23 +102,15 @@ Sample a scheduling oracle rollout:
 uv run rlvr-gym sample --family scheduling --seed 11 --export oracle
 ```
 
-If you installed with `pip` instead of `uv`, run the same commands without the `uv run` prefix.
-
 ### Troubleshooting
 
 If the `rlvr-gym` command is not found:
 
-- with `uv`, use `uv run rlvr-gym ...`
-- with `pip`, make sure your virtual environment is activated
-
-If imports fail in a local editable install:
-
-- confirm you are running commands from the repository root
-- confirm the package was installed with `python -m pip install -e .`
+- use `uv run rlvr-gym ...`
+- make sure you are running commands from the repository root
 
 If tests fail immediately because the environment is not active:
 
-- reactivate the virtual environment, or
 - rerun through `uv run ...`
 
 ## Quick start
@@ -265,10 +207,4 @@ uv run rlvr-gym benchmark --family scheduling --base-seed 123 --train-count 100 
 
 ```bash
 uv run python -B -m unittest discover -s tests -v
-```
-
-or:
-
-```bash
-python -B -m unittest discover -s tests -v
 ```
