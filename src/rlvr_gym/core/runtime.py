@@ -37,6 +37,7 @@ class RLVREnv:
             "task_id": self.task.task_id,
             "family_name": self.task.family_name,
             "objective": self.task.objective.to_dict(),
+            "space": self.task.space.to_dict(),
             "valid_actions": [action.to_dict() for action in self.task.family.valid_actions(
                 self.task.world,
                 self._state,

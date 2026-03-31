@@ -7,12 +7,13 @@ from dataclasses import dataclass
 from typing import Any
 
 from rlvr_gym.core.family import EnvironmentFamily
-from rlvr_gym.core.oracle import Oracle, OracleSolution
-from rlvr_gym.core.types import CanonicalAction, FamilyConfig, TaskObjective, TransitionResult
+from rlvr_gym.core.oracle import Oracle, OracleSolution, ProofCertificate
+from rlvr_gym.core.types import CanonicalAction, FamilyConfig, TaskObjective, TaskSpace, TransitionResult
 from rlvr_gym.core.verifier import (
     BaseVerifier,
     StepContext,
     TrajectoryContext,
+    VerificationKind,
     VerificationResult,
     VerificationScope,
     VerifierSuite,
@@ -98,6 +99,9 @@ class GraphActionVerifier(BaseVerifier):
                 scope=VerificationScope.ACTION,
                 passed=passed,
                 score=1.0 if passed else 0.0,
+                kind=VerificationKind.FEASIBILITY,
+                weight=2.0,
+                hard=True,
                 message="Action must move along an outgoing edge.",
             ),
         )
@@ -120,6 +124,9 @@ class GraphStateVerifier(BaseVerifier):
                 scope=VerificationScope.STATE,
                 passed=passed,
                 score=1.0 if passed else 0.0,
+                kind=VerificationKind.FEASIBILITY,
+                weight=2.0,
+                hard=True,
                 message="State must reference a valid node and a non-negative path cost.",
             ),
         )
@@ -138,6 +145,9 @@ class GraphGoalVerifier(BaseVerifier):
                 scope=VerificationScope.GOAL,
                 passed=passed,
                 score=1.0 if passed else 0.0,
+                kind=VerificationKind.FEASIBILITY,
+                weight=2.0,
+                hard=True,
                 message="Termination should coincide with reaching the goal node.",
             ),
         )
@@ -169,6 +179,9 @@ class GraphTrajectoryVerifier(BaseVerifier):
                 scope=VerificationScope.TRAJECTORY,
                 passed=legal,
                 score=1.0 if legal else 0.0,
+                kind=VerificationKind.FEASIBILITY,
+                weight=2.0,
+                hard=True,
                 message="The path must follow legal graph edges.",
             ),
             VerificationResult(
@@ -176,6 +189,9 @@ class GraphTrajectoryVerifier(BaseVerifier):
                 scope=VerificationScope.TRAJECTORY,
                 passed=optimal,
                 score=1.0 if optimal else 0.0,
+                kind=VerificationKind.QUALITY,
+                weight=1.0,
+                hard=False,
                 message="Successful solutions can be checked against the shortest-path optimum.",
                 metadata={"path_cost": running_cost, "optimal_cost": context.world.shortest_cost},
             ),
@@ -186,6 +202,12 @@ class GraphPlanningOracle(Oracle):
     def __init__(self, world: GraphPlanningWorld) -> None:
         self.world = world
 
+    def is_feasible(self) -> bool | None:
+        return True
+
+    def estimate_difficulty(self) -> float | None:
+        return float(len(self.world.nodes) + len(self.world.edges) / max(1, len(self.world.nodes)))
+
     def solve(self) -> OracleSolution:
         actions = tuple(
             {"name": "move", "arguments": {"target": node}}
@@ -195,6 +217,18 @@ class GraphPlanningOracle(Oracle):
             actions=actions,
             metadata={"strategy": "shortest_path", "path": list(self.world.shortest_path)},
             objective_value=self.world.shortest_cost,
+            feasible=True,
+            optimal=True,
+            difficulty_estimate=self.estimate_difficulty(),
+            certificate=ProofCertificate(
+                feasible=True,
+                optimal=True,
+                summary="Exact shortest path computed with Dijkstra search.",
+                witness={
+                    "path": list(self.world.shortest_path),
+                    "optimal_cost": self.world.shortest_cost,
+                },
+            ),
         )
 
 
@@ -292,6 +326,8 @@ class GraphPlanningFamily(EnvironmentFamily):
                 "optimal_cost": world.shortest_cost,
             },
             optimization_target="minimize_total_path_cost",
+            constraint_spec={"must_follow_edges": True, "must_terminate_at_goal": True},
+            quality_metric="total_path_cost",
         )
 
     def initial_state(
@@ -332,6 +368,33 @@ class GraphPlanningFamily(EnvironmentFamily):
                 ],
             }
         return observation
+
+    def build_task_space(
+        self,
+        world: GraphPlanningWorld,
+        objective: TaskObjective,
+        initial_state: GraphPlanningState,
+        generation_params: dict[str, Any],
+    ) -> TaskSpace:
+        return TaskSpace(
+            observation_schema={
+                "type": "object",
+                "fields": {
+                    "current_node": "string",
+                    "goal_node": "string",
+                    "neighbors": "list[{target: string, cost: int}]",
+                    "path": "list[string]",
+                    "total_cost": "int",
+                },
+                "observability": generation_params["observability"],
+            },
+            action_schema={
+                "type": "canonical_object",
+                "actions": [{"name": "move", "arguments": {"target": "node_id"}}],
+            },
+            runtime_api="gym_like",
+            notes="Gym-like reset()/step() tuples; a Gymnasium adapter is not yet provided.",
+        )
 
     def valid_actions(
         self,

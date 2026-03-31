@@ -9,6 +9,9 @@ class RewardMode(str, Enum):
     SPARSE = "sparse"
     DENSE = "dense"
     SHAPED = "shaped"
+    FEASIBILITY = "feasibility"
+    QUALITY = "quality"
+    HYBRID = "hybrid"
 
 
 @dataclass(frozen=True)
@@ -19,7 +22,11 @@ class RewardConfig:
     invalid_action_penalty: float = -1.0
     step_penalty: float = -0.01
     dense_verifier_weight: float = 0.2
+    feasibility_weight: float = 0.35
+    quality_weight: float = 0.15
+    hard_failure_penalty: float = -0.5
     shaped_hint_weight: float = 1.0
+    terminal_quality_weight: float = 0.25
 
 
 @dataclass(frozen=True)
@@ -47,6 +54,8 @@ class TaskObjective:
     description: str
     success_criteria: dict[str, Any]
     optimization_target: str | None = None
+    constraint_spec: dict[str, Any] = field(default_factory=dict)
+    quality_metric: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -54,6 +63,24 @@ class TaskObjective:
             "description": self.description,
             "success_criteria": dict(self.success_criteria),
             "optimization_target": self.optimization_target,
+            "constraint_spec": dict(self.constraint_spec),
+            "quality_metric": self.quality_metric,
+        }
+
+
+@dataclass(frozen=True)
+class TaskSpace:
+    observation_schema: dict[str, Any]
+    action_schema: dict[str, Any]
+    runtime_api: str = "gym_like"
+    notes: str = "Gym-like reset()/step() API; not a Gymnasium adapter."
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "observation_schema": dict(self.observation_schema),
+            "action_schema": dict(self.action_schema),
+            "runtime_api": self.runtime_api,
+            "notes": self.notes,
         }
 
 
@@ -114,6 +141,7 @@ class TaskInstance:
     generation_params: dict[str, Any]
     world: Any
     objective: TaskObjective
+    space: TaskSpace
     initial_state: Any
     initial_observation: Any
     verifier_suite: Any

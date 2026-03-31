@@ -12,12 +12,20 @@ class VerificationScope(str, Enum):
     TRAJECTORY = "trajectory"
 
 
+class VerificationKind(str, Enum):
+    FEASIBILITY = "feasibility"
+    QUALITY = "quality"
+
+
 @dataclass(frozen=True)
 class VerificationResult:
     name: str
     scope: VerificationScope
     passed: bool
     score: float
+    kind: VerificationKind = VerificationKind.FEASIBILITY
+    weight: float = 1.0
+    hard: bool = False
     message: str = ""
     metadata: dict[str, Any] = field(default_factory=dict)
 
@@ -27,6 +35,9 @@ class VerificationResult:
             "scope": self.scope.value,
             "passed": self.passed,
             "score": self.score,
+            "kind": self.kind.value,
+            "weight": self.weight,
+            "hard": self.hard,
             "message": self.message,
             "metadata": dict(self.metadata),
         }
@@ -37,15 +48,64 @@ class VerificationReport:
     results: tuple[VerificationResult, ...] = ()
 
     @property
+    def hard_failed(self) -> bool:
+        return any(result.hard and not result.passed for result in self.results)
+
+    @property
+    def feasibility_passed(self) -> bool:
+        feasibility_results = [result for result in self.results if result.kind is VerificationKind.FEASIBILITY]
+        return all(result.passed for result in feasibility_results) if feasibility_results else True
+
+    @property
     def passed(self) -> bool:
-        return all(result.passed for result in self.results) if self.results else True
+        return self.feasibility_passed and not self.hard_failed
+
+    @staticmethod
+    def _weighted_average(results: Sequence[VerificationResult]) -> float:
+        if not results:
+            return 1.0
+        total_weight = sum(max(0.0, result.weight) for result in results)
+        if total_weight <= 0.0:
+            total_weight = float(len(results))
+            return sum(max(0.0, min(1.0, result.score)) for result in results) / total_weight
+        return sum(
+            max(0.0, min(1.0, result.score)) * max(0.0, result.weight)
+            for result in results
+        ) / total_weight
+
+    @property
+    def weighted_score(self) -> float:
+        return self._weighted_average(self.results)
 
     @property
     def normalized_score(self) -> float:
-        if not self.results:
-            return 1.0
-        total = sum(max(0.0, min(1.0, result.score)) for result in self.results)
-        return total / len(self.results)
+        return self.weighted_score
+
+    @property
+    def feasibility_score(self) -> float:
+        return self._weighted_average(
+            [result for result in self.results if result.kind is VerificationKind.FEASIBILITY]
+        )
+
+    @property
+    def quality_score(self) -> float:
+        return self._weighted_average(
+            [result for result in self.results if result.kind is VerificationKind.QUALITY]
+        )
+
+    @property
+    def scope_scores(self) -> dict[str, float]:
+        return {
+            scope.value: self._weighted_average([result for result in self.results if result.scope is scope])
+            for scope in VerificationScope
+        }
+
+    @property
+    def kind_scores(self) -> dict[str, float]:
+        return {
+            kind.value: self._weighted_average([result for result in self.results if result.kind is kind])
+            for kind in VerificationKind
+        }
 
     def extend(self, other: VerificationReport) -> VerificationReport:
         return VerificationReport(results=self.results + other.results)
@@ -53,7 +113,13 @@ class VerificationReport:
     def to_dict(self) -> dict[str, Any]:
         return {
             "passed": self.passed,
+            "hard_failed": self.hard_failed,
             "normalized_score": self.normalized_score,
+            "weighted_score": self.weighted_score,
+            "feasibility_score": self.feasibility_score,
+            "quality_score": self.quality_score,
+            "scope_scores": self.scope_scores,
+            "kind_scores": self.kind_scores,
             "results": [result.to_dict() for result in self.results],
         }
 

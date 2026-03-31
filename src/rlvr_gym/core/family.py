@@ -6,7 +6,7 @@ from collections.abc import Mapping
 from typing import Any
 
 from rlvr_gym.core.reward import RewardEngine
-from rlvr_gym.core.types import CanonicalAction, FamilyConfig, TaskInstance, TaskObjective
+from rlvr_gym.core.types import CanonicalAction, FamilyConfig, TaskInstance, TaskObjective, TaskSpace
 from rlvr_gym.core.utils import as_primitive, merge_overrides, stable_hash_seed
 from rlvr_gym.core.verifier import VerifierSuite
 
@@ -73,6 +73,21 @@ class EnvironmentFamily(ABC):
     def build_oracle(self, world: Any, objective: TaskObjective, generation_params: dict[str, Any]) -> Any | None:
         return None
 
+    def build_task_space(
+        self,
+        world: Any,
+        objective: TaskObjective,
+        initial_state: Any,
+        generation_params: dict[str, Any],
+    ) -> TaskSpace:
+        return TaskSpace(
+            observation_schema={
+                "type": "structured",
+                "observability": generation_params.get("observability", "full"),
+            },
+            action_schema={"type": "canonical"},
+        )
+
     def export_world(self, world: Any) -> dict[str, Any]:
         return as_primitive(world)
 
@@ -86,10 +101,12 @@ class EnvironmentFamily(ABC):
             "generation_seed": task.generation_seed,
             "generation_params": as_primitive(task.generation_params),
             "objective": task.objective.to_dict(),
+            "space": task.space.to_dict(),
             "world": self.export_world(task.world),
             "initial_state": self.export_state(task.initial_state),
             "initial_observation": as_primitive(task.initial_observation),
             "metadata": as_primitive(task.metadata),
+            "oracle": task.oracle.describe() if task.oracle is not None else None,
         }
 
     def recommended_max_steps(self, generation_params: dict[str, Any]) -> int:
@@ -125,6 +142,7 @@ class EnvironmentFamily(ABC):
         world = self.sample_world(generation_params, rng)
         objective = self.derive_objective(world, generation_params, rng)
         initial_state = self.initial_state(world, objective, generation_params)
+        task_space = self.build_task_space(world, objective, initial_state, generation_params)
         initial_observation = self.observe(world, initial_state, objective, generation_params)
         verifier_suite = self.build_verifier_suite(world, objective, generation_params)
         reward_engine = RewardEngine(resolved_config.reward_config)
@@ -145,6 +163,7 @@ class EnvironmentFamily(ABC):
             generation_params=as_primitive(generation_params),
             world=world,
             objective=objective,
+            space=task_space,
             initial_state=initial_state,
             initial_observation=initial_observation,
             verifier_suite=verifier_suite,

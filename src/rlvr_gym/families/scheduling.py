@@ -6,12 +6,13 @@ from dataclasses import dataclass
 from typing import Any
 
 from rlvr_gym.core.family import EnvironmentFamily
-from rlvr_gym.core.oracle import Oracle, OracleSolution
-from rlvr_gym.core.types import CanonicalAction, FamilyConfig, TaskObjective, TransitionResult
+from rlvr_gym.core.oracle import Oracle, OracleSolution, ProofCertificate
+from rlvr_gym.core.types import CanonicalAction, FamilyConfig, TaskObjective, TaskSpace, TransitionResult
 from rlvr_gym.core.verifier import (
     BaseVerifier,
     StepContext,
     TrajectoryContext,
+    VerificationKind,
     VerificationResult,
     VerificationScope,
     VerifierSuite,
@@ -119,6 +120,9 @@ class SchedulingActionVerifier(BaseVerifier):
                 scope=VerificationScope.ACTION,
                 passed=passed,
                 score=1.0 if passed else 0.0,
+                kind=VerificationKind.FEASIBILITY,
+                weight=2.0,
+                hard=True,
                 message="Chosen job must be ready and unscheduled.",
             ),
         )
@@ -142,6 +146,9 @@ class SchedulingStateVerifier(BaseVerifier):
                 scope=VerificationScope.STATE,
                 passed=passed,
                 score=1.0 if passed else 0.0,
+                kind=VerificationKind.FEASIBILITY,
+                weight=2.0,
+                hard=True,
                 message="Schedule state must be sequential, duplicate-free, and time-consistent.",
             ),
         )
@@ -160,6 +167,9 @@ class SchedulingGoalVerifier(BaseVerifier):
                 scope=VerificationScope.GOAL,
                 passed=passed,
                 score=1.0 if passed else 0.0,
+                kind=VerificationKind.FEASIBILITY,
+                weight=2.0,
+                hard=True,
                 message="A completed episode must schedule every job exactly once.",
             ),
         )
@@ -191,6 +201,9 @@ class SchedulingTrajectoryVerifier(BaseVerifier):
                 scope=VerificationScope.TRAJECTORY,
                 passed=prerequisites_ok,
                 score=1.0 if prerequisites_ok else 0.0,
+                kind=VerificationKind.FEASIBILITY,
+                weight=2.0,
+                hard=True,
                 message="The produced schedule must satisfy all precedence constraints.",
             ),
             VerificationResult(
@@ -198,6 +211,9 @@ class SchedulingTrajectoryVerifier(BaseVerifier):
                 scope=VerificationScope.TRAJECTORY,
                 passed=optimal,
                 score=1.0 if optimal else 0.0,
+                kind=VerificationKind.QUALITY,
+                weight=1.0,
+                hard=False,
                 message="Completed schedules can be checked against the exact optimal tardiness.",
                 metadata={
                     "observed_total_tardiness": total_tardiness,
@@ -211,6 +227,12 @@ class SchedulingOracle(Oracle):
     def __init__(self, world: SchedulingWorld) -> None:
         self.world = world
 
+    def is_feasible(self) -> bool | None:
+        return True
+
+    def estimate_difficulty(self) -> float | None:
+        return float(len(self.world.jobs) + len(self.world.precedence_edges) / max(1, len(self.world.jobs)))
+
     def solve(self) -> OracleSolution:
         actions = tuple(
             {"name": "schedule", "arguments": {"job_id": job_id}}
@@ -223,6 +245,18 @@ class SchedulingOracle(Oracle):
                 "job_order": list(self.world.optimal_order),
             },
             objective_value=self.world.optimal_total_tardiness,
+            feasible=True,
+            optimal=True,
+            difficulty_estimate=self.estimate_difficulty(),
+            certificate=ProofCertificate(
+                feasible=True,
+                optimal=True,
+                summary="Exact subset dynamic programming over job-order states.",
+                witness={
+                    "job_order": list(self.world.optimal_order),
+                    "optimal_total_tardiness": self.world.optimal_total_tardiness,
+                },
+            ),
         )
 
 
@@ -296,6 +330,8 @@ class SchedulingFamily(EnvironmentFamily):
                 "optimal_total_tardiness": world.optimal_total_tardiness,
             },
             optimization_target="minimize_total_tardiness",
+            constraint_spec={"single_machine": True, "respect_precedence": True},
+            quality_metric="total_tardiness",
         )
 
     def initial_state(
@@ -350,6 +386,33 @@ class SchedulingFamily(EnvironmentFamily):
                 for job in world.jobs
             ]
         return observation
+
+    def build_task_space(
+        self,
+        world: SchedulingWorld,
+        objective: TaskObjective,
+        initial_state: SchedulingState,
+        generation_params: dict[str, Any],
+    ) -> TaskSpace:
+        return TaskSpace(
+            observation_schema={
+                "type": "object",
+                "fields": {
+                    "current_time": "int",
+                    "completed_jobs": "list[string]",
+                    "ready_jobs": "list[{job_id: string, duration: int, deadline: int}]",
+                    "schedule": "list[{job_id: string, start: int, finish: int, tardiness: int}]",
+                    "total_tardiness": "int",
+                },
+                "observability": generation_params["observability"],
+            },
+            action_schema={
+                "type": "canonical_object",
+                "actions": [{"name": "schedule", "arguments": {"job_id": "job_id"}}],
+            },
+            runtime_api="gym_like",
+            notes="Gym-like reset()/step() tuples; a Gymnasium adapter is not yet provided.",
+        )
 
     def valid_actions(
         self,

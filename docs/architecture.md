@@ -36,10 +36,13 @@ RLVR-Gym is organized around the idea that an environment family defines a distr
 - supports state-level verification
 - supports goal-level verification
 - supports trajectory-level verification
+- separates feasibility checks from quality checks
+- supports weighted composition and hard-fail semantics through the report layer
 
 `RewardEngine`
 
 - supports sparse, dense, and shaped reward modes
+- also supports feasibility-focused, quality-aware, and hybrid modes
 - consumes verifier outputs and transition hints
 
 ## Built-in families
@@ -66,3 +69,7 @@ RLVR-Gym is organized around the idea that an environment family defines a distr
 - reward shaping studies by changing reward mode and weights
 - OOD generalization by altering difficulty and generator overrides
 - pathology analysis through generated instances and verifier traces
+
+## Current maturity
+
+RLVR-Gym currently proves the framework more than it proves environment breadth. The shipped families are intentionally narrow, while the core abstractions are designed to support a wider future suite of verifiable reasoning and decision domains.

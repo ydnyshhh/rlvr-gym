@@ -2,11 +2,13 @@
 
 RLVR-Gym is a research-oriented Python package for generating formal, verifiable reasoning and decision environments. It is a task factory, not a trainer and not a static benchmark collection.
 
+Status: RLVR-Gym is currently an alpha research framework. The core abstractions are in place and the initial families are intentionally narrow, serving as proof that the generation, verification, reward, oracle, and export stack works end to end. The project is not yet a broad benchmark suite.
+
 Each environment family defines a distribution over related MDPs or POMDPs. A sampled task instance yields:
 
 - a latent world model
 - a concrete objective
-- a runnable Gym-style environment
+- a runnable Gym-like environment API
 - structured observations
 - canonical actions
 - verifier suites
@@ -26,6 +28,8 @@ Each environment family defines a distribution over related MDPs or POMDPs. A sa
 
 - `graph_planning`: weighted shortest-path navigation on generated graphs
 - `scheduling`: single-machine scheduling with deadlines and precedence constraints
+
+These are initial families rather than a claim of full environment breadth. They demonstrate the framework mechanics today; broader reasoning families are still a roadmap item.
 
 ## Quick start
 
@@ -107,13 +111,13 @@ rlvr-gym benchmark --family scheduling --base-seed 123 --train-count 100 --valid
 
 ## Package layout
 
-- [src/rlvr_gym/core/family.py](/D:/rlvr-gym/src/rlvr_gym/core/family.py): family abstraction and seeded task generation
-- [src/rlvr_gym/core/runtime.py](/D:/rlvr-gym/src/rlvr_gym/core/runtime.py): Gym-style runtime
-- [src/rlvr_gym/core/verifier.py](/D:/rlvr-gym/src/rlvr_gym/core/verifier.py): action, state, goal, and trajectory verification
-- [src/rlvr_gym/core/reward.py](/D:/rlvr-gym/src/rlvr_gym/core/reward.py): configurable reward engine
-- [src/rlvr_gym/core/exporters.py](/D:/rlvr-gym/src/rlvr_gym/core/exporters.py): task, SFT, offline RL, and benchmark exports
-- [src/rlvr_gym/families/graph_planning.py](/D:/rlvr-gym/src/rlvr_gym/families/graph_planning.py): graph planning family
-- [src/rlvr_gym/families/scheduling.py](/D:/rlvr-gym/src/rlvr_gym/families/scheduling.py): scheduling family
+- [src/rlvr_gym/core/family.py](src/rlvr_gym/core/family.py): family abstraction and seeded task generation
+- [src/rlvr_gym/core/runtime.py](src/rlvr_gym/core/runtime.py): Gym-like runtime API
+- [src/rlvr_gym/core/verifier.py](src/rlvr_gym/core/verifier.py): weighted feasibility and quality verification
+- [src/rlvr_gym/core/reward.py](src/rlvr_gym/core/reward.py): configurable reward engine with richer semantics
+- [src/rlvr_gym/core/exporters.py](src/rlvr_gym/core/exporters.py): task, SFT, offline RL, and benchmark exports
+- [src/rlvr_gym/families/graph_planning.py](src/rlvr_gym/families/graph_planning.py): graph planning family
+- [src/rlvr_gym/families/scheduling.py](src/rlvr_gym/families/scheduling.py): scheduling family
 
 ## Export modes
 
@@ -121,6 +125,14 @@ rlvr-gym benchmark --family scheduling --base-seed 123 --train-count 100 --valid
 - SFT: use `export_sft_example(task)`
 - Offline RL: use `export_offline_transitions(task)`
 - Benchmark splits: use `build_benchmark_splits(...)` and `write_benchmark_splits(...)`
+
+`RLVREnv` is Gym-like and intentionally lightweight. It matches the familiar reset/step loop researchers expect, but it is not yet a formal Gymnasium adapter with dependency-level integration.
+
+## Current limitations
+
+- The built-in family set is still narrow and should be read as initial coverage, not benchmark breadth.
+- The package favors a lightweight standard-library-first core and does not yet depend on heavier solver libraries.
+- Richer families, more solver-backed domains, and benchmark breadth remain future work.
 
 ## Testing
 
