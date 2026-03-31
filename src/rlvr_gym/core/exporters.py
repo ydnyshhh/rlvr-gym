@@ -13,6 +13,53 @@ def export_task_spec(task: TaskInstance) -> dict[str, Any]:
     return task.family.export_task_spec(task)
 
 
+def export_oracle_views(task: TaskInstance, solution: Any | None = None) -> dict[str, Any]:
+    if task.oracle is None and solution is None:
+        raise ValueError("Task instance has no oracle attached.")
+    resolved_solution = solution or task.oracle.solve()
+    return {
+        "feasibility_labels": {
+            "feasible": resolved_solution.feasible,
+            "success_criteria": task.objective.success_criteria,
+            "constraint_spec": task.objective.constraint_spec,
+        },
+        "quality_labels": {
+            "optimal": resolved_solution.optimal,
+            "objective_value": resolved_solution.objective_value,
+            "optimization_target": task.objective.optimization_target,
+            "quality_metric": task.objective.quality_metric,
+            "difficulty_estimate": resolved_solution.difficulty_estimate,
+        },
+        "proof_metadata": resolved_solution.certificate.to_dict(),
+        "action_solution": {
+            "actions": list(resolved_solution.actions),
+            "metadata": resolved_solution.metadata,
+        },
+    }
+
+
+def _export_trace_outcome(trace: dict[str, Any] | None, completed: bool) -> dict[str, Any]:
+    if not trace:
+        return {
+            "completed": completed,
+            "num_steps": 0,
+            "terminated": False,
+            "truncated": False,
+            "total_reward": 0.0,
+            "final_verification": None,
+        }
+    steps = trace.get("steps", [])
+    final_step = steps[-1] if steps else None
+    return {
+        "completed": completed,
+        "num_steps": len(steps),
+        "terminated": final_step["terminated"] if final_step else False,
+        "truncated": final_step["truncated"] if final_step else False,
+        "total_reward": sum(step["reward"] for step in steps),
+        "final_verification": final_step["info"].get("verification") if final_step else None,
+    }
+
+
 def rollout_oracle(task: TaskInstance) -> dict[str, Any]:
     if task.oracle is None:
         raise ValueError("Task instance has no oracle attached.")
@@ -25,11 +72,14 @@ def rollout_oracle(task: TaskInstance) -> dict[str, Any]:
         if terminated or truncated:
             completed = True
             break
+    trace = env.trace.to_dict() if env.trace else None
     return {
         "task_spec": export_task_spec(task),
         "oracle_solution": as_primitive(solution.to_dict()),
+        "oracle_views": export_oracle_views(task, solution=solution),
         "completed": completed,
-        "trace": env.trace.to_dict() if env.trace else None,
+        "trace": trace,
+        "trace_outcome": _export_trace_outcome(trace, completed),
     }
 
 
@@ -40,14 +90,11 @@ def export_sft_example(task: TaskInstance) -> dict[str, Any]:
     task_spec = export_task_spec(task)
     prompt = (
         "Solve the following formal decision problem. "
-        "Return a JSON object with an 'actions' field containing the canonical action sequence.\n\n"
+        "Return a JSON object with actions, feasibility, optimality, objective value, difficulty estimate, "
+        "proof certificate, and metadata fields.\n\n"
         f"{json.dumps(task_spec, indent=2, sort_keys=True)}"
     )
-    assistant_payload = {
-        "actions": list(solution.actions),
-        "objective_value": solution.objective_value,
-        "metadata": solution.metadata,
-    }
+    assistant_payload = solution.to_dict()
     return {
         "family_name": task.family_name,
         "task_id": task.task_id,
@@ -56,6 +103,7 @@ def export_sft_example(task: TaskInstance) -> dict[str, Any]:
             {"role": "assistant", "content": json.dumps(as_primitive(assistant_payload), sort_keys=True)},
         ],
         "task_spec": task_spec,
+        "oracle_views": export_oracle_views(task, solution=solution),
     }
 
 
@@ -82,6 +130,8 @@ def export_offline_transitions(task: TaskInstance) -> dict[str, Any]:
         "task_id": task.task_id,
         "task_spec": rollout["task_spec"],
         "oracle_solution": rollout["oracle_solution"],
+        "oracle_views": rollout["oracle_views"],
+        "trace_outcome": rollout["trace_outcome"],
         "transitions": transitions,
     }
 
@@ -101,7 +151,9 @@ def build_benchmark_splits(
             task = family.sample_instance(seed=seed, config=config)
             record = export_task_spec(task)
             if include_oracle and task.oracle is not None:
-                record["oracle_solution"] = as_primitive(task.oracle.solve().to_dict())
+                solution = task.oracle.solve()
+                record["oracle_solution"] = as_primitive(solution.to_dict())
+                record["oracle_views"] = export_oracle_views(task, solution=solution)
             record["benchmark_split"] = split_name
             record["benchmark_index"] = index
             records.append(record)

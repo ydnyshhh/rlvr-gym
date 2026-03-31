@@ -3,6 +3,7 @@
 from rlvr_gym.core.exporters import (
     build_benchmark_splits,
     export_offline_transitions,
+    export_oracle_views,
     export_sft_example,
     export_task_spec,
     rollout_oracle,
@@ -26,6 +27,7 @@ __all__ = [
     "TaskSpace",
     "build_benchmark_splits",
     "export_offline_transitions",
+    "export_oracle_views",
     "export_sft_example",
     "export_task_spec",
     "get_family",

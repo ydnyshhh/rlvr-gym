@@ -3,13 +3,21 @@ from __future__ import annotations
 import sys
 import unittest
 from pathlib import Path
+import json
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "src"
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
-from rlvr_gym.core.exporters import build_benchmark_splits, export_offline_transitions, export_task_spec, rollout_oracle
+from rlvr_gym.core.exporters import (
+    build_benchmark_splits,
+    export_offline_transitions,
+    export_oracle_views,
+    export_sft_example,
+    export_task_spec,
+    rollout_oracle,
+)
 from rlvr_gym.core.reward import RewardEngine
 from rlvr_gym.core.runtime import RLVREnv
 from rlvr_gym.core.types import FamilyConfig, RewardConfig, RewardMode, TransitionResult
@@ -49,6 +57,9 @@ class RLVRGymTests(unittest.TestCase):
         self.assertEqual(task.oracle.solve().objective_value, task.world.optimal_total_tardiness)
         self.assertTrue(dataset["oracle_solution"]["optimal"])
         self.assertTrue(dataset["oracle_solution"]["certificate"]["optimal"])
+        self.assertIn("trace_outcome", dataset)
+        self.assertIn("oracle_views", dataset)
+        self.assertIn("quality_labels", dataset["oracle_views"])
 
     def test_benchmark_split_generation_is_reproducible(self) -> None:
         family = get_family("scheduling")
@@ -57,6 +68,27 @@ class RLVRGymTests(unittest.TestCase):
         splits_a = build_benchmark_splits(family=family, split_counts=split_counts, base_seed=55, config=config)
         splits_b = build_benchmark_splits(family=family, split_counts=split_counts, base_seed=55, config=config)
         self.assertEqual(splits_a, splits_b)
+
+    def test_sft_export_includes_full_oracle_semantics(self) -> None:
+        family = get_family("graph_planning")
+        task = family.sample_instance(seed=7, config=FamilyConfig(difficulty="medium"))
+        example = export_sft_example(task)
+        assistant_payload = json.loads(example["messages"][1]["content"])
+        self.assertIn("feasible", assistant_payload)
+        self.assertIn("optimal", assistant_payload)
+        self.assertIn("difficulty_estimate", assistant_payload)
+        self.assertIn("certificate", assistant_payload)
+        self.assertIn("oracle_views", example)
+
+    def test_oracle_views_split_labels_and_proof_metadata(self) -> None:
+        family = get_family("scheduling")
+        task = family.sample_instance(seed=11, config=FamilyConfig(difficulty="medium"))
+        oracle_views = export_oracle_views(task)
+        self.assertIn("feasibility_labels", oracle_views)
+        self.assertIn("quality_labels", oracle_views)
+        self.assertIn("proof_metadata", oracle_views)
+        self.assertIn("action_solution", oracle_views)
+        self.assertTrue(oracle_views["proof_metadata"]["optimal"])
 
     def test_runtime_respects_max_steps_truncation(self) -> None:
         family = get_family("scheduling")

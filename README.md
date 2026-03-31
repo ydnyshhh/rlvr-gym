@@ -87,6 +87,7 @@ Available export paths:
 - Online RL: interact directly with the runtime
 - SFT: `export_sft_example(task)`
 - Offline RL: `export_offline_transitions(task)`
+- Oracle label views: `export_oracle_views(task)`
 - Benchmark generation: `build_benchmark_splits(...)` and `write_benchmark_splits(...)`
 
 ## CLI
@@ -107,6 +108,12 @@ Export an oracle rollout:
 
 ```bash
 uv run rlvr-gym sample --family scheduling --seed 11 --export oracle
+```
+
+Export decomposed oracle labels:
+
+```bash
+uv run rlvr-gym sample --family scheduling --seed 11 --export labels
 ```
 
 Generate deterministic benchmark splits:

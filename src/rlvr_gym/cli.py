@@ -7,6 +7,7 @@ from pathlib import Path
 from rlvr_gym.core.exporters import (
     build_benchmark_splits,
     export_offline_transitions,
+    export_oracle_views,
     export_sft_example,
     export_task_spec,
     rollout_oracle,
@@ -46,7 +47,7 @@ def main() -> None:
     sample_parser.add_argument("--reward-mode", default="shaped", choices=[mode.value for mode in RewardMode])
     sample_parser.add_argument("--max-steps", type=int)
     sample_parser.add_argument("--no-oracle", action="store_true")
-    sample_parser.add_argument("--export", default="task", choices=["task", "oracle", "sft", "offline"])
+    sample_parser.add_argument("--export", default="task", choices=["task", "oracle", "labels", "sft", "offline"])
 
     benchmark_parser = subparsers.add_parser("benchmark", help="Generate deterministic benchmark splits.")
     benchmark_parser.add_argument("--family", required=True)
@@ -75,6 +76,8 @@ def main() -> None:
             _emit(export_task_spec(task))
         elif args.export == "oracle":
             _emit(rollout_oracle(task))
+        elif args.export == "labels":
+            _emit(export_oracle_views(task))
         elif args.export == "sft":
             _emit(export_sft_example(task))
         elif args.export == "offline":
