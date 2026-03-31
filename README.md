@@ -31,17 +31,145 @@ RLVR-Gym is built for research workflows such as RLVR, online RL, offline RL, SF
 
 ## Installation
 
-Using `uv`:
+RLVR-Gym supports two straightforward setup paths:
+
+- `uv` for managed environments and reproducible local setup
+- `pip` for a standard editable Python installation
+
+### Prerequisites
+
+Before installing, make sure you have:
+
+- Python 3.10 or newer
+- `git`
+- either `uv` or `pip`
+
+You can verify your Python version with:
+
+```bash
+python --version
+```
+
+### Option 1: Install with `uv`
+
+This is the recommended setup path for local development and day-to-day usage.
+
+1. Clone the repository:
+
+```bash
+git clone <your-repo-url>
+cd rlvr-gym
+```
+
+2. Sync the project environment:
 
 ```bash
 uv sync
 ```
 
-Using `pip`:
+This will:
+
+- create a local virtual environment if needed
+- install the package in the project environment
+- resolve and install dependencies from the project configuration
+
+3. Verify that the CLI works:
+
+```bash
+uv run rlvr-gym list-families
+```
+
+4. Run the test suite:
+
+```bash
+uv run python -B -m unittest discover -s tests -v
+```
+
+### Option 2: Install with `pip`
+
+Use this if you prefer a standard editable install.
+
+1. Clone the repository:
+
+```bash
+git clone <your-repo-url>
+cd rlvr-gym
+```
+
+2. Create and activate a virtual environment:
+
+On Windows PowerShell:
+
+```bash
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+On macOS/Linux:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+
+3. Install the package in editable mode:
 
 ```bash
 python -m pip install -e .
 ```
+
+4. Verify that the CLI works:
+
+```bash
+rlvr-gym list-families
+```
+
+5. Run the test suite:
+
+```bash
+python -B -m unittest discover -s tests -v
+```
+
+### Common first-run commands
+
+After installation, these are good first checks:
+
+List built-in families:
+
+```bash
+uv run rlvr-gym list-families
+```
+
+Sample a graph-planning task:
+
+```bash
+uv run rlvr-gym sample --family graph_planning --seed 7 --export task
+```
+
+Sample a scheduling oracle rollout:
+
+```bash
+uv run rlvr-gym sample --family scheduling --seed 11 --export oracle
+```
+
+If you installed with `pip` instead of `uv`, run the same commands without the `uv run` prefix.
+
+### Troubleshooting
+
+If the `rlvr-gym` command is not found:
+
+- with `uv`, use `uv run rlvr-gym ...`
+- with `pip`, make sure your virtual environment is activated
+
+If imports fail in a local editable install:
+
+- confirm you are running commands from the repository root
+- confirm the package was installed with `python -m pip install -e .`
+
+If tests fail immediately because the environment is not active:
+
+- reactivate the virtual environment, or
+- rerun through `uv run ...`
 
 ## Quick start
 
