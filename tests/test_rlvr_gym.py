@@ -167,6 +167,54 @@ class RLVRGymTests(unittest.TestCase):
         )
         self.assertAlmostEqual(reward, 1.75)
 
+    def test_symbolic_transformation_generation_is_deterministic(self) -> None:
+        family = get_family("symbolic_transformation")
+        config = FamilyConfig(
+            difficulty="medium",
+            generation_overrides={"task_type": "arithmetic_simplify"},
+        )
+        task_a = family.sample_instance(seed=77, config=config)
+        task_b = family.sample_instance(seed=77, config=config)
+        self.assertEqual(export_task_spec(task_a), export_task_spec(task_b))
+
+    def test_symbolic_arithmetic_oracle_rollout_solves_task(self) -> None:
+        family = get_family("symbolic_transformation")
+        task = family.sample_instance(
+            seed=17,
+            config=FamilyConfig(difficulty="medium", generation_overrides={"task_type": "arithmetic_simplify"}),
+        )
+        rollout = rollout_oracle(task)
+        self.assertTrue(rollout["completed"])
+        self.assertEqual(rollout["trace_outcome"]["final_verification"]["kind_scores"]["feasibility"], 1.0)
+        self.assertTrue(rollout["oracle_solution"]["optimal"])
+
+    def test_symbolic_boolean_oracle_rollout_solves_task(self) -> None:
+        family = get_family("symbolic_transformation")
+        task = family.sample_instance(
+            seed=29,
+            config=FamilyConfig(difficulty="medium", generation_overrides={"task_type": "boolean_nnf"}),
+        )
+        rollout = rollout_oracle(task)
+        self.assertTrue(rollout["completed"])
+        self.assertEqual(rollout["task_spec"]["metadata"]["task_type"], "boolean_nnf")
+        self.assertTrue(rollout["oracle_solution"]["certificate"]["optimal"])
+
+    def test_symbolic_invalid_rewrite_is_rejected(self) -> None:
+        family = get_family("symbolic_transformation")
+        task = family.sample_instance(
+            seed=31,
+            config=FamilyConfig(difficulty="easy", generation_overrides={"task_type": "arithmetic_simplify"}),
+        )
+        env = RLVREnv(task)
+        env.reset()
+        _, _, terminated, truncated, info = env.step(
+            {"name": "rewrite", "arguments": {"rule_id": "nonexistent_rule", "path": [9]}}
+        )
+        self.assertFalse(terminated)
+        self.assertFalse(truncated)
+        self.assertFalse(info["verification"]["passed"])
+        self.assertTrue(info["verification"]["hard_failed"])
+
 
 if __name__ == "__main__":
     unittest.main()

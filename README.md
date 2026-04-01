@@ -28,6 +28,7 @@ RLVR-Gym is built for research workflows such as RLVR, online RL, offline RL, SF
 
 - `graph_planning`: weighted graph navigation with exact shortest-path verification
 - `scheduling`: single-machine scheduling with deadlines, precedence constraints, and exact tardiness optimization
+- `symbolic_transformation`: formal symbolic tree rewriting for arithmetic simplification and boolean normalization
 
 ## Installation
 
@@ -100,6 +101,12 @@ Sample a scheduling oracle rollout:
 
 ```bash
 uv run rlvr-gym sample --family scheduling --seed 11 --export oracle
+```
+
+Sample a symbolic transformation task:
+
+```bash
+uv run rlvr-gym sample --family symbolic_transformation --seed 17 --export task
 ```
 
 ### Troubleshooting
@@ -202,6 +209,7 @@ uv run rlvr-gym benchmark --family scheduling --base-seed 123 --train-count 100 
 - [src/rlvr_gym/core/oracle.py](src/rlvr_gym/core/oracle.py): oracle interface and proof-style solution metadata
 - [src/rlvr_gym/families/graph_planning.py](src/rlvr_gym/families/graph_planning.py): graph planning family
 - [src/rlvr_gym/families/scheduling.py](src/rlvr_gym/families/scheduling.py): scheduling family
+- [src/rlvr_gym/families/symbolic_transformation.py](src/rlvr_gym/families/symbolic_transformation.py): symbolic rewrite family
 
 ## Testing
 

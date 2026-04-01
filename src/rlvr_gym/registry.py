@@ -2,10 +2,12 @@ from __future__ import annotations
 
 from rlvr_gym.families.graph_planning import GraphPlanningFamily
 from rlvr_gym.families.scheduling import SchedulingFamily
+from rlvr_gym.families.symbolic_transformation import SymbolicTransformationFamily
 
 FAMILY_REGISTRY = {
     "graph_planning": GraphPlanningFamily(),
     "scheduling": SchedulingFamily(),
+    "symbolic_transformation": SymbolicTransformationFamily(),
 }
 
 
