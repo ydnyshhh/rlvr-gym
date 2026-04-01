@@ -210,6 +210,22 @@ uv run rlvr-gym benchmark --family scheduling --base-seed 123 --train-count 100 
 - [src/rlvr_gym/families/graph_planning.py](src/rlvr_gym/families/graph_planning.py): graph planning family
 - [src/rlvr_gym/families/scheduling.py](src/rlvr_gym/families/scheduling.py): scheduling family
 - [src/rlvr_gym/families/symbolic_transformation.py](src/rlvr_gym/families/symbolic_transformation.py): symbolic rewrite family
+- [docs/benchmark_cards/README.md](docs/benchmark_cards/README.md): benchmark card index
+
+## Benchmark cards
+
+Family-specific benchmark cards are available under [docs/benchmark_cards](docs/benchmark_cards/README.md).
+
+They document:
+
+- intended capability coverage
+- formal objectives
+- verification guarantees
+- oracle semantics
+- recommended metrics
+- recommended ID and OOD split protocols
+- shortcut risks
+- baseline heuristics
 
 ## Testing
 

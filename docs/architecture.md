@@ -70,6 +70,21 @@ RLVR-Gym is organized around the idea that an environment family defines a distr
 - OOD generalization by altering difficulty and generator overrides
 - pathology analysis through generated instances and verifier traces
 
+## Benchmark cards
+
+Per-family benchmark cards live under [benchmark_cards](benchmark_cards/README.md).
+
+They are intended to be the research-facing summary for each family, including:
+
+- capability targets
+- formal objectives
+- verification guarantees
+- oracle interpretation
+- metrics
+- recommended ID and OOD splits
+- shortcut risks
+- baseline heuristics
+
 ## Current maturity
 
 RLVR-Gym currently proves the framework more than it proves environment breadth. The shipped families are intentionally narrow, while the core abstractions are designed to support a wider future suite of verifiable reasoning and decision domains.
