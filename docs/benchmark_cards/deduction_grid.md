@@ -34,6 +34,8 @@ The agent interacts with a deduction table using canonical actions:
 - `propagate`
 - `commit_solution`
 
+The public observation exposes the clue set, the current explicit table state, and recorded true/false facts. It does not expose the internally derived closure state, pending oracle deductions, or the hidden resolved assignment before commit.
+
 The task is solved when the agent commits a complete assignment that satisfies every clue and all bijection constraints.
 
 ## Verification guarantees

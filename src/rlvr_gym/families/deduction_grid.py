@@ -577,6 +577,28 @@ def _observation_table(world: DeductionGridWorld, analysis: DeductionAnalysis) -
     return table
 
 
+def _visible_analysis_from_state(world: DeductionGridWorld, state: DeductionGridState) -> tuple[dict[str, dict[str, tuple[str, ...]]], bool, str]:
+    relation_lookup = _relation_lookup(world)
+    possible = _init_possible(world.base_category, world.relation_categories)
+    contradiction = False
+    contradiction_reason = ""
+
+    for fact in state.known_true:
+        _, reason = _force_true(possible, relation_lookup, _entities(world), fact)
+        if reason is not None:
+            contradiction = True
+            contradiction_reason = reason
+            break
+    if not contradiction:
+        for fact in state.known_false:
+            _, reason = _force_false(possible, fact)
+            if reason is not None:
+                contradiction = True
+                contradiction_reason = reason
+                break
+    return _possible_snapshot(possible, world.relation_categories), contradiction, contradiction_reason
+
+
 def _commit_ready(analysis: DeductionAnalysis) -> bool:
     return analysis.solved and not analysis.pending_true and not analysis.pending_false
 
@@ -864,7 +886,7 @@ class DeductionGridFamily(EnvironmentFamily):
         objective: TaskObjective,
         generation_params: dict[str, Any],
     ) -> dict[str, Any]:
-        analysis = _analyze_state(world.base_category, world.relation_categories, world.clues, state)
+        visible_possible, contradiction, contradiction_reason = _visible_analysis_from_state(world, state)
         return {
             "mode": generation_params["observability"],
             "base_category": world.base_category.name,
@@ -882,13 +904,26 @@ class DeductionGridFamily(EnvironmentFamily):
                 }
                 for clue in world.clues
             ],
-            "deduction_table": _observation_table(world, analysis),
+            "deduction_table": _observation_table(
+                world,
+                DeductionAnalysis(
+                    contradiction=contradiction,
+                    contradiction_reason=contradiction_reason,
+                    possible=visible_possible,
+                    entailed_true=(),
+                    entailed_false=(),
+                    pending_true=(),
+                    pending_false=(),
+                    resolved_assignment={},
+                    solved=False,
+                    num_resolved_pairs=0,
+                    num_eliminated_pairs=0,
+                ),
+            ),
             "known_true": [_fact_to_dict(fact) for fact in state.known_true],
             "known_false": [_fact_to_dict(fact) for fact in state.known_false],
-            "pending_true": [_fact_to_dict(fact) for fact in analysis.pending_true],
-            "pending_false": [_fact_to_dict(fact) for fact in analysis.pending_false],
-            "resolved_assignment": analysis.resolved_assignment,
-            "ready_to_commit": _commit_ready(analysis),
+            "table_consistent": not contradiction,
+            "table_consistency_reason": contradiction_reason or "",
             "committed_assignment": state.committed_assignment,
             "solved": state.solved,
         }
@@ -908,7 +943,8 @@ class DeductionGridFamily(EnvironmentFamily):
                     "deduction_table": "category -> entity -> possible_values",
                     "known_true": "list[deduction_fact]",
                     "known_false": "list[deduction_fact]",
-                    "resolved_assignment": "partial_or_complete_assignment",
+                    "table_consistent": "bool",
+                    "committed_assignment": "optional_final_assignment",
                 },
                 "observability": generation_params["observability"],
             },
@@ -922,7 +958,7 @@ class DeductionGridFamily(EnvironmentFamily):
                 ],
             },
             runtime_api="gym_like",
-            notes="Gym-like reset()/step() tuples over a formal deduction table with exact propagation semantics.",
+            notes="Gym-like reset()/step() tuples over a formal deduction table with exact propagation semantics; observation hides solver closure and unresolved oracle state.",
         )
 
     def valid_actions(

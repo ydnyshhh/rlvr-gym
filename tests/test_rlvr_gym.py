@@ -230,6 +230,17 @@ class RLVRGymTests(unittest.TestCase):
         self.assertTrue(rollout["oracle_solution"]["optimal"])
         self.assertEqual(rollout["trace_outcome"]["final_verification"]["kind_scores"]["feasibility"], 1.0)
 
+    def test_deduction_grid_observation_hides_internal_closure(self) -> None:
+        family = get_family("deduction_grid")
+        task = family.sample_instance(seed=19, config=FamilyConfig(difficulty="medium"))
+        observation = task.initial_observation
+        self.assertNotIn("resolved_assignment", observation)
+        self.assertNotIn("pending_true", observation)
+        self.assertNotIn("pending_false", observation)
+        self.assertIn("deduction_table", observation)
+        self.assertIn("known_true", observation)
+        self.assertIn("known_false", observation)
+
     def test_deduction_grid_invalid_deduction_is_rejected(self) -> None:
         family = get_family("deduction_grid")
         task = family.sample_instance(seed=37, config=FamilyConfig(difficulty="easy"))

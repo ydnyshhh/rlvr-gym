@@ -51,6 +51,7 @@ RLVR-Gym is organized around the idea that an environment family defines a distr
 
 - latent world: a hidden bijective assignment across entity and attribute categories plus a generated clue set
 - objective: recover the full assignment by exact symbolic table updates and a final solution commit
+- observation: exposes clues plus the agent-built deduction table, while hiding internal closure-derived pending updates and resolved assignments
 - oracle: deterministic closure-driven deduction policy ending in a formally checked complete assignment
 - verification: action legality, table-update correctness, final assignment validity, trajectory efficiency
 
