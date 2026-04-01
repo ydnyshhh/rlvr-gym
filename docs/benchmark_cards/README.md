@@ -19,4 +19,5 @@ Available cards:
 - [deduction_grid.md](deduction_grid.md)
 - [graph_planning.md](graph_planning.md)
 - [scheduling.md](scheduling.md)
+- [sokoban.md](sokoban.md)
 - [symbolic_transformation.md](symbolic_transformation.md)

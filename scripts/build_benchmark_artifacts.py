@@ -66,6 +66,20 @@ BENCHMARK_SPECS: dict[str, dict[str, Any]] = {
         "evaluation_splits": ["test", "ood_more_jobs", "ood_tighter_constraints"],
         "baselines": ["random_ready", "shortest_processing_time", "earliest_deadline", "minimum_slack", "oracle"],
     },
+    "sokoban": {
+        "version": "v1",
+        "description": "Frozen Sokoban benchmark with ID and long-horizon planning OOD splits.",
+        "objective_gap_name": "move_count_gap",
+        "splits": {
+            "train": {"group": "id", "count": 24, "difficulty": "medium", "observability": "full", "generation_overrides": {}},
+            "validation": {"group": "id", "count": 12, "difficulty": "medium", "observability": "full", "generation_overrides": {}},
+            "test": {"group": "id", "count": 12, "difficulty": "medium", "observability": "full", "generation_overrides": {}},
+            "ood_more_boxes": {"group": "ood", "count": 12, "difficulty": "hard", "observability": "full", "generation_overrides": {"num_boxes": 3, "min_solution_length": 14}},
+            "ood_longer_plans": {"group": "ood", "count": 12, "difficulty": "hard", "observability": "full", "generation_overrides": {"reverse_scramble_steps": 20, "min_solution_length": 18, "template_pool": ["warehouse_large", "rooms_and_halls"]}},
+        },
+        "evaluation_splits": ["test", "ood_more_boxes", "ood_longer_plans"],
+        "baselines": ["random_valid", "push_when_possible", "greedy_goal_progress", "deadlock_avoiding_greedy", "oracle"],
+    },
     "symbolic_transformation": {
         "version": "v1",
         "description": "Frozen symbolic rewrite benchmark with mode-specific ID splits and deeper OOD splits.",
@@ -128,6 +142,40 @@ def _scheduling_baseline_action(name: str, observation: dict[str, Any], valid_ac
             ready[action["arguments"]["job_id"]]["deadline"] - observation["current_time"] - ready[action["arguments"]["job_id"]]["duration"],
             ready[action["arguments"]["job_id"]]["deadline"],
             action["arguments"]["job_id"],
+        ),
+    )
+
+
+def _sokoban_baseline_action(name: str, valid_actions: list[dict[str, Any]], rng: Random) -> dict[str, Any]:
+    if name == "random_valid":
+        return rng.choice(valid_actions)
+    if name == "push_when_possible":
+        priority = lambda action: (
+            0 if action["arguments"].get("causes_push") else 1,
+            -action["arguments"].get("boxes_on_goals_after", 0),
+            action["arguments"].get("goal_distance_after", 0),
+            action["name"],
+        )
+        return min(valid_actions, key=priority)
+    if name == "greedy_goal_progress":
+        return min(
+            valid_actions,
+            key=lambda action: (
+                -action["arguments"].get("boxes_on_goals_after", 0),
+                action["arguments"].get("goal_distance_after", 0),
+                0 if action["arguments"].get("causes_push") else 1,
+                action["name"],
+            ),
+        )
+    safe_actions = [action for action in valid_actions if not action["arguments"].get("introduces_deadlock")]
+    candidates = safe_actions or valid_actions
+    return min(
+        candidates,
+        key=lambda action: (
+            action["arguments"].get("goal_distance_after", 0),
+            0 if action["arguments"].get("causes_push") else 1,
+            -action["arguments"].get("boxes_on_goals_after", 0),
+            action["name"],
         ),
     )
 
@@ -244,6 +292,8 @@ def _evaluate_policy(family_name: str, task: Any, baseline_name: str) -> dict[st
             action_index += 1
         elif family_name == "graph_planning":
             action = _graph_baseline_action(baseline_name, task, observation, valid_actions, rng)
+        elif family_name == "sokoban":
+            action = _sokoban_baseline_action(baseline_name, valid_actions, rng)
         elif family_name == "scheduling":
             action = _scheduling_baseline_action(baseline_name, observation, valid_actions, rng)
         elif family_name == "deduction_grid":
@@ -263,6 +313,10 @@ def _evaluate_policy(family_name: str, task: Any, baseline_name: str) -> dict[st
         final_cost = getattr(env.state, "total_cost", None)
         if final_cost is not None:
             objective_gap = float(final_cost - task.world.shortest_cost)
+    elif family_name == "sokoban":
+        final_moves = getattr(env.state, "move_count", None)
+        if final_moves is not None:
+            objective_gap = float(final_moves - task.world.oracle_move_count)
     elif family_name == "scheduling":
         final_tardiness = getattr(env.state, "total_tardiness", None)
         if final_tardiness is not None:
@@ -331,6 +385,16 @@ def _family_summary_row(family_name: str, split_name: str, records: list[dict[st
                 "num_constraints_mean": round(_mean([record["metadata"]["num_constraints"] for record in records]), 2),
                 "optimal_tardiness_mean": round(_mean([record["metadata"]["optimal_total_tardiness"] for record in records]), 2),
                 "oracle_steps_mean": round(_mean([record["oracle_steps"] for record in records]), 2),
+            }
+        )
+    elif family_name == "sokoban":
+        row.update(
+            {
+                "num_boxes_mean": round(_mean([record["metadata"]["num_boxes"] for record in records]), 2),
+                "board_height_mean": round(_mean([record["metadata"]["board_height"] for record in records]), 2),
+                "board_width_mean": round(_mean([record["metadata"]["board_width"] for record in records]), 2),
+                "oracle_steps_mean": round(_mean([record["metadata"]["oracle_steps"] for record in records]), 2),
+                "oracle_push_count_mean": round(_mean([record["metadata"]["oracle_push_count"] for record in records]), 2),
             }
         )
     elif family_name == "deduction_grid":
@@ -470,6 +534,7 @@ def build_index(output_root: Path) -> None:
         "- [deduction_grid](deduction_grid/benchmark_spec.json)",
         "- [graph_planning](graph_planning/benchmark_spec.json)",
         "- [scheduling](scheduling/benchmark_spec.json)",
+        "- [sokoban](sokoban/benchmark_spec.json)",
         "- [symbolic_transformation](symbolic_transformation/benchmark_spec.json)",
     ]
     _write_text(output_root / "README.md", "\n".join(lines))

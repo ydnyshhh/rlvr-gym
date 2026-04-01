@@ -266,6 +266,39 @@ class RLVRGymTests(unittest.TestCase):
         total_recorded = len(next_obs["known_true"]) + len(next_obs["known_false"])
         self.assertEqual(total_recorded, 1)
 
+    def test_sokoban_generation_is_deterministic(self) -> None:
+        family = get_family("sokoban")
+        config = FamilyConfig(difficulty="easy")
+        task_a = family.sample_instance(seed=41, config=config)
+        task_b = family.sample_instance(seed=41, config=config)
+        self.assertEqual(export_task_spec(task_a), export_task_spec(task_b))
+
+    def test_sokoban_oracle_rollout_solves_task(self) -> None:
+        family = get_family("sokoban")
+        task = family.sample_instance(seed=41, config=FamilyConfig(difficulty="easy"))
+        rollout = rollout_oracle(task)
+        self.assertTrue(rollout["completed"])
+        self.assertTrue(rollout["oracle_solution"]["optimal"])
+        self.assertTrue(rollout["oracle_solution"]["certificate"]["optimal"])
+        self.assertEqual(rollout["trace_outcome"]["final_verification"]["kind_scores"]["feasibility"], 1.0)
+
+    def test_sokoban_invalid_move_is_rejected(self) -> None:
+        family = get_family("sokoban")
+        task = family.sample_instance(seed=41, config=FamilyConfig(difficulty="easy"))
+        env = RLVREnv(task)
+        _, info = env.reset()
+        valid_names = {action["name"] for action in info["valid_actions"]}
+        invalid_name = next(
+            (name for name in ("move_up", "move_down", "move_left", "move_right") if name not in valid_names),
+            "move_nowhere",
+        )
+        _, _, terminated, truncated, step_info = env.step({"name": invalid_name, "arguments": {}})
+        self.assertFalse(terminated)
+        self.assertFalse(truncated)
+        self.assertFalse(step_info["verification"]["passed"])
+        self.assertTrue(step_info["verification"]["hard_failed"])
+        self.assertIn("reason", step_info)
+
 
 if __name__ == "__main__":
     unittest.main()

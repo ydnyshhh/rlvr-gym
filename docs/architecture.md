@@ -70,6 +70,13 @@ RLVR-Gym is organized around the idea that an environment family defines a distr
 - oracle: exact dynamic programming over job subsets
 - verification: action readiness, schedule consistency, completion, precedence, optimality
 
+### Sokoban
+
+- latent world: static grid board with walls and goals plus dynamic player and box positions
+- objective: push every box onto a goal cell while minimizing primitive move count
+- oracle: exact A* planning over deterministic Sokoban states with static deadlock pruning
+- verification: action legality, exact state updates, deadlock detection, goal completion, plan efficiency
+
 ## Research uses
 
 - RLVR and online RL with on-reset procedural generation
