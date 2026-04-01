@@ -26,7 +26,7 @@
           "num_entities": 4,
           "num_relation_categories": 4,
           "observability": "full",
-          "oracle_steps": 18,
+          "oracle_steps": 21,
           "relation_categories": [
             "Vehicle",
             "Pet",
@@ -35,9 +35,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 41.0,
-        "oracle_objective_value": 18,
-        "oracle_steps": 18,
+        "oracle_difficulty_estimate": 44.0,
+        "oracle_objective_value": 21,
+        "oracle_steps": 21,
         "seed": 10806616728342263378,
         "split": "ood_more_categories",
         "task_id": "deduction_grid-667f8467052148a4"
@@ -67,7 +67,7 @@
           "num_entities": 4,
           "num_relation_categories": 4,
           "observability": "full",
-          "oracle_steps": 18,
+          "oracle_steps": 20,
           "relation_categories": [
             "Hobby",
             "Vehicle",
@@ -76,9 +76,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 41.0,
-        "oracle_objective_value": 18,
-        "oracle_steps": 18,
+        "oracle_difficulty_estimate": 43.0,
+        "oracle_objective_value": 20,
+        "oracle_steps": 20,
         "seed": 14972901932283412342,
         "split": "ood_more_categories",
         "task_id": "deduction_grid-02c0216d2a74dc53"
@@ -107,7 +107,7 @@
           "num_entities": 4,
           "num_relation_categories": 4,
           "observability": "full",
-          "oracle_steps": 18,
+          "oracle_steps": 21,
           "relation_categories": [
             "Drink",
             "Pet",
@@ -116,9 +116,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 41.0,
-        "oracle_objective_value": 18,
-        "oracle_steps": 18,
+        "oracle_difficulty_estimate": 44.0,
+        "oracle_objective_value": 21,
+        "oracle_steps": 21,
         "seed": 1558821075312679071,
         "split": "ood_more_categories",
         "task_id": "deduction_grid-b5da841e6b5d6c63"
@@ -188,7 +188,7 @@
           "num_entities": 4,
           "num_relation_categories": 4,
           "observability": "full",
-          "oracle_steps": 18,
+          "oracle_steps": 20,
           "relation_categories": [
             "Vehicle",
             "Meal",
@@ -197,9 +197,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 41.0,
-        "oracle_objective_value": 18,
-        "oracle_steps": 18,
+        "oracle_difficulty_estimate": 43.0,
+        "oracle_objective_value": 20,
+        "oracle_steps": 20,
         "seed": 13829072723778890777,
         "split": "ood_more_categories",
         "task_id": "deduction_grid-16eda104fb5fadd6"
@@ -228,7 +228,7 @@
           "num_entities": 4,
           "num_relation_categories": 4,
           "observability": "full",
-          "oracle_steps": 18,
+          "oracle_steps": 19,
           "relation_categories": [
             "Hobby",
             "Drink",
@@ -237,9 +237,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 41.0,
-        "oracle_objective_value": 18,
-        "oracle_steps": 18,
+        "oracle_difficulty_estimate": 42.0,
+        "oracle_objective_value": 19,
+        "oracle_steps": 19,
         "seed": 9321062801979978391,
         "split": "ood_more_categories",
         "task_id": "deduction_grid-3066c831fa35d6ad"
@@ -268,7 +268,7 @@
           "num_entities": 4,
           "num_relation_categories": 4,
           "observability": "full",
-          "oracle_steps": 18,
+          "oracle_steps": 21,
           "relation_categories": [
             "Drink",
             "House",
@@ -277,9 +277,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 41.0,
-        "oracle_objective_value": 18,
-        "oracle_steps": 18,
+        "oracle_difficulty_estimate": 44.0,
+        "oracle_objective_value": 21,
+        "oracle_steps": 21,
         "seed": 16645692104771393732,
         "split": "ood_more_categories",
         "task_id": "deduction_grid-9eb71eab493b8763"
@@ -308,7 +308,7 @@
           "num_entities": 4,
           "num_relation_categories": 4,
           "observability": "full",
-          "oracle_steps": 18,
+          "oracle_steps": 19,
           "relation_categories": [
             "Hobby",
             "Pet",
@@ -317,9 +317,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 41.0,
-        "oracle_objective_value": 18,
-        "oracle_steps": 18,
+        "oracle_difficulty_estimate": 42.0,
+        "oracle_objective_value": 19,
+        "oracle_steps": 19,
         "seed": 12089421329288734542,
         "split": "ood_more_categories",
         "task_id": "deduction_grid-0e3307e5dd6fea06"
@@ -349,7 +349,7 @@
           "num_entities": 4,
           "num_relation_categories": 4,
           "observability": "full",
-          "oracle_steps": 18,
+          "oracle_steps": 20,
           "relation_categories": [
             "Drink",
             "Time",
@@ -358,9 +358,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 41.0,
-        "oracle_objective_value": 18,
-        "oracle_steps": 18,
+        "oracle_difficulty_estimate": 43.0,
+        "oracle_objective_value": 20,
+        "oracle_steps": 20,
         "seed": 12072537086158086363,
         "split": "ood_more_categories",
         "task_id": "deduction_grid-616165283a061ea5"
@@ -390,7 +390,7 @@
           "num_entities": 4,
           "num_relation_categories": 4,
           "observability": "full",
-          "oracle_steps": 18,
+          "oracle_steps": 20,
           "relation_categories": [
             "Meal",
             "Vehicle",
@@ -399,9 +399,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 41.0,
-        "oracle_objective_value": 18,
-        "oracle_steps": 18,
+        "oracle_difficulty_estimate": 43.0,
+        "oracle_objective_value": 20,
+        "oracle_steps": 20,
         "seed": 330563424043358692,
         "split": "ood_more_categories",
         "task_id": "deduction_grid-e5cacb4369202895"
@@ -430,7 +430,7 @@
           "num_entities": 4,
           "num_relation_categories": 4,
           "observability": "full",
-          "oracle_steps": 18,
+          "oracle_steps": 19,
           "relation_categories": [
             "Pet",
             "Hobby",
@@ -439,9 +439,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 41.0,
-        "oracle_objective_value": 18,
-        "oracle_steps": 18,
+        "oracle_difficulty_estimate": 42.0,
+        "oracle_objective_value": 19,
+        "oracle_steps": 19,
         "seed": 14306311625972835695,
         "split": "ood_more_categories",
         "task_id": "deduction_grid-563d1d66ee1e0155"
@@ -471,7 +471,7 @@
           "num_entities": 4,
           "num_relation_categories": 4,
           "observability": "full",
-          "oracle_steps": 18,
+          "oracle_steps": 20,
           "relation_categories": [
             "Time",
             "Hobby",
@@ -480,9 +480,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 41.0,
-        "oracle_objective_value": 18,
-        "oracle_steps": 18,
+        "oracle_difficulty_estimate": 43.0,
+        "oracle_objective_value": 20,
+        "oracle_steps": 20,
         "seed": 6846909166530070839,
         "split": "ood_more_categories",
         "task_id": "deduction_grid-ed09961d8eb5047b"
@@ -513,7 +513,7 @@
           "num_entities": 5,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 17,
+          "oracle_steps": 18,
           "relation_categories": [
             "Hobby",
             "Pet",
@@ -521,9 +521,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 39.0,
-        "oracle_objective_value": 17,
-        "oracle_steps": 17,
+        "oracle_difficulty_estimate": 40.0,
+        "oracle_objective_value": 18,
+        "oracle_steps": 18,
         "seed": 15408161525732835181,
         "split": "ood_more_entities",
         "task_id": "deduction_grid-f0e777b10a08b3c4"
@@ -591,7 +591,7 @@
           "num_entities": 5,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 17,
+          "oracle_steps": 18,
           "relation_categories": [
             "House",
             "Time",
@@ -599,9 +599,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 39.0,
-        "oracle_objective_value": 17,
-        "oracle_steps": 17,
+        "oracle_difficulty_estimate": 40.0,
+        "oracle_objective_value": 18,
+        "oracle_steps": 18,
         "seed": 1591354839605024950,
         "split": "ood_more_entities",
         "task_id": "deduction_grid-7b928f61b7e048e7"
@@ -630,7 +630,7 @@
           "num_entities": 5,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 17,
+          "oracle_steps": 20,
           "relation_categories": [
             "House",
             "Drink",
@@ -638,9 +638,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 39.0,
-        "oracle_objective_value": 17,
-        "oracle_steps": 17,
+        "oracle_difficulty_estimate": 42.0,
+        "oracle_objective_value": 20,
+        "oracle_steps": 20,
         "seed": 16542521099094645140,
         "split": "ood_more_entities",
         "task_id": "deduction_grid-1395f49bf4e308d4"
@@ -670,7 +670,7 @@
           "num_entities": 5,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 17,
+          "oracle_steps": 19,
           "relation_categories": [
             "House",
             "Pet",
@@ -678,9 +678,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 39.0,
-        "oracle_objective_value": 17,
-        "oracle_steps": 17,
+        "oracle_difficulty_estimate": 41.0,
+        "oracle_objective_value": 19,
+        "oracle_steps": 19,
         "seed": 12541418400529876728,
         "split": "ood_more_entities",
         "task_id": "deduction_grid-dcd01273266c30ff"
@@ -709,7 +709,7 @@
           "num_entities": 5,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 17,
+          "oracle_steps": 18,
           "relation_categories": [
             "Hobby",
             "Vehicle",
@@ -717,9 +717,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 39.0,
-        "oracle_objective_value": 17,
-        "oracle_steps": 17,
+        "oracle_difficulty_estimate": 40.0,
+        "oracle_objective_value": 18,
+        "oracle_steps": 18,
         "seed": 18083142534547029103,
         "split": "ood_more_entities",
         "task_id": "deduction_grid-656d5cc63a18cea6"
@@ -748,7 +748,7 @@
           "num_entities": 5,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 17,
+          "oracle_steps": 18,
           "relation_categories": [
             "Vehicle",
             "House",
@@ -756,9 +756,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 39.0,
-        "oracle_objective_value": 17,
-        "oracle_steps": 17,
+        "oracle_difficulty_estimate": 40.0,
+        "oracle_objective_value": 18,
+        "oracle_steps": 18,
         "seed": 3692658535249802324,
         "split": "ood_more_entities",
         "task_id": "deduction_grid-6f90611fbfb3b28d"
@@ -826,7 +826,7 @@
           "num_entities": 5,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 17,
+          "oracle_steps": 20,
           "relation_categories": [
             "Vehicle",
             "Drink",
@@ -834,9 +834,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 39.0,
-        "oracle_objective_value": 17,
-        "oracle_steps": 17,
+        "oracle_difficulty_estimate": 42.0,
+        "oracle_objective_value": 20,
+        "oracle_steps": 20,
         "seed": 5988346491370135560,
         "split": "ood_more_entities",
         "task_id": "deduction_grid-5f926cb1c1faa40f"
@@ -904,7 +904,7 @@
           "num_entities": 5,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 17,
+          "oracle_steps": 18,
           "relation_categories": [
             "Drink",
             "Hobby",
@@ -912,9 +912,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 39.0,
-        "oracle_objective_value": 17,
-        "oracle_steps": 17,
+        "oracle_difficulty_estimate": 40.0,
+        "oracle_objective_value": 18,
+        "oracle_steps": 18,
         "seed": 6780325885305575979,
         "split": "ood_more_entities",
         "task_id": "deduction_grid-cd5583d0a35e8825"
@@ -944,7 +944,7 @@
           "num_entities": 5,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 17,
+          "oracle_steps": 19,
           "relation_categories": [
             "Meal",
             "House",
@@ -952,9 +952,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 39.0,
-        "oracle_objective_value": 17,
-        "oracle_steps": 17,
+        "oracle_difficulty_estimate": 41.0,
+        "oracle_objective_value": 19,
+        "oracle_steps": 19,
         "seed": 12175522086403775143,
         "split": "ood_more_entities",
         "task_id": "deduction_grid-c69e2fb5d55a716c"
@@ -985,7 +985,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 15,
           "relation_categories": [
             "Vehicle",
             "Pet",
@@ -993,9 +993,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.0,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 32.0,
+        "oracle_objective_value": 15,
+        "oracle_steps": 15,
         "seed": 7346788942512326312,
         "split": "test",
         "task_id": "deduction_grid-f19a5e20f8913fc6"
@@ -1025,7 +1025,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 16,
           "relation_categories": [
             "Drink",
             "Hobby",
@@ -1033,9 +1033,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.5,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 33.5,
+        "oracle_objective_value": 16,
+        "oracle_steps": 16,
         "seed": 8932695176281046043,
         "split": "test",
         "task_id": "deduction_grid-c0c33b510b648b7c"
@@ -1065,7 +1065,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 15,
           "relation_categories": [
             "Time",
             "Drink",
@@ -1073,9 +1073,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.5,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 32.5,
+        "oracle_objective_value": 15,
+        "oracle_steps": 15,
         "seed": 3973460505605544703,
         "split": "test",
         "task_id": "deduction_grid-c85688ddf33a2145"
@@ -1144,7 +1144,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 16,
           "relation_categories": [
             "Pet",
             "Hobby",
@@ -1152,9 +1152,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.5,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 33.5,
+        "oracle_objective_value": 16,
+        "oracle_steps": 16,
         "seed": 10447008429182927459,
         "split": "test",
         "task_id": "deduction_grid-74cd023aa0de13d1"
@@ -1223,7 +1223,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 16,
           "relation_categories": [
             "Time",
             "House",
@@ -1231,9 +1231,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.5,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 33.5,
+        "oracle_objective_value": 16,
+        "oracle_steps": 16,
         "seed": 14517217177103418002,
         "split": "test",
         "task_id": "deduction_grid-ae4cfef0f44076b9"
@@ -1262,7 +1262,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 15,
           "relation_categories": [
             "Time",
             "Hobby",
@@ -1270,9 +1270,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.0,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 32.0,
+        "oracle_objective_value": 15,
+        "oracle_steps": 15,
         "seed": 15323664322809138889,
         "split": "test",
         "task_id": "deduction_grid-7592609c48f6eca3"
@@ -1301,7 +1301,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 15,
           "relation_categories": [
             "Time",
             "Drink",
@@ -1309,9 +1309,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.5,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 32.5,
+        "oracle_objective_value": 15,
+        "oracle_steps": 15,
         "seed": 5385134159865332461,
         "split": "test",
         "task_id": "deduction_grid-048bab60636a1a42"
@@ -1379,7 +1379,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 15,
           "relation_categories": [
             "Pet",
             "Meal",
@@ -1387,9 +1387,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.5,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 32.5,
+        "oracle_objective_value": 15,
+        "oracle_steps": 15,
         "seed": 2770178351589600478,
         "split": "test",
         "task_id": "deduction_grid-e12596275ce02f76"
@@ -1498,7 +1498,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 15,
           "relation_categories": [
             "Meal",
             "Hobby",
@@ -1506,9 +1506,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.0,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 32.0,
+        "oracle_objective_value": 15,
+        "oracle_steps": 15,
         "seed": 18054527667731907233,
         "split": "train",
         "task_id": "deduction_grid-3d8c17f29c4f2a30"
@@ -1537,7 +1537,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 15,
           "relation_categories": [
             "Pet",
             "Time",
@@ -1545,9 +1545,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.0,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 32.0,
+        "oracle_objective_value": 15,
+        "oracle_steps": 15,
         "seed": 7324899942224081582,
         "split": "train",
         "task_id": "deduction_grid-07fa853c77c02afd"
@@ -1615,7 +1615,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 17,
           "relation_categories": [
             "Pet",
             "Drink",
@@ -1623,9 +1623,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.5,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 34.5,
+        "oracle_objective_value": 17,
+        "oracle_steps": 17,
         "seed": 1417383914081316656,
         "split": "train",
         "task_id": "deduction_grid-b10b065d4358098b"
@@ -1732,7 +1732,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 16,
           "relation_categories": [
             "Drink",
             "Time",
@@ -1740,9 +1740,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.5,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 33.5,
+        "oracle_objective_value": 16,
+        "oracle_steps": 16,
         "seed": 474953730299944371,
         "split": "train",
         "task_id": "deduction_grid-1a2d1076b2b9c87e"
@@ -1771,7 +1771,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 15,
           "relation_categories": [
             "Meal",
             "Time",
@@ -1779,9 +1779,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.5,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 32.5,
+        "oracle_objective_value": 15,
+        "oracle_steps": 15,
         "seed": 1817912094884374108,
         "split": "train",
         "task_id": "deduction_grid-864354cbd38a9669"
@@ -1810,7 +1810,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 15,
           "relation_categories": [
             "Time",
             "Hobby",
@@ -1818,9 +1818,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.5,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 32.5,
+        "oracle_objective_value": 15,
+        "oracle_steps": 15,
         "seed": 2054931034420142173,
         "split": "train",
         "task_id": "deduction_grid-19a30bd985af1f77"
@@ -1887,7 +1887,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 15,
           "relation_categories": [
             "Meal",
             "Time",
@@ -1895,9 +1895,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.0,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 32.0,
+        "oracle_objective_value": 15,
+        "oracle_steps": 15,
         "seed": 13781670909655672234,
         "split": "train",
         "task_id": "deduction_grid-ae7b58c6af549050"
@@ -1965,7 +1965,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 15,
           "relation_categories": [
             "House",
             "Drink",
@@ -1973,9 +1973,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.5,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 32.5,
+        "oracle_objective_value": 15,
+        "oracle_steps": 15,
         "seed": 6478724348127932019,
         "split": "train",
         "task_id": "deduction_grid-19883aaa9c0f322c"
@@ -2004,7 +2004,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 15,
           "relation_categories": [
             "Time",
             "Vehicle",
@@ -2012,9 +2012,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.0,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 32.0,
+        "oracle_objective_value": 15,
+        "oracle_steps": 15,
         "seed": 8143923435754881463,
         "split": "train",
         "task_id": "deduction_grid-dde64fc23ddf2129"
@@ -2238,7 +2238,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 15,
           "relation_categories": [
             "Vehicle",
             "Drink",
@@ -2246,9 +2246,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.0,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 32.0,
+        "oracle_objective_value": 15,
+        "oracle_steps": 15,
         "seed": 1840748257024977439,
         "split": "train",
         "task_id": "deduction_grid-94d99bcce943d7b8"
@@ -2277,7 +2277,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 17,
           "relation_categories": [
             "Pet",
             "Time",
@@ -2285,9 +2285,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.5,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 34.5,
+        "oracle_objective_value": 17,
+        "oracle_steps": 17,
         "seed": 529471929864538724,
         "split": "train",
         "task_id": "deduction_grid-2890bcf7f14a609c"
@@ -2396,7 +2396,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 15,
           "relation_categories": [
             "Pet",
             "Time",
@@ -2404,9 +2404,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.5,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 32.5,
+        "oracle_objective_value": 15,
+        "oracle_steps": 15,
         "seed": 9060076878671396742,
         "split": "validation",
         "task_id": "deduction_grid-f3b55d4f36e235ad"
@@ -2552,7 +2552,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 16,
           "relation_categories": [
             "Meal",
             "House",
@@ -2560,9 +2560,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.5,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 33.5,
+        "oracle_objective_value": 16,
+        "oracle_steps": 16,
         "seed": 7172896052157253837,
         "split": "validation",
         "task_id": "deduction_grid-197cf148b5f56d56"
@@ -2591,7 +2591,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 15,
           "relation_categories": [
             "Pet",
             "Vehicle",
@@ -2599,9 +2599,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.5,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 32.5,
+        "oracle_objective_value": 15,
+        "oracle_steps": 15,
         "seed": 18254866345325306160,
         "split": "validation",
         "task_id": "deduction_grid-e641af289baaca12"
@@ -2630,7 +2630,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 17,
           "relation_categories": [
             "House",
             "Time",
@@ -2638,9 +2638,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.5,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 34.5,
+        "oracle_objective_value": 17,
+        "oracle_steps": 17,
         "seed": 12678645027866897619,
         "split": "validation",
         "task_id": "deduction_grid-e646d5090d2219bf"
@@ -2746,7 +2746,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 15,
           "relation_categories": [
             "Time",
             "Pet",
@@ -2754,9 +2754,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.0,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 32.0,
+        "oracle_objective_value": 15,
+        "oracle_steps": 15,
         "seed": 6239782890705874143,
         "split": "validation",
         "task_id": "deduction_grid-13c4401641e8a032"
@@ -2786,7 +2786,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 16,
           "relation_categories": [
             "Pet",
             "Hobby",
@@ -2794,9 +2794,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.5,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 33.5,
+        "oracle_objective_value": 16,
+        "oracle_steps": 16,
         "seed": 98610490390421844,
         "split": "validation",
         "task_id": "deduction_grid-f495da9a58b7d9f1"
@@ -2826,7 +2826,7 @@
           "num_entities": 4,
           "num_relation_categories": 3,
           "observability": "full",
-          "oracle_steps": 14,
+          "oracle_steps": 16,
           "relation_categories": [
             "Hobby",
             "House",
@@ -2834,9 +2834,9 @@
           ]
         },
         "objective_name": "solve_deduction_grid",
-        "oracle_difficulty_estimate": 31.5,
-        "oracle_objective_value": 14,
-        "oracle_steps": 14,
+        "oracle_difficulty_estimate": 33.5,
+        "oracle_objective_value": 16,
+        "oracle_steps": 16,
         "seed": 9189652688129868017,
         "split": "validation",
         "task_id": "deduction_grid-884a51f90152af13"

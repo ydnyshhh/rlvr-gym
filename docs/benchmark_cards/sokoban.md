@@ -1,5 +1,12 @@
 # Sokoban Benchmark Card
 
+## Artifact bundle
+
+- [benchmark spec](../benchmark_artifacts/sokoban/benchmark_spec.json)
+- [split manifest](../benchmark_artifacts/sokoban/split_manifest.json)
+- [diversity summary](../benchmark_artifacts/sokoban/diversity_summary.md)
+- [baseline results](../benchmark_artifacts/sokoban/baseline_results.md)
+
 ## Capability
 
 This family measures long-horizon spatial planning under delayed consequences. Agents must reason over exact deterministic box-pushing dynamics, avoid irreversible mistakes, and manage local decisions that affect future reachability.

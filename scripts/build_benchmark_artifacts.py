@@ -76,7 +76,7 @@ BENCHMARK_SPECS: dict[str, dict[str, Any]] = {
             "validation": {"group": "id", "count": 12, "difficulty": "medium", "observability": "full", "generation_overrides": {}},
             "test": {"group": "id", "count": 12, "difficulty": "medium", "observability": "full", "generation_overrides": {}},
             "ood_more_boxes": {"group": "ood", "count": 12, "difficulty": "hard", "observability": "full", "generation_overrides": {"num_boxes": 3, "min_solution_length": 14}},
-            "ood_longer_plans": {"group": "ood", "count": 12, "difficulty": "hard", "observability": "full", "generation_overrides": {"reverse_scramble_steps": 20, "min_solution_length": 18, "template_pool": ["warehouse_large", "rooms_and_halls"]}},
+            "ood_longer_plans": {"group": "ood", "count": 12, "difficulty": "hard", "observability": "full", "generation_overrides": {"reverse_scramble_steps": 18, "min_solution_length": 16, "template_pool": ["compact_cross", "side_rooms", "warehouse_large", "rooms_and_halls"]}},
         },
         "evaluation_splits": ["test", "ood_more_boxes", "ood_longer_plans"],
         "baselines": ["random_valid", "push_when_possible", "greedy_goal_progress", "deadlock_avoiding_greedy", "oracle"],

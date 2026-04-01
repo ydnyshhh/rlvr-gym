@@ -926,8 +926,8 @@ class SokobanFamily(EnvironmentFamily):
         }
 
     def sample_world(self, generation_params: dict[str, Any], rng: random.Random) -> SokobanWorld:
-        template_names = set(generation_params.get("template_pool", []))
-        candidate_templates = [template for template in TEMPLATES if template.name in template_names] or list(TEMPLATES)
+        template_names = list(generation_params.get("template_pool", []))
+        base_candidate_templates = [template for template in TEMPLATES if template.name in set(template_names)] or list(TEMPLATES)
         num_boxes = int(generation_params["num_boxes"])
         reverse_steps = int(generation_params["reverse_scramble_steps"])
         min_solution_length = int(generation_params["min_solution_length"])
@@ -935,70 +935,95 @@ class SokobanFamily(EnvironmentFamily):
         max_boxes_on_goals_at_start = int(generation_params.get("max_boxes_on_goals_at_start", 0))
         min_interaction_pairs = int(generation_params.get("min_interaction_pairs", 0))
         solver_expansion_limit = int(generation_params["solver_expansion_limit"])
+        relaxation_profiles = [
+            {
+                "templates": base_candidate_templates,
+                "max_boxes_on_goals_at_start": max_boxes_on_goals_at_start,
+                "min_interaction_pairs": min_interaction_pairs,
+                "solver_expansion_limit": solver_expansion_limit,
+                "attempts": 96,
+            },
+            {
+                "templates": list(TEMPLATES),
+                "max_boxes_on_goals_at_start": max_boxes_on_goals_at_start,
+                "min_interaction_pairs": max(0, min_interaction_pairs - 1),
+                "solver_expansion_limit": solver_expansion_limit * 2,
+                "attempts": 96,
+            },
+            {
+                "templates": list(TEMPLATES),
+                "max_boxes_on_goals_at_start": min(max_boxes_on_goals_at_start + 1, max(0, num_boxes - 1)),
+                "min_interaction_pairs": max(0, min_interaction_pairs - 2),
+                "solver_expansion_limit": solver_expansion_limit * 3,
+                "attempts": 128,
+            },
+        ]
 
-        for _ in range(96):
-            template = rng.choice(candidate_templates)
-            rows = _transform_rows(template.rows, rng.choice(["identity", "flip_horizontal", "flip_vertical", "flip_both"]))
-            width, height, walls, floors = _parse_template(rows)
-            candidates = _goal_candidates(width, height, walls, floors)
-            if len(candidates) < num_boxes + 1:
-                continue
-            goals = _sorted_coords(rng.sample(candidates, num_boxes))
-            taboo = _taboo_cells(width, height, walls, goals)
-            player_candidates = [cell for cell in floors if cell not in goals]
-            if not player_candidates:
-                continue
-            player_start = rng.choice(player_candidates)
-            candidate_world = SokobanWorld(
-                template_name=template.name,
-                width=width,
-                height=height,
-                walls=walls,
-                goals=goals,
-                initial_boxes=goals,
-                initial_player=player_start,
-                taboo_cells=taboo,
-                reverse_scramble_steps=reverse_steps,
-            )
-            scrambled_state = _scramble_from_solved(candidate_world, rng, reverse_steps, player_start)
-            if scrambled_state.boxes == candidate_world.goals:
-                continue
-            candidate_world = replace(
-                candidate_world,
-                initial_boxes=scrambled_state.boxes,
-                initial_player=scrambled_state.player,
-            )
-            initial_state = _build_state(
-                player=candidate_world.initial_player,
-                boxes=candidate_world.initial_boxes,
-                walls=candidate_world.walls,
-                goals=candidate_world.goals,
-                taboo_cells=candidate_world.taboo_cells,
-            )
-            if initial_state.deadlock or initial_state.solved:
-                continue
-            boxes_on_goals_at_start = _boxes_on_goals(initial_state.boxes, candidate_world.goals)
-            interaction_pairs = _box_interaction_pair_count(initial_state.boxes)
-            effective_min_interaction_pairs = min_interaction_pairs if num_boxes <= 1 else max(
-                0,
-                min_interaction_pairs - 1 if _ >= 48 else min_interaction_pairs,
-            )
-            if boxes_on_goals_at_start > max_boxes_on_goals_at_start:
-                continue
-            if interaction_pairs < effective_min_interaction_pairs:
-                continue
-            solver_result = _solve_sokoban(candidate_world, initial_state, expansion_limit=solver_expansion_limit)
-            if solver_result is None:
-                continue
-            if not (min_solution_length <= solver_result.move_count <= max_solution_length):
-                continue
-            return replace(
-                candidate_world,
-                oracle_plan=solver_result.actions,
-                oracle_move_count=solver_result.move_count,
-                oracle_push_count=solver_result.push_count,
-                solver_expansions=solver_result.expanded_nodes,
-            )
+        for profile in relaxation_profiles:
+            candidate_templates = profile["templates"]
+            for _ in range(int(profile["attempts"])):
+                template = rng.choice(candidate_templates)
+                rows = _transform_rows(template.rows, rng.choice(["identity", "flip_horizontal", "flip_vertical", "flip_both"]))
+                width, height, walls, floors = _parse_template(rows)
+                candidates = _goal_candidates(width, height, walls, floors)
+                if len(candidates) < num_boxes + 1:
+                    continue
+                goals = _sorted_coords(rng.sample(candidates, num_boxes))
+                taboo = _taboo_cells(width, height, walls, goals)
+                player_candidates = [cell for cell in floors if cell not in goals]
+                if not player_candidates:
+                    continue
+                player_start = rng.choice(player_candidates)
+                candidate_world = SokobanWorld(
+                    template_name=template.name,
+                    width=width,
+                    height=height,
+                    walls=walls,
+                    goals=goals,
+                    initial_boxes=goals,
+                    initial_player=player_start,
+                    taboo_cells=taboo,
+                    reverse_scramble_steps=reverse_steps,
+                )
+                scrambled_state = _scramble_from_solved(candidate_world, rng, reverse_steps, player_start)
+                if scrambled_state.boxes == candidate_world.goals:
+                    continue
+                candidate_world = replace(
+                    candidate_world,
+                    initial_boxes=scrambled_state.boxes,
+                    initial_player=scrambled_state.player,
+                )
+                initial_state = _build_state(
+                    player=candidate_world.initial_player,
+                    boxes=candidate_world.initial_boxes,
+                    walls=candidate_world.walls,
+                    goals=candidate_world.goals,
+                    taboo_cells=candidate_world.taboo_cells,
+                )
+                if initial_state.deadlock or initial_state.solved:
+                    continue
+                boxes_on_goals_at_start = _boxes_on_goals(initial_state.boxes, candidate_world.goals)
+                interaction_pairs = _box_interaction_pair_count(initial_state.boxes)
+                if boxes_on_goals_at_start > int(profile["max_boxes_on_goals_at_start"]):
+                    continue
+                if interaction_pairs < int(profile["min_interaction_pairs"]):
+                    continue
+                solver_result = _solve_sokoban(
+                    candidate_world,
+                    initial_state,
+                    expansion_limit=int(profile["solver_expansion_limit"]),
+                )
+                if solver_result is None:
+                    continue
+                if not (min_solution_length <= solver_result.move_count <= max_solution_length):
+                    continue
+                return replace(
+                    candidate_world,
+                    oracle_plan=solver_result.actions,
+                    oracle_move_count=solver_result.move_count,
+                    oracle_push_count=solver_result.push_count,
+                    solver_expansions=solver_result.expanded_nodes,
+                )
         raise ValueError("Unable to generate a solvable Sokoban instance matching the requested difficulty.")
 
     def derive_objective(

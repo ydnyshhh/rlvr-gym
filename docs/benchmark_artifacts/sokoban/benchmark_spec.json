@@ -1,0 +1,68 @@
+{
+  "baselines": [
+    "random_valid",
+    "push_when_possible",
+    "greedy_goal_progress",
+    "deadlock_avoiding_greedy",
+    "oracle"
+  ],
+  "description": "Frozen Sokoban benchmark with ID and long-horizon planning OOD splits.",
+  "evaluation_splits": [
+    "test",
+    "ood_more_boxes",
+    "ood_longer_plans"
+  ],
+  "family_name": "sokoban",
+  "objective_gap_name": "move_count_gap",
+  "secondary_objective_gap_name": "push_count_gap",
+  "splits": {
+    "ood_longer_plans": {
+      "count": 12,
+      "difficulty": "hard",
+      "generation_overrides": {
+        "min_solution_length": 16,
+        "reverse_scramble_steps": 18,
+        "template_pool": [
+          "compact_cross",
+          "side_rooms",
+          "warehouse_large",
+          "rooms_and_halls"
+        ]
+      },
+      "group": "ood",
+      "observability": "full"
+    },
+    "ood_more_boxes": {
+      "count": 12,
+      "difficulty": "hard",
+      "generation_overrides": {
+        "min_solution_length": 14,
+        "num_boxes": 3
+      },
+      "group": "ood",
+      "observability": "full"
+    },
+    "test": {
+      "count": 12,
+      "difficulty": "medium",
+      "generation_overrides": {},
+      "group": "id",
+      "observability": "full"
+    },
+    "train": {
+      "count": 24,
+      "difficulty": "medium",
+      "generation_overrides": {},
+      "group": "id",
+      "observability": "full"
+    },
+    "validation": {
+      "count": 12,
+      "difficulty": "medium",
+      "generation_overrides": {},
+      "group": "id",
+      "observability": "full"
+    }
+  },
+  "version": "v1"
+}

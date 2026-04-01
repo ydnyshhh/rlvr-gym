@@ -7,4 +7,5 @@ This directory contains frozen benchmark specs, split manifests, diversity summa
 - [deduction_grid](deduction_grid/benchmark_spec.json)
 - [graph_planning](graph_planning/benchmark_spec.json)
 - [scheduling](scheduling/benchmark_spec.json)
+- [sokoban](sokoban/benchmark_spec.json)
 - [symbolic_transformation](symbolic_transformation/benchmark_spec.json)
