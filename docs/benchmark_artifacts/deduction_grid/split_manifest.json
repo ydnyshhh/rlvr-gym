@@ -1,0 +1,2617 @@
+{
+  "family_name": "deduction_grid",
+  "splits": {
+    "ood_more_categories": [
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 3366167956746500299,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_positive": 10
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "oracle_steps": 18,
+          "relation_categories": [
+            "Meal",
+            "Drink",
+            "Hobby",
+            "Time"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 41.0,
+        "oracle_objective_value": 18,
+        "oracle_steps": 18,
+        "seed": 10806616728342263378,
+        "split": "ood_more_categories",
+        "task_id": "deduction_grid-bf3c69ca65b65d1f"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 8918569739893766068,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_negative": 1,
+            "linked_values_positive": 9
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "oracle_steps": 18,
+          "relation_categories": [
+            "Hobby",
+            "Vehicle",
+            "Meal",
+            "House"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 41.0,
+        "oracle_objective_value": 18,
+        "oracle_steps": 18,
+        "seed": 14972901932283412342,
+        "split": "ood_more_categories",
+        "task_id": "deduction_grid-4db951c83c34acc3"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 18167665317785784526,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 3,
+            "linked_values_negative": 2,
+            "linked_values_positive": 9
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "oracle_steps": 18,
+          "relation_categories": [
+            "Drink",
+            "Pet",
+            "Vehicle",
+            "Meal"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 41.0,
+        "oracle_objective_value": 18,
+        "oracle_steps": 18,
+        "seed": 1558821075312679071,
+        "split": "ood_more_categories",
+        "task_id": "deduction_grid-8ccb77c6a271a3e6"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 14299236199250800882,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_positive": 10
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "oracle_steps": 18,
+          "relation_categories": [
+            "Pet",
+            "Vehicle",
+            "Drink",
+            "Meal"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 41.0,
+        "oracle_objective_value": 18,
+        "oracle_steps": 18,
+        "seed": 1617709061149851841,
+        "split": "ood_more_categories",
+        "task_id": "deduction_grid-3604c06a6bc1268c"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 17389642198482500299,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_negative": 1,
+            "linked_values_positive": 9
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "oracle_steps": 18,
+          "relation_categories": [
+            "Vehicle",
+            "Meal",
+            "House",
+            "Hobby"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 41.0,
+        "oracle_objective_value": 18,
+        "oracle_steps": 18,
+        "seed": 13829072723778890777,
+        "split": "ood_more_categories",
+        "task_id": "deduction_grid-d5498b8dd9a5b3a2"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 2818622258123357721,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 4,
+            "linked_values_positive": 9
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "oracle_steps": 18,
+          "relation_categories": [
+            "Drink",
+            "Hobby",
+            "House",
+            "Time"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 41.0,
+        "oracle_objective_value": 18,
+        "oracle_steps": 18,
+        "seed": 9321062801979978391,
+        "split": "ood_more_categories",
+        "task_id": "deduction_grid-70bbbf4b859bbc36"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 5455672894781012454,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_negative": 1,
+            "linked_values_positive": 9
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "oracle_steps": 18,
+          "relation_categories": [
+            "Time",
+            "Meal",
+            "House",
+            "Drink"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 41.0,
+        "oracle_objective_value": 18,
+        "oracle_steps": 18,
+        "seed": 16645692104771393732,
+        "split": "ood_more_categories",
+        "task_id": "deduction_grid-454e0b31ff64cc80"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 12879000169274805761,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 2,
+            "entity_value_positive": 3,
+            "linked_values_positive": 9
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "oracle_steps": 18,
+          "relation_categories": [
+            "Hobby",
+            "Pet",
+            "Time",
+            "Vehicle"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 41.0,
+        "oracle_objective_value": 18,
+        "oracle_steps": 18,
+        "seed": 12089421329288734542,
+        "split": "ood_more_categories",
+        "task_id": "deduction_grid-7bcb72faf17c1be0"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 9956658352598087406,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 4,
+            "linked_values_positive": 9
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "oracle_steps": 18,
+          "relation_categories": [
+            "Hobby",
+            "Meal",
+            "Time",
+            "House"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 41.0,
+        "oracle_objective_value": 18,
+        "oracle_steps": 18,
+        "seed": 12072537086158086363,
+        "split": "ood_more_categories",
+        "task_id": "deduction_grid-a6b3225f26ff5d12"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 3642498950593395097,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_negative": 1,
+            "linked_values_positive": 9
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "oracle_steps": 18,
+          "relation_categories": [
+            "Meal",
+            "Vehicle",
+            "Drink",
+            "Time"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 41.0,
+        "oracle_objective_value": 18,
+        "oracle_steps": 18,
+        "seed": 330563424043358692,
+        "split": "ood_more_categories",
+        "task_id": "deduction_grid-088eeca992b2db3d"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 9853152817549582152,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 2,
+            "entity_value_positive": 3,
+            "linked_values_positive": 9
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "oracle_steps": 18,
+          "relation_categories": [
+            "Pet",
+            "Hobby",
+            "Vehicle",
+            "Meal"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 41.0,
+        "oracle_objective_value": 18,
+        "oracle_steps": 18,
+        "seed": 14306311625972835695,
+        "split": "ood_more_categories",
+        "task_id": "deduction_grid-b1b49a9b9498b38a"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 16112230392535976472,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_positive": 10
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 4,
+          "num_relation_categories": 4,
+          "observability": "full",
+          "oracle_steps": 18,
+          "relation_categories": [
+            "Vehicle",
+            "Drink",
+            "Hobby",
+            "Time"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 41.0,
+        "oracle_objective_value": 18,
+        "oracle_steps": 18,
+        "seed": 6846909166530070839,
+        "split": "ood_more_categories",
+        "task_id": "deduction_grid-251bc68eaa4f0cae"
+      }
+    ],
+    "ood_more_entities": [
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 8742307627435367274,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 5,
+            "linked_values_positive": 8
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 17,
+          "relation_categories": [
+            "Drink",
+            "Hobby",
+            "Pet"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 39.0,
+        "oracle_objective_value": 17,
+        "oracle_steps": 17,
+        "seed": 15408161525732835181,
+        "split": "ood_more_entities",
+        "task_id": "deduction_grid-d08e38b7fcb69d56"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 635042665314447621,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 4,
+            "linked_values_negative": 1,
+            "linked_values_positive": 8
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 17,
+          "relation_categories": [
+            "House",
+            "Pet",
+            "Hobby"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 39.0,
+        "oracle_objective_value": 17,
+        "oracle_steps": 17,
+        "seed": 2401663370562902409,
+        "split": "ood_more_entities",
+        "task_id": "deduction_grid-6c68f6f2bbb93a3e"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 18025092962326907709,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 4,
+            "linked_values_negative": 1,
+            "linked_values_positive": 8
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 17,
+          "relation_categories": [
+            "Pet",
+            "Meal",
+            "Time"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 39.0,
+        "oracle_objective_value": 17,
+        "oracle_steps": 17,
+        "seed": 1591354839605024950,
+        "split": "ood_more_entities",
+        "task_id": "deduction_grid-f94a71e2320f1473"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 3635289218023550178,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 5,
+            "linked_values_negative": 1,
+            "linked_values_positive": 8
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 17,
+          "relation_categories": [
+            "Time",
+            "Drink",
+            "House"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 39.0,
+        "oracle_objective_value": 17,
+        "oracle_steps": 17,
+        "seed": 16542521099094645140,
+        "split": "ood_more_entities",
+        "task_id": "deduction_grid-a852bf27e0c62e6b"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 4150054500039886024,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_negative": 2,
+            "linked_values_positive": 8
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 17,
+          "relation_categories": [
+            "Vehicle",
+            "House",
+            "Drink"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 39.0,
+        "oracle_objective_value": 17,
+        "oracle_steps": 17,
+        "seed": 12541418400529876728,
+        "split": "ood_more_entities",
+        "task_id": "deduction_grid-4686704d9adea1ab"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 9566501495902416264,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_negative": 2,
+            "linked_values_positive": 8
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 17,
+          "relation_categories": [
+            "Pet",
+            "Meal",
+            "Vehicle"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 39.0,
+        "oracle_objective_value": 17,
+        "oracle_steps": 17,
+        "seed": 18083142534547029103,
+        "split": "ood_more_entities",
+        "task_id": "deduction_grid-3c1635dbc00a9668"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 17688536040109431081,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_negative": 1,
+            "linked_values_positive": 9
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 17,
+          "relation_categories": [
+            "Meal",
+            "House",
+            "Drink"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 39.0,
+        "oracle_objective_value": 17,
+        "oracle_steps": 17,
+        "seed": 3692658535249802324,
+        "split": "ood_more_entities",
+        "task_id": "deduction_grid-b48c2c3fca5643dc"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 13551109873512217863,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 5,
+            "linked_values_negative": 1,
+            "linked_values_positive": 8
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 17,
+          "relation_categories": [
+            "Meal",
+            "Drink",
+            "Hobby"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 39.0,
+        "oracle_objective_value": 17,
+        "oracle_steps": 17,
+        "seed": 7922708446526249387,
+        "split": "ood_more_entities",
+        "task_id": "deduction_grid-6432add5993a266b"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 295736661822891537,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 2,
+            "entity_value_positive": 4,
+            "linked_values_positive": 8
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 17,
+          "relation_categories": [
+            "Drink",
+            "Time",
+            "Pet"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 39.0,
+        "oracle_objective_value": 17,
+        "oracle_steps": 17,
+        "seed": 5988346491370135560,
+        "split": "ood_more_entities",
+        "task_id": "deduction_grid-08d88b14c7396283"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 15039847074810263605,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_negative": 2,
+            "linked_values_positive": 8
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 17,
+          "relation_categories": [
+            "Hobby",
+            "Meal",
+            "Time"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 39.0,
+        "oracle_objective_value": 17,
+        "oracle_steps": 17,
+        "seed": 2860750319789778077,
+        "split": "ood_more_entities",
+        "task_id": "deduction_grid-1c8958fbb85a4fcc"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 7121557535898120071,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 2,
+            "entity_value_positive": 4,
+            "linked_values_positive": 8
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 17,
+          "relation_categories": [
+            "Drink",
+            "Meal",
+            "House"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 39.0,
+        "oracle_objective_value": 17,
+        "oracle_steps": 17,
+        "seed": 6780325885305575979,
+        "split": "ood_more_entities",
+        "task_id": "deduction_grid-4e7955e844d66f5e"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 930537713709457961,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 4,
+            "linked_values_negative": 1,
+            "linked_values_positive": 8
+          },
+          "difficulty": "hard",
+          "num_clues": 14,
+          "num_entities": 5,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 17,
+          "relation_categories": [
+            "Time",
+            "Hobby",
+            "Drink"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 39.0,
+        "oracle_objective_value": 17,
+        "oracle_steps": 17,
+        "seed": 12175522086403775143,
+        "split": "ood_more_entities",
+        "task_id": "deduction_grid-b5d305a1b40113fc"
+      }
+    ],
+    "test": [
+      {
+        "generation_params": {
+          "num_distractor_clues": 1,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 10479204973830209450,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 10,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "House",
+            "Pet",
+            "Time"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.0,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 7346788942512326312,
+        "split": "test",
+        "task_id": "deduction_grid-859dec131ba840bd"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 11993580532461837475,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_negative": 1,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Drink",
+            "Hobby",
+            "Meal"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 8932695176281046043,
+        "split": "test",
+        "task_id": "deduction_grid-4541e956a902061d"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 16825886511990541975,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_negative": 1,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Time",
+            "Drink",
+            "Meal"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 3973460505605544703,
+        "split": "test",
+        "task_id": "deduction_grid-4f3ab977d8024bfc"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 1,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 11016024027698972211,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 10,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Hobby",
+            "Meal",
+            "House"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.0,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 6168268871887256322,
+        "split": "test",
+        "task_id": "deduction_grid-84d5a2c4a6f3bf73"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 15952845797570328544,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_positive": 7
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Pet",
+            "Hobby",
+            "Meal"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 10447008429182927459,
+        "split": "test",
+        "task_id": "deduction_grid-a86ae4ae529b4484"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 1,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 2859767137029337537,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 10,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Pet",
+            "Meal",
+            "House"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.0,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 15841523948796442519,
+        "split": "test",
+        "task_id": "deduction_grid-3b83cdb1f1f00e66"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 1257386691879005792,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_positive": 7
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Vehicle",
+            "Drink",
+            "Meal"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 14517217177103418002,
+        "split": "test",
+        "task_id": "deduction_grid-ffeb7999f124acc3"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 1,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 12079989116448079928,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 3,
+            "linked_values_negative": 1,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 10,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Time",
+            "Hobby",
+            "Vehicle"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.0,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 15323664322809138889,
+        "split": "test",
+        "task_id": "deduction_grid-5b192db33561cc79"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 7063256841058895776,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_negative": 1,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Meal",
+            "Drink",
+            "House"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 5385134159865332461,
+        "split": "test",
+        "task_id": "deduction_grid-2c39dcf993ad5bfd"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 7556532514111147053,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_positive": 7
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Drink",
+            "House",
+            "Pet"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 6185409304206431939,
+        "split": "test",
+        "task_id": "deduction_grid-24c5bd697345e961"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 7693002444403228595,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 2,
+            "entity_value_positive": 3,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Pet",
+            "Meal",
+            "Time"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 2770178351589600478,
+        "split": "test",
+        "task_id": "deduction_grid-156e7a82f177d711"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 10831237534873570982,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_negative": 1,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "House",
+            "Hobby",
+            "Time"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 5073949050077027703,
+        "split": "test",
+        "task_id": "deduction_grid-32854c17b3f5a463"
+      }
+    ],
+    "train": [
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 2058256281260577171,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_negative": 1,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Meal",
+            "Vehicle",
+            "Drink"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 16325392471319248087,
+        "split": "train",
+        "task_id": "deduction_grid-c6b214110f269e46"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 1,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 14942824112499061377,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 10,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "House",
+            "Time",
+            "Pet"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.0,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 18054527667731907233,
+        "split": "train",
+        "task_id": "deduction_grid-52918a7c96e15eb4"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 1,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 7289242977152003111,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 10,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Meal",
+            "Time",
+            "Hobby"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.0,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 7324899942224081582,
+        "split": "train",
+        "task_id": "deduction_grid-3172032d95a81951"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 1,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 13569503412670027476,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 10,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Hobby",
+            "Time",
+            "Meal"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.0,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 714381327444800107,
+        "split": "train",
+        "task_id": "deduction_grid-8f8398724e1e9127"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 429373340446497791,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 3,
+            "linked_values_negative": 2,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Pet",
+            "Drink",
+            "House"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 1417383914081316656,
+        "split": "train",
+        "task_id": "deduction_grid-8ce93ff20c524bb1"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 1,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 10761901697318609116,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 3,
+            "linked_values_positive": 7
+          },
+          "difficulty": "medium",
+          "num_clues": 10,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Meal",
+            "Vehicle",
+            "Time"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.0,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 15229701157851924040,
+        "split": "train",
+        "task_id": "deduction_grid-d70274709e9a9d9b"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 1,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 10721670358013812888,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 10,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Vehicle",
+            "Time",
+            "Hobby"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.0,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 11133749498284282314,
+        "split": "train",
+        "task_id": "deduction_grid-722a17d16ad1283b"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 12149629869867958379,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_negative": 1,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Drink",
+            "Time",
+            "Hobby"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 474953730299944371,
+        "split": "train",
+        "task_id": "deduction_grid-b64c9c8bc46f4bfd"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 15286202888909151876,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_negative": 1,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Drink",
+            "Vehicle",
+            "Pet"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 1817912094884374108,
+        "split": "train",
+        "task_id": "deduction_grid-779369f74f998f01"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 4787269656149659720,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 4,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Meal",
+            "Time",
+            "Vehicle"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 2054931034420142173,
+        "split": "train",
+        "task_id": "deduction_grid-5d852be0662cd54f"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 1,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 8159087944557875939,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 3,
+            "linked_values_positive": 7
+          },
+          "difficulty": "medium",
+          "num_clues": 10,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Vehicle",
+            "House",
+            "Drink"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.0,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 6008663724742084081,
+        "split": "train",
+        "task_id": "deduction_grid-fa98ad8ebf698456"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 1,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 16927721349078722934,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 10,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Time",
+            "Hobby",
+            "Pet"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.0,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 13781670909655672234,
+        "split": "train",
+        "task_id": "deduction_grid-028754c962ed239f"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 6221138052170753302,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_positive": 7
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Drink",
+            "Meal",
+            "House"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 6732279558731176731,
+        "split": "train",
+        "task_id": "deduction_grid-b34001c4c4bde732"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 11581068138559545426,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 3,
+            "linked_values_negative": 1,
+            "linked_values_positive": 7
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "House",
+            "Drink",
+            "Vehicle"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 6478724348127932019,
+        "split": "train",
+        "task_id": "deduction_grid-130458701727456b"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 1,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 6139774485855873288,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 3,
+            "linked_values_negative": 1,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 10,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Time",
+            "Vehicle",
+            "Pet"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.0,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 8143923435754881463,
+        "split": "train",
+        "task_id": "deduction_grid-b3dd4e40a980c9d4"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 1,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 2371916991532595907,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 10,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Pet",
+            "Drink",
+            "Meal"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.0,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 7971992181156560874,
+        "split": "train",
+        "task_id": "deduction_grid-9cedeadc91e0de1a"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 4561883234897757999,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_positive": 7
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "House",
+            "Drink",
+            "Time"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 5079991390503963829,
+        "split": "train",
+        "task_id": "deduction_grid-43fedc207d1a4b3c"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 4632026068420512397,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_negative": 1,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "House",
+            "Meal",
+            "Pet"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 9197158166107262698,
+        "split": "train",
+        "task_id": "deduction_grid-c21f58fcff33c81a"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 1,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 1229516164041202290,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 10,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Vehicle",
+            "Time",
+            "House"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.0,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 3045171916457275604,
+        "split": "train",
+        "task_id": "deduction_grid-5f755adc9c927812"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 1,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 2880567318824172656,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 10,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Drink",
+            "House",
+            "Meal"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.0,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 2735691998671185085,
+        "split": "train",
+        "task_id": "deduction_grid-14083f2500fcebd3"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 1,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 115382674208262180,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 3,
+            "linked_values_negative": 1,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 10,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Vehicle",
+            "Drink",
+            "Meal"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.0,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 1840748257024977439,
+        "split": "train",
+        "task_id": "deduction_grid-f6bb50553d582288"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 4712603622210883609,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_negative": 1,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Drink",
+            "House",
+            "Time"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 529471929864538724,
+        "split": "train",
+        "task_id": "deduction_grid-a824b17e28ddc0e3"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 6834514913500165292,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 4,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Time",
+            "Drink",
+            "Hobby"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 2891454142478756424,
+        "split": "train",
+        "task_id": "deduction_grid-969417fbff0551ba"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 1,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 219361996129587748,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 10,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "House",
+            "Hobby",
+            "Vehicle"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.0,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 4736125339761974649,
+        "split": "train",
+        "task_id": "deduction_grid-52aee6f1f448185a"
+      }
+    ],
+    "validation": [
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 2443949525511218469,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_positive": 7
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Time",
+            "House",
+            "Vehicle"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 9060076878671396742,
+        "split": "validation",
+        "task_id": "deduction_grid-0369aa62dedd1e2b"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 9394191953390053062,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_positive": 7
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "House",
+            "Vehicle",
+            "Time"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 7788392290300731236,
+        "split": "validation",
+        "task_id": "deduction_grid-fd3bf6c02198a44e"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 1,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 9774291446002976524,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 3,
+            "linked_values_positive": 7
+          },
+          "difficulty": "medium",
+          "num_clues": 10,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Time",
+            "Meal",
+            "House"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.0,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 5004090503478064242,
+        "split": "validation",
+        "task_id": "deduction_grid-cd76f8a07292b159"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 1,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 5581233524316377836,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 10,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Vehicle",
+            "Meal",
+            "Drink"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.0,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 15686587833228947913,
+        "split": "validation",
+        "task_id": "deduction_grid-0a82fe1a6625d9a5"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 1499184493280910146,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_negative": 1,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Meal",
+            "House",
+            "Drink"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 7172896052157253837,
+        "split": "validation",
+        "task_id": "deduction_grid-5c1ed6cabe809d7a"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 7905197540245498801,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 3,
+            "linked_values_negative": 1,
+            "linked_values_positive": 7
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Pet",
+            "Vehicle",
+            "Hobby"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 18254866345325306160,
+        "split": "validation",
+        "task_id": "deduction_grid-7c3f0e4b4c991c86"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 13091019845978033447,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 4,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Time",
+            "Meal",
+            "Hobby"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 12678645027866897619,
+        "split": "validation",
+        "task_id": "deduction_grid-d193a668cf4b4d91"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 1,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 7232980722031277206,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 4,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 10,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Meal",
+            "House",
+            "Time"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.0,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 2867252137231571868,
+        "split": "validation",
+        "task_id": "deduction_grid-07e7b58889b081a8"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 16646086311259572758,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_positive": 7
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Pet",
+            "House",
+            "Meal"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 18134809352400770216,
+        "split": "validation",
+        "task_id": "deduction_grid-56fcf27d31558666"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 1,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 11602743873704463188,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_positive": 3,
+            "linked_values_negative": 1,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 10,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Time",
+            "Pet",
+            "Meal"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.0,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 6239782890705874143,
+        "split": "validation",
+        "task_id": "deduction_grid-52475079084d803b"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 10847025655311179506,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_negative": 1,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Pet",
+            "Hobby",
+            "Time"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 98610490390421844,
+        "split": "validation",
+        "task_id": "deduction_grid-02518147812f4bde"
+      },
+      {
+        "generation_params": {
+          "num_distractor_clues": 2,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "prefer_relational": true
+        },
+        "generation_seed": 4736123697878899722,
+        "metadata": {
+          "base_category": "Person",
+          "clue_type_histogram": {
+            "entity_value_negative": 1,
+            "entity_value_positive": 3,
+            "linked_values_negative": 1,
+            "linked_values_positive": 6
+          },
+          "difficulty": "medium",
+          "num_clues": 11,
+          "num_entities": 4,
+          "num_relation_categories": 3,
+          "observability": "full",
+          "oracle_steps": 14,
+          "relation_categories": [
+            "Hobby",
+            "House",
+            "Pet"
+          ]
+        },
+        "objective_name": "solve_deduction_grid",
+        "oracle_difficulty_estimate": 31.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 14,
+        "seed": 9189652688129868017,
+        "split": "validation",
+        "task_id": "deduction_grid-04e2fcb7485f2351"
+      }
+    ]
+  },
+  "version": "v1"
+}

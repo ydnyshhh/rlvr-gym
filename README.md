@@ -26,6 +26,7 @@ RLVR-Gym is built for research workflows such as RLVR, online RL, offline RL, SF
 
 ## Included families
 
+- `deduction_grid`: logic-grid deduction with exact table updates, propagation, and formal final-assignment verification
 - `graph_planning`: weighted graph navigation with exact shortest-path verification
 - `scheduling`: single-machine scheduling with deadlines, precedence constraints, and exact tardiness optimization
 - `symbolic_transformation`: formal symbolic tree rewriting for arithmetic simplification and boolean normalization
@@ -95,6 +96,12 @@ Sample a graph-planning task:
 
 ```bash
 uv run rlvr-gym sample --family graph_planning --seed 7 --export task
+```
+
+Sample a deduction-grid task:
+
+```bash
+uv run rlvr-gym sample --family deduction_grid --seed 19 --export task
 ```
 
 Sample a scheduling oracle rollout:
@@ -210,6 +217,7 @@ uv run rlvr-gym benchmark --family scheduling --base-seed 123 --train-count 100 
 - [src/rlvr_gym/families/graph_planning.py](src/rlvr_gym/families/graph_planning.py): graph planning family
 - [src/rlvr_gym/families/scheduling.py](src/rlvr_gym/families/scheduling.py): scheduling family
 - [src/rlvr_gym/families/symbolic_transformation.py](src/rlvr_gym/families/symbolic_transformation.py): symbolic rewrite family
+- [src/rlvr_gym/families/deduction_grid.py](src/rlvr_gym/families/deduction_grid.py): logic-grid deduction family
 - [docs/benchmark_cards/README.md](docs/benchmark_cards/README.md): benchmark card index
 
 ## Benchmark cards

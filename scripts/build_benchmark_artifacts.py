@@ -24,6 +24,20 @@ from rlvr_gym.registry import get_family
 
 
 BENCHMARK_SPECS: dict[str, dict[str, Any]] = {
+    "deduction_grid": {
+        "version": "v1",
+        "description": "Frozen deduction-grid benchmark with ID and puzzle-size OOD splits.",
+        "objective_gap_name": "deduction_step_gap",
+        "splits": {
+            "train": {"group": "id", "count": 24, "difficulty": "medium", "observability": "full", "generation_overrides": {}},
+            "validation": {"group": "id", "count": 12, "difficulty": "medium", "observability": "full", "generation_overrides": {}},
+            "test": {"group": "id", "count": 12, "difficulty": "medium", "observability": "full", "generation_overrides": {}},
+            "ood_more_entities": {"group": "ood", "count": 12, "difficulty": "hard", "observability": "full", "generation_overrides": {"num_entities": 5, "num_relation_categories": 3, "num_distractor_clues": 2}},
+            "ood_more_categories": {"group": "ood", "count": 12, "difficulty": "hard", "observability": "full", "generation_overrides": {"num_entities": 4, "num_relation_categories": 4, "num_distractor_clues": 2}},
+        },
+        "evaluation_splits": ["test", "ood_more_entities", "ood_more_categories"],
+        "baselines": ["random_valid", "propagate_first", "assert_first", "rule_out_first", "oracle"],
+    },
     "graph_planning": {
         "version": "v1",
         "description": "Frozen graph-planning benchmark with ID and graph-structure OOD splits.",
@@ -118,6 +132,31 @@ def _scheduling_baseline_action(name: str, observation: dict[str, Any], valid_ac
     )
 
 
+def _deduction_action_sort_key(action: dict[str, Any]) -> tuple[Any, ...]:
+    arguments = action.get("arguments", {})
+    assignment = arguments.get("assignment")
+    assignment_key = json.dumps(assignment, sort_keys=True) if isinstance(assignment, dict) else ""
+    return (
+        action.get("name", ""),
+        str(arguments.get("category", "")),
+        str(arguments.get("entity", "")),
+        str(arguments.get("value", "")),
+        assignment_key,
+    )
+
+
+def _deduction_baseline_action(name: str, valid_actions: list[dict[str, Any]], rng: Random) -> dict[str, Any]:
+    if name == "random_valid":
+        return rng.choice(valid_actions)
+    if name == "propagate_first":
+        priority = {"propagate": 0, "assert_pair": 1, "rule_out_pair": 2, "commit_solution": 3}
+    elif name == "assert_first":
+        priority = {"assert_pair": 0, "propagate": 1, "rule_out_pair": 2, "commit_solution": 3}
+    else:
+        priority = {"rule_out_pair": 0, "propagate": 1, "assert_pair": 2, "commit_solution": 3}
+    return min(valid_actions, key=lambda action: (priority.get(action["name"], 4), _deduction_action_sort_key(action)))
+
+
 def _symbolic_candidates(task: Any, env: RLVREnv) -> list[Any]:
     return _enumerate_forward_rewrites(env.state.current_expression, task.world.task_type)
 
@@ -207,6 +246,8 @@ def _evaluate_policy(family_name: str, task: Any, baseline_name: str) -> dict[st
             action = _graph_baseline_action(baseline_name, task, observation, valid_actions, rng)
         elif family_name == "scheduling":
             action = _scheduling_baseline_action(baseline_name, observation, valid_actions, rng)
+        elif family_name == "deduction_grid":
+            action = _deduction_baseline_action(baseline_name, valid_actions, rng)
         else:
             action = _symbolic_baseline_action(baseline_name, task, env, rng)
         observation, _, terminated, truncated, info = env.step(action)
@@ -289,6 +330,15 @@ def _family_summary_row(family_name: str, split_name: str, records: list[dict[st
                 "num_jobs_mean": round(_mean([record["metadata"]["num_jobs"] for record in records]), 2),
                 "num_constraints_mean": round(_mean([record["metadata"]["num_constraints"] for record in records]), 2),
                 "optimal_tardiness_mean": round(_mean([record["metadata"]["optimal_total_tardiness"] for record in records]), 2),
+                "oracle_steps_mean": round(_mean([record["oracle_steps"] for record in records]), 2),
+            }
+        )
+    elif family_name == "deduction_grid":
+        row.update(
+            {
+                "num_entities_mean": round(_mean([record["metadata"]["num_entities"] for record in records]), 2),
+                "num_relation_categories_mean": round(_mean([record["metadata"]["num_relation_categories"] for record in records]), 2),
+                "num_clues_mean": round(_mean([record["metadata"]["num_clues"] for record in records]), 2),
                 "oracle_steps_mean": round(_mean([record["oracle_steps"] for record in records]), 2),
             }
         )
@@ -417,6 +467,7 @@ def build_index(output_root: Path) -> None:
         "",
         "## Families",
         "",
+        "- [deduction_grid](deduction_grid/benchmark_spec.json)",
         "- [graph_planning](graph_planning/benchmark_spec.json)",
         "- [scheduling](scheduling/benchmark_spec.json)",
         "- [symbolic_transformation](symbolic_transformation/benchmark_spec.json)",

@@ -1,0 +1,63 @@
+{
+  "baselines": [
+    "random_valid",
+    "propagate_first",
+    "assert_first",
+    "rule_out_first",
+    "oracle"
+  ],
+  "description": "Frozen deduction-grid benchmark with ID and puzzle-size OOD splits.",
+  "evaluation_splits": [
+    "test",
+    "ood_more_entities",
+    "ood_more_categories"
+  ],
+  "family_name": "deduction_grid",
+  "objective_gap_name": "deduction_step_gap",
+  "splits": {
+    "ood_more_categories": {
+      "count": 12,
+      "difficulty": "hard",
+      "generation_overrides": {
+        "num_distractor_clues": 2,
+        "num_entities": 4,
+        "num_relation_categories": 4
+      },
+      "group": "ood",
+      "observability": "full"
+    },
+    "ood_more_entities": {
+      "count": 12,
+      "difficulty": "hard",
+      "generation_overrides": {
+        "num_distractor_clues": 2,
+        "num_entities": 5,
+        "num_relation_categories": 3
+      },
+      "group": "ood",
+      "observability": "full"
+    },
+    "test": {
+      "count": 12,
+      "difficulty": "medium",
+      "generation_overrides": {},
+      "group": "id",
+      "observability": "full"
+    },
+    "train": {
+      "count": 24,
+      "difficulty": "medium",
+      "generation_overrides": {},
+      "group": "id",
+      "observability": "full"
+    },
+    "validation": {
+      "count": 12,
+      "difficulty": "medium",
+      "generation_overrides": {},
+      "group": "id",
+      "observability": "full"
+    }
+  },
+  "version": "v1"
+}

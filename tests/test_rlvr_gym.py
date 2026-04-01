@@ -215,6 +215,34 @@ class RLVRGymTests(unittest.TestCase):
         self.assertFalse(info["verification"]["passed"])
         self.assertTrue(info["verification"]["hard_failed"])
 
+    def test_deduction_grid_generation_is_deterministic(self) -> None:
+        family = get_family("deduction_grid")
+        config = FamilyConfig(difficulty="medium")
+        task_a = family.sample_instance(seed=19, config=config)
+        task_b = family.sample_instance(seed=19, config=config)
+        self.assertEqual(export_task_spec(task_a), export_task_spec(task_b))
+
+    def test_deduction_grid_oracle_rollout_solves_task(self) -> None:
+        family = get_family("deduction_grid")
+        task = family.sample_instance(seed=23, config=FamilyConfig(difficulty="medium"))
+        rollout = rollout_oracle(task)
+        self.assertTrue(rollout["completed"])
+        self.assertTrue(rollout["oracle_solution"]["optimal"])
+        self.assertEqual(rollout["trace_outcome"]["final_verification"]["kind_scores"]["feasibility"], 1.0)
+
+    def test_deduction_grid_invalid_deduction_is_rejected(self) -> None:
+        family = get_family("deduction_grid")
+        task = family.sample_instance(seed=37, config=FamilyConfig(difficulty="easy"))
+        env = RLVREnv(task)
+        env.reset()
+        _, _, terminated, truncated, info = env.step(
+            {"name": "assert_pair", "arguments": {"category": "House", "entity": "Alice", "value": "Impossible"}}
+        )
+        self.assertFalse(terminated)
+        self.assertFalse(truncated)
+        self.assertFalse(info["verification"]["passed"])
+        self.assertTrue(info["verification"]["hard_failed"])
+
 
 if __name__ == "__main__":
     unittest.main()
