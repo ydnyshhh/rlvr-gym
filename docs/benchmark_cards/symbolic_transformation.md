@@ -1,5 +1,12 @@
 # Symbolic Transformation Benchmark Card
 
+## Artifact bundle
+
+- Spec: [../benchmark_artifacts/symbolic_transformation/benchmark_spec.json](../benchmark_artifacts/symbolic_transformation/benchmark_spec.json)
+- Split manifest: [../benchmark_artifacts/symbolic_transformation/split_manifest.json](../benchmark_artifacts/symbolic_transformation/split_manifest.json)
+- Diversity summary: [../benchmark_artifacts/symbolic_transformation/diversity_summary.md](../benchmark_artifacts/symbolic_transformation/diversity_summary.md)
+- Baseline table: [../benchmark_artifacts/symbolic_transformation/baseline_results.md](../benchmark_artifacts/symbolic_transformation/baseline_results.md)
+
 ## Capability
 
 This family measures formal step-by-step symbolic reasoning over structured expression trees.

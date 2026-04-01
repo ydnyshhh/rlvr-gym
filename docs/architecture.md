@@ -73,6 +73,7 @@ RLVR-Gym is organized around the idea that an environment family defines a distr
 ## Benchmark cards
 
 Per-family benchmark cards live under [benchmark_cards](benchmark_cards/README.md).
+Generated benchmark artifacts live under [benchmark_artifacts](benchmark_artifacts/README.md).
 
 They are intended to be the research-facing summary for each family, including:
 

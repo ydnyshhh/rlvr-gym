@@ -227,6 +227,15 @@ They document:
 - shortcut risks
 - baseline heuristics
 
+Generated benchmark artifact bundles are available under [docs/benchmark_artifacts](docs/benchmark_artifacts/README.md).
+
+These include:
+
+- versioned benchmark spec files
+- frozen split manifests
+- difficulty and diversity summaries
+- baseline result tables
+
 ## Testing
 
 ```bash

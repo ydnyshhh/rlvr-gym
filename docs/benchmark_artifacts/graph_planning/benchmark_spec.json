@@ -1,0 +1,62 @@
+{
+  "baselines": [
+    "random_valid",
+    "greedy_low_cost",
+    "greedy_goal_distance",
+    "oracle"
+  ],
+  "description": "Frozen graph-planning benchmark with ID and graph-structure OOD splits.",
+  "evaluation_splits": [
+    "test",
+    "ood_larger_graphs",
+    "ood_directed_shift"
+  ],
+  "family_name": "graph_planning",
+  "objective_gap_name": "path_cost_gap",
+  "splits": {
+    "ood_directed_shift": {
+      "count": 12,
+      "difficulty": "hard",
+      "generation_overrides": {
+        "directed": true,
+        "edge_probability": 0.45,
+        "num_nodes": 10
+      },
+      "group": "ood",
+      "observability": "full"
+    },
+    "ood_larger_graphs": {
+      "count": 12,
+      "difficulty": "hard",
+      "generation_overrides": {
+        "directed": false,
+        "edge_probability": 0.55,
+        "num_nodes": 12
+      },
+      "group": "ood",
+      "observability": "full"
+    },
+    "test": {
+      "count": 12,
+      "difficulty": "medium",
+      "generation_overrides": {},
+      "group": "id",
+      "observability": "full"
+    },
+    "train": {
+      "count": 24,
+      "difficulty": "medium",
+      "generation_overrides": {},
+      "group": "id",
+      "observability": "full"
+    },
+    "validation": {
+      "count": 12,
+      "difficulty": "medium",
+      "generation_overrides": {},
+      "group": "id",
+      "observability": "full"
+    }
+  },
+  "version": "v1"
+}

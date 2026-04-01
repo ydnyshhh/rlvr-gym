@@ -1,5 +1,12 @@
 # Graph Planning Benchmark Card
 
+## Artifact bundle
+
+- Spec: [../benchmark_artifacts/graph_planning/benchmark_spec.json](../benchmark_artifacts/graph_planning/benchmark_spec.json)
+- Split manifest: [../benchmark_artifacts/graph_planning/split_manifest.json](../benchmark_artifacts/graph_planning/split_manifest.json)
+- Diversity summary: [../benchmark_artifacts/graph_planning/diversity_summary.md](../benchmark_artifacts/graph_planning/diversity_summary.md)
+- Baseline table: [../benchmark_artifacts/graph_planning/baseline_results.md](../benchmark_artifacts/graph_planning/baseline_results.md)
+
 ## Capability
 
 This family measures sequential planning over structured graph worlds with exact local legality and globally verifiable path quality.

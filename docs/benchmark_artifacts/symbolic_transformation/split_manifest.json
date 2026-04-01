@@ -1,0 +1,3022 @@
+{
+  "family_name": "symbolic_transformation",
+  "splits": {
+    "arithmetic_test": [
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 3937145656279547033,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 15,
+          "target_num_nodes": 5,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 12.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 15424265612054560505,
+        "split": "arithmetic_test",
+        "task_id": "symbolic_transformation-26bad7929724d1ca"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 1791623079175917745,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 17,
+          "target_num_nodes": 7,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 13.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 2927142922944046368,
+        "split": "arithmetic_test",
+        "task_id": "symbolic_transformation-e42684c901dbf4c4"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 11254721915664269393,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 13,
+          "target_num_nodes": 5,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 10.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 7742218220448931947,
+        "split": "arithmetic_test",
+        "task_id": "symbolic_transformation-5ffbb8fd818a0052"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 8578422361652872406,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 11,
+          "target_num_nodes": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 9.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 3679879889693914444,
+        "split": "arithmetic_test",
+        "task_id": "symbolic_transformation-86015ac8b2d2befc"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 5341321585092206916,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 9,
+          "target_num_nodes": 1,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 8.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 15848680184482055745,
+        "split": "arithmetic_test",
+        "task_id": "symbolic_transformation-7226e477e81827c3"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 11387187216369540582,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 6,
+          "source_num_nodes": 13,
+          "target_num_nodes": 1,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 12.5,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 8703464584600274757,
+        "split": "arithmetic_test",
+        "task_id": "symbolic_transformation-9236cb17ee338e7f"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 9173417745314381944,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 15,
+          "target_num_nodes": 7,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 12.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 15579115279524552129,
+        "split": "arithmetic_test",
+        "task_id": "symbolic_transformation-5a4ba60ac7f2c8b4"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 14200077831918791575,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 9,
+          "target_num_nodes": 1,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 8.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 17070529710867450333,
+        "split": "arithmetic_test",
+        "task_id": "symbolic_transformation-acb216041b33ce47"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 6885550071009842714,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 11,
+          "target_num_nodes": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 9.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 4236209246353579214,
+        "split": "arithmetic_test",
+        "task_id": "symbolic_transformation-8829f93e4933d53e"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 14959136944706782490,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 11,
+          "target_num_nodes": 1,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 10.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 12485581944723300993,
+        "split": "arithmetic_test",
+        "task_id": "symbolic_transformation-8c7ce6dcbd704102"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 8809125468851882410,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 13,
+          "target_num_nodes": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 11.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 4853567184604265028,
+        "split": "arithmetic_test",
+        "task_id": "symbolic_transformation-348d60e364e3421e"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 3804722413074070678,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 6,
+          "source_num_nodes": 19,
+          "target_num_nodes": 7,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 15.5,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 18280487470786318592,
+        "split": "arithmetic_test",
+        "task_id": "symbolic_transformation-425ffbd0ed44372e"
+      }
+    ],
+    "arithmetic_train": [
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 977484939648582877,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 11,
+          "target_num_nodes": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 10.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 12296602688266734603,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-193539aeebff9261"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 10448738531454879957,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 9,
+          "target_num_nodes": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 8.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 6221091201325315576,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-8a631250bae6ee9a"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 7743631326404744349,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 15,
+          "target_num_nodes": 7,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 11.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 6427366901628112505,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-21d2577614ec8a3c"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 9809540514945316562,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 15,
+          "target_num_nodes": 7,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 11.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 12562319938398914538,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-69844ad5f6d88f20"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 16062745988895295818,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 9,
+          "target_num_nodes": 1,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 8.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 2955916637502391438,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-4537c48cd60c4e53"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 3199056061563486777,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 15,
+          "target_num_nodes": 7,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 11.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 14985106629431212411,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-e36363edd5152492"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 3912444167890174612,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 9,
+          "target_num_nodes": 1,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 8.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 8444394545450973347,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-f4f08dc3486f64c9"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 9045998398660409110,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 9,
+          "target_num_nodes": 1,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 8.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 9784665701458628053,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-133f06a0c9e9ae8f"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 11458779068961314494,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 19,
+          "target_num_nodes": 9,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 14.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 14027943751724571978,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-9bd5ffd2dd5f2cae"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 14026619980228590018,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 9,
+          "target_num_nodes": 1,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 8.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 13594355320352116409,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-662a3cf34f417bd4"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 7142657608706908105,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 11,
+          "target_num_nodes": 5,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 9.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 219657337200236126,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-f5eef544c3753748"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 9095904502817536952,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 13,
+          "target_num_nodes": 5,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 11.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 12449246985842903963,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-d3c1ea38eb2aaf23"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 18034022623125950002,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 13,
+          "target_num_nodes": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 11.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 16114073673284115898,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-0de1545fd5f8583e"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 13800282908313294989,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 9,
+          "target_num_nodes": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 8.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 1324097249922920000,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-a831011996f6d832"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 7409654547079887789,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 13,
+          "target_num_nodes": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 11.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 11404259101407784088,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-2cb2df257408eaf6"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 4284309977792110404,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 17,
+          "target_num_nodes": 7,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 13.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 14671860659302556293,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-1148bda8ca8f1644"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 401361405323111107,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 9,
+          "target_num_nodes": 1,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 8.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 8884728034915730905,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-72614b5612026459"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 10810521158982093850,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 17,
+          "target_num_nodes": 7,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 13.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 16526952132792053762,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-cb7ab4bb4d231ed4"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 4850442902238368242,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 9,
+          "target_num_nodes": 1,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 8.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 6625133045260051890,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-5d1a634878ce7039"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 766885689705235076,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 13,
+          "target_num_nodes": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 11.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 5090198839901079166,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-556a043bcb566e76"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 3855582314504913731,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 13,
+          "target_num_nodes": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 11.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 6737275560321578925,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-a027100e563ceb76"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 6030635898347077823,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 11,
+          "target_num_nodes": 5,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 9.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 13207190715876004048,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-ee35b9cec2d7cb0b"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 16478751069997439648,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 6,
+          "source_num_nodes": 17,
+          "target_num_nodes": 5,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 14.5,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 15353590213229506792,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-385628ca49287734"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 8999188993248574818,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 17,
+          "target_num_nodes": 7,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 13.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 8426623019428361387,
+        "split": "arithmetic_train",
+        "task_id": "symbolic_transformation-56fae6d68d599040"
+      }
+    ],
+    "arithmetic_validation": [
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 11510857907011856039,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 6,
+          "source_num_nodes": 15,
+          "target_num_nodes": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 13.5,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 15961647318781835090,
+        "split": "arithmetic_validation",
+        "task_id": "symbolic_transformation-1d7082db1c2d6d85"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 9609963226875081816,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 6,
+          "source_num_nodes": 17,
+          "target_num_nodes": 5,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 14.5,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 2972581783153920675,
+        "split": "arithmetic_validation",
+        "task_id": "symbolic_transformation-1a3042e3e32cc561"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 3015143679871612733,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 9,
+          "target_num_nodes": 1,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 8.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 11600253898373529363,
+        "split": "arithmetic_validation",
+        "task_id": "symbolic_transformation-3dc0ed8f611e97c1"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 4043946383929790148,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 11,
+          "target_num_nodes": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 9.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 4503787096733984876,
+        "split": "arithmetic_validation",
+        "task_id": "symbolic_transformation-f369173ca6f836ad"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 11334751457609174147,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 13,
+          "target_num_nodes": 5,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 10.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 9643643153335221811,
+        "split": "arithmetic_validation",
+        "task_id": "symbolic_transformation-46d319137f8f5656"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 13821152377667224434,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 11,
+          "target_num_nodes": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 9.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 10789307841343425354,
+        "split": "arithmetic_validation",
+        "task_id": "symbolic_transformation-acdf75fb166652ff"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 2304310312061183132,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 6,
+          "source_num_nodes": 17,
+          "target_num_nodes": 5,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 14.5,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 17652849419497229801,
+        "split": "arithmetic_validation",
+        "task_id": "symbolic_transformation-5f7d71bdde621ac2"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 17435178322138155093,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 9,
+          "target_num_nodes": 1,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 8.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 10694512038133150254,
+        "split": "arithmetic_validation",
+        "task_id": "symbolic_transformation-da8d81add4b721ee"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 14185004689375065627,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 9,
+          "target_num_nodes": 1,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 8.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 15700909460891871552,
+        "split": "arithmetic_validation",
+        "task_id": "symbolic_transformation-3d772cf3577cb1c6"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 2296538153774667901,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 13,
+          "target_num_nodes": 5,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 10.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 10078883282922071778,
+        "split": "arithmetic_validation",
+        "task_id": "symbolic_transformation-07ff98716380901f"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 17789494223525186620,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 6,
+          "source_num_nodes": 15,
+          "target_num_nodes": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 13.5,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 13658223958078819208,
+        "split": "arithmetic_validation",
+        "task_id": "symbolic_transformation-ebbb0755d0d7bf31"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 12922763012575400363,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 13,
+          "target_num_nodes": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 11.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 619011492099437227,
+        "split": "arithmetic_validation",
+        "task_id": "symbolic_transformation-6ef250c731d35c5c"
+      }
+    ],
+    "boolean_test": [
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 5019222169978015395,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 14,
+          "target_num_nodes": 4,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 12.0,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 9105378087457957462,
+        "split": "boolean_test",
+        "task_id": "symbolic_transformation-12bcc39c9dc54794"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 14708179331290540526,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 16,
+          "target_num_nodes": 12,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 12.0,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 1302218935655565893,
+        "split": "boolean_test",
+        "task_id": "symbolic_transformation-384b141e8b87e359"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 12592659255479716176,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 11,
+          "target_num_nodes": 1,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 10.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 2795883518839254316,
+        "split": "boolean_test",
+        "task_id": "symbolic_transformation-66a78b9240126dc2"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 6912973647366567477,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 9,
+          "target_num_nodes": 1,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 8.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 6665599563004112788,
+        "split": "boolean_test",
+        "task_id": "symbolic_transformation-d120387282a550a0"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 3573311110306844036,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 6,
+          "source_num_nodes": 17,
+          "target_num_nodes": 5,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 14.5,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 17336113427329773057,
+        "split": "boolean_test",
+        "task_id": "symbolic_transformation-98d40818c548684f"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 10435173659659369053,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 13,
+          "target_num_nodes": 7,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 11.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 12033047389102147350,
+        "split": "boolean_test",
+        "task_id": "symbolic_transformation-b44f777e2852b160"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 12864258454305025901,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 9,
+          "target_num_nodes": 1,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 8.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 12991667312401981085,
+        "split": "boolean_test",
+        "task_id": "symbolic_transformation-b2519002232f6aeb"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 15200930843365171680,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 11,
+          "target_num_nodes": 1,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 10.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 8684889278620765345,
+        "split": "boolean_test",
+        "task_id": "symbolic_transformation-2156efb8bc847711"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 4166870192592543256,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 13,
+          "target_num_nodes": 5,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 11.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 7502990583157892362,
+        "split": "boolean_test",
+        "task_id": "symbolic_transformation-a0eb4baeef438c99"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 12344406700316956957,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 9,
+          "target_num_nodes": 1,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 8.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 7271535716675478563,
+        "split": "boolean_test",
+        "task_id": "symbolic_transformation-eac9e92c968193c6"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 17893073073090489439,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 17,
+          "target_num_nodes": 9,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 12.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 14572452720816281521,
+        "split": "boolean_test",
+        "task_id": "symbolic_transformation-bae5a05f54fe435d"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 8857291007418650402,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 14,
+          "target_num_nodes": 6,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 11.0,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 8516215812001998972,
+        "split": "boolean_test",
+        "task_id": "symbolic_transformation-e3a769d54d50189c"
+      }
+    ],
+    "boolean_train": [
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 7830213709623948499,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 15,
+          "target_num_nodes": 11,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 11.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 7520141299814283478,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-95213f1cf49e4d16"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 8742710272434366110,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 6,
+          "source_num_nodes": 14,
+          "target_num_nodes": 2,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 13.0,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 874690116668182628,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-a6e28f106e7c6f7d"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 9710169536358857391,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 15,
+          "target_num_nodes": 10,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 12.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 7769683788329228713,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-6ceba4b148ea52eb"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 13780553086779927907,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 17,
+          "target_num_nodes": 9,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 12.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 17323403423685530443,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-83a2005a64de8d2b"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 2224917334175029511,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 19,
+          "target_num_nodes": 9,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 14.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 11909019176185775519,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-25ef26cf64923304"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 3191395766719477035,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 13,
+          "target_num_nodes": 7,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 10.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 9498610251378800293,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-8a22478fd6e5a081"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 11082755634241826267,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 13,
+          "source_num_nodes": 17,
+          "target_num_nodes": 11,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 21.5,
+        "oracle_objective_value": 13,
+        "oracle_steps": 13,
+        "seed": 14147520906743180365,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-ecc51bc75cfdc290"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 2072043647123787144,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 15,
+          "target_num_nodes": 11,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 11.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 4123866568210058543,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-27fb20ad54e69d20"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 3126244707327783417,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 17,
+          "target_num_nodes": 7,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 13.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 4202109489721143311,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-b800c3604bc72ae6"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 2848037889470413458,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 12,
+          "target_num_nodes": 7,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 10.0,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 7177931839548062721,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-992db09c08fae368"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 8530597250568817704,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 10,
+          "target_num_nodes": 2,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 9.0,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 1272051248420785165,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-fee2525a652136f2"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 5159189545193359632,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 11,
+          "target_num_nodes": 3,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 9.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 250411415646148931,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-799bbb86f951ffc6"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 5127542511631027732,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 18,
+          "target_num_nodes": 8,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 14.0,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 6127520868231149704,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-9e4d35681ff84ac6"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 4266472839651309798,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 15,
+          "target_num_nodes": 7,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 12.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 3788717741389977161,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-7dfc00a115420743"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 12396290893223090762,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 12,
+          "target_num_nodes": 2,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 11.0,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 3157949568999535896,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-c243985746283a9a"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 34684069617902669,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 6,
+          "source_num_nodes": 14,
+          "target_num_nodes": 2,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 13.0,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 11739890641311444359,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-6ac63a546977e52f"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 4611053511576433442,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 6,
+          "source_num_nodes": 18,
+          "target_num_nodes": 6,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 15.0,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 17543874616031467607,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-e15c1fa5b2bc92dd"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 2498078243092604678,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 18,
+          "target_num_nodes": 10,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 13.0,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 794678587111356195,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-77f58d35646c26fa"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 11882209248730450850,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 13,
+          "target_num_nodes": 10,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 10.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 793595350064245657,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-530b096118d47700"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 6597317670680434841,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 6,
+          "source_num_nodes": 23,
+          "target_num_nodes": 13,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 17.5,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 2025478518533986026,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-8b38202da00dd0e3"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 18421367751150734440,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 11,
+          "target_num_nodes": 1,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 10.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 9550040746558366691,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-103eb7c55886e5ec"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 10543924421339205858,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 6,
+          "source_num_nodes": 20,
+          "target_num_nodes": 8,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 16.0,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 13965148953256393301,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-b3dd9c309c5d0a8c"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 9029788970384732211,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 19,
+          "target_num_nodes": 11,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 14.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 2414349506610282288,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-33be2f60b47a029b"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 16941768747168942068,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 11,
+          "target_num_nodes": 1,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 10.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 2776901975297321956,
+        "split": "boolean_train",
+        "task_id": "symbolic_transformation-0cf9174e860ab7b1"
+      }
+    ],
+    "boolean_validation": [
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 12376033437696208665,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 6,
+          "source_num_nodes": 18,
+          "target_num_nodes": 10,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 15.0,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 6289580705881751459,
+        "split": "boolean_validation",
+        "task_id": "symbolic_transformation-641ed623dd949834"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 17543586148031359019,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 6,
+          "source_num_nodes": 22,
+          "target_num_nodes": 10,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 17.0,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 13085066096307318366,
+        "split": "boolean_validation",
+        "task_id": "symbolic_transformation-6c780ba8ebda1196"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 8144564120162228272,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 16,
+          "target_num_nodes": 10,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 12.0,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 7984816536127811073,
+        "split": "boolean_validation",
+        "task_id": "symbolic_transformation-9f9ab04834e4602a"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 7613287178556815367,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 17,
+          "target_num_nodes": 7,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 13.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 9338419061374617979,
+        "split": "boolean_validation",
+        "task_id": "symbolic_transformation-45f6c618f66ffd0d"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 13068718440851116515,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 12,
+          "target_num_nodes": 2,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 11.0,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 3858200445044228078,
+        "split": "boolean_validation",
+        "task_id": "symbolic_transformation-4c65a21e7631d6a2"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 18140743751057949920,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 16,
+          "target_num_nodes": 8,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 12.0,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 5936248404465622928,
+        "split": "boolean_validation",
+        "task_id": "symbolic_transformation-6e66b262ca73c173"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 5,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 10741408236372428128,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 19,
+          "target_num_nodes": 9,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 14.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 12759251434709290225,
+        "split": "boolean_validation",
+        "task_id": "symbolic_transformation-a05658daedfb835e"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 6,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 10032712997574871842,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 6,
+          "source_num_nodes": 22,
+          "target_num_nodes": 10,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 17.0,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 14977047740676272961,
+        "split": "boolean_validation",
+        "task_id": "symbolic_transformation-884b3a1a4ad0c9e8"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 9135035131662370131,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 13,
+          "target_num_nodes": 9,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 10.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 6278411677168284230,
+        "split": "boolean_validation",
+        "task_id": "symbolic_transformation-16080b07cfd944ec"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 18090361880113339029,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 15,
+          "target_num_nodes": 7,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 11.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 9967316868480542674,
+        "split": "boolean_validation",
+        "task_id": "symbolic_transformation-dfb6ba6a5104cf85"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 3,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 293788927960551077,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 10,
+          "target_num_nodes": 2,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 9.0,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 10174134923903956930,
+        "split": "boolean_validation",
+        "task_id": "symbolic_transformation-7e3b5508c8a8adbf"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 4,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 2,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 17773765898786744737,
+        "metadata": {
+          "difficulty": "medium",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 10,
+          "target_num_nodes": 2,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 9.0,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 18437011806644122158,
+        "split": "boolean_validation",
+        "task_id": "symbolic_transformation-7be4d91fb390bab0"
+      }
+    ],
+    "ood_arithmetic_deeper": [
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 1101609093196511237,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 7,
+          "source_num_nodes": 17,
+          "target_num_nodes": 1,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 15.5,
+        "oracle_objective_value": 7,
+        "oracle_steps": 7,
+        "seed": 13438000527187691273,
+        "split": "ood_arithmetic_deeper",
+        "task_id": "symbolic_transformation-25211e191504741d"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 8576418494925665571,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 8,
+          "source_num_nodes": 19,
+          "target_num_nodes": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 17.5,
+        "oracle_objective_value": 8,
+        "oracle_steps": 8,
+        "seed": 12922137997261160791,
+        "split": "ood_arithmetic_deeper",
+        "task_id": "symbolic_transformation-38bcd6f600f8d8d5"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 10254769582905767676,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 8,
+          "source_num_nodes": 19,
+          "target_num_nodes": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 17.5,
+        "oracle_objective_value": 8,
+        "oracle_steps": 8,
+        "seed": 6795350036918893010,
+        "split": "ood_arithmetic_deeper",
+        "task_id": "symbolic_transformation-9965a043aef9290d"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 15754782462195716804,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 6,
+          "source_num_nodes": 15,
+          "target_num_nodes": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 13.5,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 2865135797692012322,
+        "split": "ood_arithmetic_deeper",
+        "task_id": "symbolic_transformation-946ffdbbc8d1e8e2"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 12083238698004956336,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 4,
+          "source_num_nodes": 11,
+          "target_num_nodes": 1,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 9.5,
+        "oracle_objective_value": 4,
+        "oracle_steps": 4,
+        "seed": 12377055491854589172,
+        "split": "ood_arithmetic_deeper",
+        "task_id": "symbolic_transformation-45374639a20cf552"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 1063131702254765990,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 2,
+          "source_num_nodes": 17,
+          "target_num_nodes": 1,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 10.5,
+        "oracle_objective_value": 2,
+        "oracle_steps": 2,
+        "seed": 16278756937975790935,
+        "split": "ood_arithmetic_deeper",
+        "task_id": "symbolic_transformation-a3025e97e4c6a535"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 12603621462484049656,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 6,
+          "source_num_nodes": 25,
+          "target_num_nodes": 13,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 18.5,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 10345386068022225407,
+        "split": "ood_arithmetic_deeper",
+        "task_id": "symbolic_transformation-9e7a8ff0747c11bd"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 16681864467220676960,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 6,
+          "source_num_nodes": 13,
+          "target_num_nodes": 1,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 12.5,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 4904145964487173333,
+        "split": "ood_arithmetic_deeper",
+        "task_id": "symbolic_transformation-ba7c06e09a685455"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 9424491080436584295,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 15,
+          "target_num_nodes": 5,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 12.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 6582001707048863623,
+        "split": "ood_arithmetic_deeper",
+        "task_id": "symbolic_transformation-d47f85280fa2f9d1"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 4708022473208245030,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 8,
+          "source_num_nodes": 17,
+          "target_num_nodes": 1,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 16.5,
+        "oracle_objective_value": 8,
+        "oracle_steps": 8,
+        "seed": 3164074257927335716,
+        "split": "ood_arithmetic_deeper",
+        "task_id": "symbolic_transformation-44e3bf3c65a99b01"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 9530959461106266104,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 7,
+          "source_num_nodes": 17,
+          "target_num_nodes": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 15.5,
+        "oracle_objective_value": 7,
+        "oracle_steps": 7,
+        "seed": 10945588031833109571,
+        "split": "ood_arithmetic_deeper",
+        "task_id": "symbolic_transformation-6397829f1f96e069"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "arithmetic_simplify"
+        },
+        "generation_seed": 1961630498747620160,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 8,
+          "source_num_nodes": 19,
+          "target_num_nodes": 3,
+          "task_type": "arithmetic_simplify"
+        },
+        "objective_name": "simplify_symbolic_expression",
+        "oracle_difficulty_estimate": 17.5,
+        "oracle_objective_value": 8,
+        "oracle_steps": 8,
+        "seed": 1008224104956763569,
+        "split": "ood_arithmetic_deeper",
+        "task_id": "symbolic_transformation-ab4c8158659ca871"
+      }
+    ],
+    "ood_boolean_deeper": [
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 2952980154607645767,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 8,
+          "source_num_nodes": 18,
+          "target_num_nodes": 2,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 17.0,
+        "oracle_objective_value": 8,
+        "oracle_steps": 8,
+        "seed": 10513500489621250708,
+        "split": "ood_boolean_deeper",
+        "task_id": "symbolic_transformation-fae5b4ccba138614"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 1276757126553727294,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 8,
+          "source_num_nodes": 25,
+          "target_num_nodes": 11,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 20.5,
+        "oracle_objective_value": 8,
+        "oracle_steps": 8,
+        "seed": 13705464619320629787,
+        "split": "ood_boolean_deeper",
+        "task_id": "symbolic_transformation-53a56c7dd3cf0c71"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 3222467920711813600,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 8,
+          "source_num_nodes": 24,
+          "target_num_nodes": 13,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 20.0,
+        "oracle_objective_value": 8,
+        "oracle_steps": 8,
+        "seed": 9641580010233977923,
+        "split": "ood_boolean_deeper",
+        "task_id": "symbolic_transformation-aa1e16c54f08f9ca"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 9473643701211521336,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 5,
+          "source_num_nodes": 14,
+          "target_num_nodes": 4,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 12.0,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 3564203044152171634,
+        "split": "ood_boolean_deeper",
+        "task_id": "symbolic_transformation-077542d46ed9b301"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 3632128295945687966,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 6,
+          "source_num_nodes": 15,
+          "target_num_nodes": 3,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 13.5,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 4061689057622616305,
+        "split": "ood_boolean_deeper",
+        "task_id": "symbolic_transformation-65a029c309d0327d"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 10332625432961517047,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 8,
+          "source_num_nodes": 18,
+          "target_num_nodes": 4,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 17.0,
+        "oracle_objective_value": 8,
+        "oracle_steps": 8,
+        "seed": 7024417284328670433,
+        "split": "ood_boolean_deeper",
+        "task_id": "symbolic_transformation-1477e31f4851bb50"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 8358487001472073017,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 8,
+          "source_num_nodes": 18,
+          "target_num_nodes": 2,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 17.0,
+        "oracle_objective_value": 8,
+        "oracle_steps": 8,
+        "seed": 8724160856250820570,
+        "split": "ood_boolean_deeper",
+        "task_id": "symbolic_transformation-be44f095ce106417"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 3469351322621292404,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 8,
+          "source_num_nodes": 18,
+          "target_num_nodes": 2,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 17.0,
+        "oracle_objective_value": 8,
+        "oracle_steps": 8,
+        "seed": 11608194111987729263,
+        "split": "ood_boolean_deeper",
+        "task_id": "symbolic_transformation-ca48c56ac03953a1"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 442762356358526091,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 6,
+          "source_num_nodes": 24,
+          "target_num_nodes": 16,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 18.0,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 12892229026007954399,
+        "split": "ood_boolean_deeper",
+        "task_id": "symbolic_transformation-8ad65b44d346fab5"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 2187153095526788531,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 8,
+          "source_num_nodes": 17,
+          "target_num_nodes": 1,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 16.5,
+        "oracle_objective_value": 8,
+        "oracle_steps": 8,
+        "seed": 7781962553205490655,
+        "split": "ood_boolean_deeper",
+        "task_id": "symbolic_transformation-cf4628cb93ab1b40"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 3156799486108648943,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 8,
+          "source_num_nodes": 21,
+          "target_num_nodes": 8,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 18.5,
+        "oracle_objective_value": 8,
+        "oracle_steps": 8,
+        "seed": 2324581876346090885,
+        "split": "ood_boolean_deeper",
+        "task_id": "symbolic_transformation-591b89e2d7a17c0c"
+      },
+      {
+        "generation_params": {
+          "inverse_steps": 8,
+          "num_variables": 3,
+          "observability": "full",
+          "target_depth": 4,
+          "task_type": "boolean_nnf"
+        },
+        "generation_seed": 1811765106649392580,
+        "metadata": {
+          "difficulty": "hard",
+          "observability": "full",
+          "oracle_steps": 8,
+          "source_num_nodes": 16,
+          "target_num_nodes": 5,
+          "task_type": "boolean_nnf"
+        },
+        "objective_name": "normalize_formula_to_nnf",
+        "oracle_difficulty_estimate": 16.0,
+        "oracle_objective_value": 8,
+        "oracle_steps": 8,
+        "seed": 8818654601508270161,
+        "split": "ood_boolean_deeper",
+        "task_id": "symbolic_transformation-c4f4b47e2b1a3ffb"
+      }
+    ]
+  },
+  "version": "v1"
+}

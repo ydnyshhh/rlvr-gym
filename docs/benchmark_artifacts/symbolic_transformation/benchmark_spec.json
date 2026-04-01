@@ -1,0 +1,97 @@
+{
+  "baselines": [
+    "random_valid",
+    "greedy_target_distance",
+    "greedy_expression_size",
+    "rule_priority",
+    "oracle"
+  ],
+  "description": "Frozen symbolic rewrite benchmark with mode-specific ID splits and deeper OOD splits.",
+  "evaluation_splits": [
+    "arithmetic_test",
+    "boolean_test",
+    "ood_arithmetic_deeper",
+    "ood_boolean_deeper"
+  ],
+  "family_name": "symbolic_transformation",
+  "objective_gap_name": "rewrite_step_gap",
+  "splits": {
+    "arithmetic_test": {
+      "count": 12,
+      "difficulty": "medium",
+      "generation_overrides": {
+        "task_type": "arithmetic_simplify"
+      },
+      "group": "id",
+      "observability": "full"
+    },
+    "arithmetic_train": {
+      "count": 24,
+      "difficulty": "medium",
+      "generation_overrides": {
+        "task_type": "arithmetic_simplify"
+      },
+      "group": "id",
+      "observability": "full"
+    },
+    "arithmetic_validation": {
+      "count": 12,
+      "difficulty": "medium",
+      "generation_overrides": {
+        "task_type": "arithmetic_simplify"
+      },
+      "group": "id",
+      "observability": "full"
+    },
+    "boolean_test": {
+      "count": 12,
+      "difficulty": "medium",
+      "generation_overrides": {
+        "task_type": "boolean_nnf"
+      },
+      "group": "id",
+      "observability": "full"
+    },
+    "boolean_train": {
+      "count": 24,
+      "difficulty": "medium",
+      "generation_overrides": {
+        "task_type": "boolean_nnf"
+      },
+      "group": "id",
+      "observability": "full"
+    },
+    "boolean_validation": {
+      "count": 12,
+      "difficulty": "medium",
+      "generation_overrides": {
+        "task_type": "boolean_nnf"
+      },
+      "group": "id",
+      "observability": "full"
+    },
+    "ood_arithmetic_deeper": {
+      "count": 12,
+      "difficulty": "hard",
+      "generation_overrides": {
+        "inverse_steps": 8,
+        "target_depth": 4,
+        "task_type": "arithmetic_simplify"
+      },
+      "group": "ood",
+      "observability": "full"
+    },
+    "ood_boolean_deeper": {
+      "count": 12,
+      "difficulty": "hard",
+      "generation_overrides": {
+        "inverse_steps": 8,
+        "target_depth": 4,
+        "task_type": "boolean_nnf"
+      },
+      "group": "ood",
+      "observability": "full"
+    }
+  },
+  "version": "v1"
+}

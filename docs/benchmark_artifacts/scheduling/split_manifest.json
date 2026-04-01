@@ -1,0 +1,1888 @@
+{
+  "family_name": "scheduling",
+  "splits": {
+    "ood_more_jobs": [
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            5
+          ],
+          "num_jobs": 9,
+          "observability": "full",
+          "prerequisite_probability": 0.35
+        },
+        "generation_seed": 3016385699725671251,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 11,
+          "num_jobs": 9,
+          "observability": "full",
+          "optimal_total_tardiness": 8
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 10.222222222222221,
+        "oracle_objective_value": 8,
+        "oracle_steps": 9,
+        "seed": 15382492596394571658,
+        "split": "ood_more_jobs",
+        "task_id": "scheduling-aa239ecf00fcf3d4"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            5
+          ],
+          "num_jobs": 9,
+          "observability": "full",
+          "prerequisite_probability": 0.35
+        },
+        "generation_seed": 15418437470642930918,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 11,
+          "num_jobs": 9,
+          "observability": "full",
+          "optimal_total_tardiness": 1
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 10.222222222222221,
+        "oracle_objective_value": 1,
+        "oracle_steps": 9,
+        "seed": 6732121916339131441,
+        "split": "ood_more_jobs",
+        "task_id": "scheduling-aeac9da724d281fa"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            5
+          ],
+          "num_jobs": 9,
+          "observability": "full",
+          "prerequisite_probability": 0.35
+        },
+        "generation_seed": 8302925343157787982,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 15,
+          "num_jobs": 9,
+          "observability": "full",
+          "optimal_total_tardiness": 10
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 10.666666666666666,
+        "oracle_objective_value": 10,
+        "oracle_steps": 9,
+        "seed": 18107297526719343524,
+        "split": "ood_more_jobs",
+        "task_id": "scheduling-3d999ad2abe46f3d"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            5
+          ],
+          "num_jobs": 9,
+          "observability": "full",
+          "prerequisite_probability": 0.35
+        },
+        "generation_seed": 1862887513299124973,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 19,
+          "num_jobs": 9,
+          "observability": "full",
+          "optimal_total_tardiness": 9
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 11.11111111111111,
+        "oracle_objective_value": 9,
+        "oracle_steps": 9,
+        "seed": 1765213878049656321,
+        "split": "ood_more_jobs",
+        "task_id": "scheduling-1aff4fa391b975f3"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            5
+          ],
+          "num_jobs": 9,
+          "observability": "full",
+          "prerequisite_probability": 0.35
+        },
+        "generation_seed": 16416060154798443454,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 7,
+          "num_jobs": 9,
+          "observability": "full",
+          "optimal_total_tardiness": 0
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 9.777777777777779,
+        "oracle_objective_value": 0,
+        "oracle_steps": 9,
+        "seed": 11323900887747226248,
+        "split": "ood_more_jobs",
+        "task_id": "scheduling-4dc1e9ed91462a17"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            5
+          ],
+          "num_jobs": 9,
+          "observability": "full",
+          "prerequisite_probability": 0.35
+        },
+        "generation_seed": 6321133346888124005,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 14,
+          "num_jobs": 9,
+          "observability": "full",
+          "optimal_total_tardiness": 1
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 10.555555555555555,
+        "oracle_objective_value": 1,
+        "oracle_steps": 9,
+        "seed": 13438859264746839705,
+        "split": "ood_more_jobs",
+        "task_id": "scheduling-613a5e7a542095eb"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            5
+          ],
+          "num_jobs": 9,
+          "observability": "full",
+          "prerequisite_probability": 0.35
+        },
+        "generation_seed": 5268620568873845896,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 15,
+          "num_jobs": 9,
+          "observability": "full",
+          "optimal_total_tardiness": 23
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 10.666666666666666,
+        "oracle_objective_value": 23,
+        "oracle_steps": 9,
+        "seed": 14788858302746518286,
+        "split": "ood_more_jobs",
+        "task_id": "scheduling-cdbf65eba72deb46"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            5
+          ],
+          "num_jobs": 9,
+          "observability": "full",
+          "prerequisite_probability": 0.35
+        },
+        "generation_seed": 13868699525606433334,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 11,
+          "num_jobs": 9,
+          "observability": "full",
+          "optimal_total_tardiness": 14
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 10.222222222222221,
+        "oracle_objective_value": 14,
+        "oracle_steps": 9,
+        "seed": 10200337347545826951,
+        "split": "ood_more_jobs",
+        "task_id": "scheduling-cf311bf88bc8257f"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            5
+          ],
+          "num_jobs": 9,
+          "observability": "full",
+          "prerequisite_probability": 0.35
+        },
+        "generation_seed": 8551265993666376536,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 9,
+          "num_jobs": 9,
+          "observability": "full",
+          "optimal_total_tardiness": 3
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 10.0,
+        "oracle_objective_value": 3,
+        "oracle_steps": 9,
+        "seed": 8420942000730155795,
+        "split": "ood_more_jobs",
+        "task_id": "scheduling-680e89f49ccd2407"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            5
+          ],
+          "num_jobs": 9,
+          "observability": "full",
+          "prerequisite_probability": 0.35
+        },
+        "generation_seed": 10226385573651785075,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 14,
+          "num_jobs": 9,
+          "observability": "full",
+          "optimal_total_tardiness": 12
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 10.555555555555555,
+        "oracle_objective_value": 12,
+        "oracle_steps": 9,
+        "seed": 16001321663712171077,
+        "split": "ood_more_jobs",
+        "task_id": "scheduling-16792720a6eafa71"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            5
+          ],
+          "num_jobs": 9,
+          "observability": "full",
+          "prerequisite_probability": 0.35
+        },
+        "generation_seed": 6436340006289635251,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 13,
+          "num_jobs": 9,
+          "observability": "full",
+          "optimal_total_tardiness": 18
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 10.444444444444445,
+        "oracle_objective_value": 18,
+        "oracle_steps": 9,
+        "seed": 9759154425784351844,
+        "split": "ood_more_jobs",
+        "task_id": "scheduling-b34ab4646d5cd349"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            5
+          ],
+          "num_jobs": 9,
+          "observability": "full",
+          "prerequisite_probability": 0.35
+        },
+        "generation_seed": 5193316880086895981,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 13,
+          "num_jobs": 9,
+          "observability": "full",
+          "optimal_total_tardiness": 10
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 10.444444444444445,
+        "oracle_objective_value": 10,
+        "oracle_steps": 9,
+        "seed": 6422747268979661559,
+        "split": "ood_more_jobs",
+        "task_id": "scheduling-f4cade3dbbbf2222"
+      }
+    ],
+    "ood_tighter_constraints": [
+      {
+        "generation_params": {
+          "duration_range": [
+            2,
+            5
+          ],
+          "num_jobs": 8,
+          "observability": "full",
+          "prerequisite_probability": 0.45
+        },
+        "generation_seed": 10273061632954441377,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 17,
+          "num_jobs": 8,
+          "observability": "full",
+          "optimal_total_tardiness": 22
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 10.125,
+        "oracle_objective_value": 22,
+        "oracle_steps": 8,
+        "seed": 15088839559197594301,
+        "split": "ood_tighter_constraints",
+        "task_id": "scheduling-fc1441a396b8efa3"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            2,
+            5
+          ],
+          "num_jobs": 8,
+          "observability": "full",
+          "prerequisite_probability": 0.45
+        },
+        "generation_seed": 6950826034532570872,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 12,
+          "num_jobs": 8,
+          "observability": "full",
+          "optimal_total_tardiness": 1
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 9.5,
+        "oracle_objective_value": 1,
+        "oracle_steps": 8,
+        "seed": 3078339825203877866,
+        "split": "ood_tighter_constraints",
+        "task_id": "scheduling-e2318b4f2ae1fe2f"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            2,
+            5
+          ],
+          "num_jobs": 8,
+          "observability": "full",
+          "prerequisite_probability": 0.45
+        },
+        "generation_seed": 6846547733861122283,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 10,
+          "num_jobs": 8,
+          "observability": "full",
+          "optimal_total_tardiness": 13
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 9.25,
+        "oracle_objective_value": 13,
+        "oracle_steps": 8,
+        "seed": 4161598972740064060,
+        "split": "ood_tighter_constraints",
+        "task_id": "scheduling-0323571010659096"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            2,
+            5
+          ],
+          "num_jobs": 8,
+          "observability": "full",
+          "prerequisite_probability": 0.45
+        },
+        "generation_seed": 1849180247528623515,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 14,
+          "num_jobs": 8,
+          "observability": "full",
+          "optimal_total_tardiness": 20
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 9.75,
+        "oracle_objective_value": 20,
+        "oracle_steps": 8,
+        "seed": 11394335454839038722,
+        "split": "ood_tighter_constraints",
+        "task_id": "scheduling-b393db6fe82e7352"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            2,
+            5
+          ],
+          "num_jobs": 8,
+          "observability": "full",
+          "prerequisite_probability": 0.45
+        },
+        "generation_seed": 6186225651912671323,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 14,
+          "num_jobs": 8,
+          "observability": "full",
+          "optimal_total_tardiness": 10
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 9.75,
+        "oracle_objective_value": 10,
+        "oracle_steps": 8,
+        "seed": 9291418708570317253,
+        "split": "ood_tighter_constraints",
+        "task_id": "scheduling-97c6e8ab0f826936"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            2,
+            5
+          ],
+          "num_jobs": 8,
+          "observability": "full",
+          "prerequisite_probability": 0.45
+        },
+        "generation_seed": 15412845642707271650,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 11,
+          "num_jobs": 8,
+          "observability": "full",
+          "optimal_total_tardiness": 1
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 9.375,
+        "oracle_objective_value": 1,
+        "oracle_steps": 8,
+        "seed": 11101923042965421678,
+        "split": "ood_tighter_constraints",
+        "task_id": "scheduling-7a9c77abcc19d22a"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            2,
+            5
+          ],
+          "num_jobs": 8,
+          "observability": "full",
+          "prerequisite_probability": 0.45
+        },
+        "generation_seed": 11306910864812134808,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 15,
+          "num_jobs": 8,
+          "observability": "full",
+          "optimal_total_tardiness": 19
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 9.875,
+        "oracle_objective_value": 19,
+        "oracle_steps": 8,
+        "seed": 14183401538076871738,
+        "split": "ood_tighter_constraints",
+        "task_id": "scheduling-7cc8a08b4a7bec79"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            2,
+            5
+          ],
+          "num_jobs": 8,
+          "observability": "full",
+          "prerequisite_probability": 0.45
+        },
+        "generation_seed": 4256516274380072423,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 10,
+          "num_jobs": 8,
+          "observability": "full",
+          "optimal_total_tardiness": 11
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 9.25,
+        "oracle_objective_value": 11,
+        "oracle_steps": 8,
+        "seed": 6486137851753995005,
+        "split": "ood_tighter_constraints",
+        "task_id": "scheduling-f4a4b4ae171d9966"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            2,
+            5
+          ],
+          "num_jobs": 8,
+          "observability": "full",
+          "prerequisite_probability": 0.45
+        },
+        "generation_seed": 1822446449005095397,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 14,
+          "num_jobs": 8,
+          "observability": "full",
+          "optimal_total_tardiness": 12
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 9.75,
+        "oracle_objective_value": 12,
+        "oracle_steps": 8,
+        "seed": 6655207043002555284,
+        "split": "ood_tighter_constraints",
+        "task_id": "scheduling-425a651bec6e7b83"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            2,
+            5
+          ],
+          "num_jobs": 8,
+          "observability": "full",
+          "prerequisite_probability": 0.45
+        },
+        "generation_seed": 18271865498051724889,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 10,
+          "num_jobs": 8,
+          "observability": "full",
+          "optimal_total_tardiness": 9
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 9.25,
+        "oracle_objective_value": 9,
+        "oracle_steps": 8,
+        "seed": 2078933137209467951,
+        "split": "ood_tighter_constraints",
+        "task_id": "scheduling-76eb1d89bb2f4533"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            2,
+            5
+          ],
+          "num_jobs": 8,
+          "observability": "full",
+          "prerequisite_probability": 0.45
+        },
+        "generation_seed": 2465887068659675247,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 14,
+          "num_jobs": 8,
+          "observability": "full",
+          "optimal_total_tardiness": 21
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 9.75,
+        "oracle_objective_value": 21,
+        "oracle_steps": 8,
+        "seed": 14181377394560628983,
+        "split": "ood_tighter_constraints",
+        "task_id": "scheduling-ded7ec7d02877613"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            2,
+            5
+          ],
+          "num_jobs": 8,
+          "observability": "full",
+          "prerequisite_probability": 0.45
+        },
+        "generation_seed": 11982204780504774949,
+        "metadata": {
+          "difficulty": "hard",
+          "num_constraints": 7,
+          "num_jobs": 8,
+          "observability": "full",
+          "optimal_total_tardiness": 4
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 8.875,
+        "oracle_objective_value": 4,
+        "oracle_steps": 8,
+        "seed": 11440537249754231225,
+        "split": "ood_tighter_constraints",
+        "task_id": "scheduling-0cff78673d15885a"
+      }
+    ],
+    "test": [
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 7,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 8521146367844601765,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 3,
+          "num_jobs": 7,
+          "observability": "full",
+          "optimal_total_tardiness": 0
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 7.428571428571429,
+        "oracle_objective_value": 0,
+        "oracle_steps": 7,
+        "seed": 17448005304885822864,
+        "split": "test",
+        "task_id": "scheduling-3417f0b11b0dfd30"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 7,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 1262061341920385600,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 5,
+          "num_jobs": 7,
+          "observability": "full",
+          "optimal_total_tardiness": 1
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 7.714285714285714,
+        "oracle_objective_value": 1,
+        "oracle_steps": 7,
+        "seed": 12774578337006646062,
+        "split": "test",
+        "task_id": "scheduling-988acdf57d3f0f03"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 6,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 1153164638969641786,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 9,
+          "num_jobs": 6,
+          "observability": "full",
+          "optimal_total_tardiness": 8
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 7.5,
+        "oracle_objective_value": 8,
+        "oracle_steps": 6,
+        "seed": 8460919298532158989,
+        "split": "test",
+        "task_id": "scheduling-feaecbd9d7792354"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 6,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 14838360677614650020,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 4,
+          "num_jobs": 6,
+          "observability": "full",
+          "optimal_total_tardiness": 5
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 6.666666666666667,
+        "oracle_objective_value": 5,
+        "oracle_steps": 6,
+        "seed": 6022016660330581199,
+        "split": "test",
+        "task_id": "scheduling-e70ac46af831cb52"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 6,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 10951612252260746955,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 2,
+          "num_jobs": 6,
+          "observability": "full",
+          "optimal_total_tardiness": 2
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 6.333333333333333,
+        "oracle_objective_value": 2,
+        "oracle_steps": 6,
+        "seed": 8453211952702208487,
+        "split": "test",
+        "task_id": "scheduling-97206ae492876528"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 7,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 14183923465476685795,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 6,
+          "num_jobs": 7,
+          "observability": "full",
+          "optimal_total_tardiness": 1
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 7.857142857142857,
+        "oracle_objective_value": 1,
+        "oracle_steps": 7,
+        "seed": 5642041338822263348,
+        "split": "test",
+        "task_id": "scheduling-bb0bbab743c96a15"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 6,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 3206862327127303117,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 7,
+          "num_jobs": 6,
+          "observability": "full",
+          "optimal_total_tardiness": 6
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 7.166666666666667,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 12981555329964150060,
+        "split": "test",
+        "task_id": "scheduling-4003d2e1551f713d"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 7,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 8169663746780564188,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 4,
+          "num_jobs": 7,
+          "observability": "full",
+          "optimal_total_tardiness": 3
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 7.571428571428571,
+        "oracle_objective_value": 3,
+        "oracle_steps": 7,
+        "seed": 12225189423502605831,
+        "split": "test",
+        "task_id": "scheduling-0c0c9ff411c10816"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 7,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 11621449595242131930,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 6,
+          "num_jobs": 7,
+          "observability": "full",
+          "optimal_total_tardiness": 6
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 7.857142857142857,
+        "oracle_objective_value": 6,
+        "oracle_steps": 7,
+        "seed": 15764513011363994216,
+        "split": "test",
+        "task_id": "scheduling-89383cb4196e24bf"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 7,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 8356833131608244795,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 5,
+          "num_jobs": 7,
+          "observability": "full",
+          "optimal_total_tardiness": 0
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 7.714285714285714,
+        "oracle_objective_value": 0,
+        "oracle_steps": 7,
+        "seed": 14978373147871286775,
+        "split": "test",
+        "task_id": "scheduling-cf4b4615cde03e6b"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 6,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 9003104181295644598,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 3,
+          "num_jobs": 6,
+          "observability": "full",
+          "optimal_total_tardiness": 3
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 6.5,
+        "oracle_objective_value": 3,
+        "oracle_steps": 6,
+        "seed": 15551613224977938689,
+        "split": "test",
+        "task_id": "scheduling-e4869d89c401dd8c"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 6,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 11784812891017238927,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 4,
+          "num_jobs": 6,
+          "observability": "full",
+          "optimal_total_tardiness": 8
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 6.666666666666667,
+        "oracle_objective_value": 8,
+        "oracle_steps": 6,
+        "seed": 6389892137882680674,
+        "split": "test",
+        "task_id": "scheduling-187d4aaa7be0e7cc"
+      }
+    ],
+    "train": [
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 7,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 9217515939767157551,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 6,
+          "num_jobs": 7,
+          "observability": "full",
+          "optimal_total_tardiness": 8
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 7.857142857142857,
+        "oracle_objective_value": 8,
+        "oracle_steps": 7,
+        "seed": 9263415227536648552,
+        "split": "train",
+        "task_id": "scheduling-540dab5123b57b9f"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 7,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 8287652405531563575,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 4,
+          "num_jobs": 7,
+          "observability": "full",
+          "optimal_total_tardiness": 4
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 7.571428571428571,
+        "oracle_objective_value": 4,
+        "oracle_steps": 7,
+        "seed": 4344951549061708992,
+        "split": "train",
+        "task_id": "scheduling-e3b783a7f08a68bb"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 7,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 1831181365792685950,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 3,
+          "num_jobs": 7,
+          "observability": "full",
+          "optimal_total_tardiness": 5
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 7.428571428571429,
+        "oracle_objective_value": 5,
+        "oracle_steps": 7,
+        "seed": 10196006961881753634,
+        "split": "train",
+        "task_id": "scheduling-db67735c895f56a3"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 5,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 9559775739971848301,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 3,
+          "num_jobs": 5,
+          "observability": "full",
+          "optimal_total_tardiness": 2
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 5.6,
+        "oracle_objective_value": 2,
+        "oracle_steps": 5,
+        "seed": 12257216296962784062,
+        "split": "train",
+        "task_id": "scheduling-2b0094e9bb506183"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 5,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 5963405640139239025,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 0,
+          "num_jobs": 5,
+          "observability": "full",
+          "optimal_total_tardiness": 1
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 5.0,
+        "oracle_objective_value": 1,
+        "oracle_steps": 5,
+        "seed": 6552718063561575138,
+        "split": "train",
+        "task_id": "scheduling-ebaeb017b8cf879b"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 5,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 6008114339941716978,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 4,
+          "num_jobs": 5,
+          "observability": "full",
+          "optimal_total_tardiness": 4
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 5.8,
+        "oracle_objective_value": 4,
+        "oracle_steps": 5,
+        "seed": 15861373556616490218,
+        "split": "train",
+        "task_id": "scheduling-e1255de80065ce38"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 7,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 2953773977013116060,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 7,
+          "num_jobs": 7,
+          "observability": "full",
+          "optimal_total_tardiness": 0
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 8.0,
+        "oracle_objective_value": 0,
+        "oracle_steps": 7,
+        "seed": 6815746433024863766,
+        "split": "train",
+        "task_id": "scheduling-b2f9e4cc9819c0b4"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 7,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 11208401565585116693,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 3,
+          "num_jobs": 7,
+          "observability": "full",
+          "optimal_total_tardiness": 4
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 7.428571428571429,
+        "oracle_objective_value": 4,
+        "oracle_steps": 7,
+        "seed": 11703443450532324426,
+        "split": "train",
+        "task_id": "scheduling-683e690acb0c2a6a"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 6,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 6052106845052235707,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 5,
+          "num_jobs": 6,
+          "observability": "full",
+          "optimal_total_tardiness": 0
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 6.833333333333333,
+        "oracle_objective_value": 0,
+        "oracle_steps": 6,
+        "seed": 8881721692349409846,
+        "split": "train",
+        "task_id": "scheduling-ad793d892b33da03"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 7,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 602412282821383379,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 5,
+          "num_jobs": 7,
+          "observability": "full",
+          "optimal_total_tardiness": 9
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 7.714285714285714,
+        "oracle_objective_value": 9,
+        "oracle_steps": 7,
+        "seed": 17428315462474255827,
+        "split": "train",
+        "task_id": "scheduling-9ec034fb068ec8ed"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 6,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 13293049483834208025,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 6,
+          "num_jobs": 6,
+          "observability": "full",
+          "optimal_total_tardiness": 0
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 7.0,
+        "oracle_objective_value": 0,
+        "oracle_steps": 6,
+        "seed": 14857994690987494203,
+        "split": "train",
+        "task_id": "scheduling-5068a7694b399061"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 7,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 10623533971331301185,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 5,
+          "num_jobs": 7,
+          "observability": "full",
+          "optimal_total_tardiness": 8
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 7.714285714285714,
+        "oracle_objective_value": 8,
+        "oracle_steps": 7,
+        "seed": 11072297756303191649,
+        "split": "train",
+        "task_id": "scheduling-ebe25ea51ebe14a4"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 7,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 11835548572551988118,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 6,
+          "num_jobs": 7,
+          "observability": "full",
+          "optimal_total_tardiness": 0
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 7.857142857142857,
+        "oracle_objective_value": 0,
+        "oracle_steps": 7,
+        "seed": 7494237086381632349,
+        "split": "train",
+        "task_id": "scheduling-e1c604feff74e2a4"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 6,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 11894239449824407840,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 6,
+          "num_jobs": 6,
+          "observability": "full",
+          "optimal_total_tardiness": 4
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 7.0,
+        "oracle_objective_value": 4,
+        "oracle_steps": 6,
+        "seed": 8775090040947556682,
+        "split": "train",
+        "task_id": "scheduling-c51c1a27a9cd0db5"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 6,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 3000723065136584901,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 2,
+          "num_jobs": 6,
+          "observability": "full",
+          "optimal_total_tardiness": 2
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 6.333333333333333,
+        "oracle_objective_value": 2,
+        "oracle_steps": 6,
+        "seed": 17088743233540578639,
+        "split": "train",
+        "task_id": "scheduling-2260bed7cd06ff22"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 5,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 2521344455464310322,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 2,
+          "num_jobs": 5,
+          "observability": "full",
+          "optimal_total_tardiness": 3
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 5.4,
+        "oracle_objective_value": 3,
+        "oracle_steps": 5,
+        "seed": 17840615461312621907,
+        "split": "train",
+        "task_id": "scheduling-208ba811f520aaba"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 5,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 17787365408080794328,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 3,
+          "num_jobs": 5,
+          "observability": "full",
+          "optimal_total_tardiness": 2
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 5.6,
+        "oracle_objective_value": 2,
+        "oracle_steps": 5,
+        "seed": 9217065584422309227,
+        "split": "train",
+        "task_id": "scheduling-171bdeee675d7447"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 6,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 12665524502340359184,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 4,
+          "num_jobs": 6,
+          "observability": "full",
+          "optimal_total_tardiness": 2
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 6.666666666666667,
+        "oracle_objective_value": 2,
+        "oracle_steps": 6,
+        "seed": 886690073674592688,
+        "split": "train",
+        "task_id": "scheduling-943d2b2eede0076e"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 6,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 8469638916581229284,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 4,
+          "num_jobs": 6,
+          "observability": "full",
+          "optimal_total_tardiness": 5
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 6.666666666666667,
+        "oracle_objective_value": 5,
+        "oracle_steps": 6,
+        "seed": 5555660334764214604,
+        "split": "train",
+        "task_id": "scheduling-09f7724b22c1e923"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 5,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 2879800338925319596,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 3,
+          "num_jobs": 5,
+          "observability": "full",
+          "optimal_total_tardiness": 0
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 5.6,
+        "oracle_objective_value": 0,
+        "oracle_steps": 5,
+        "seed": 5786214989017745305,
+        "split": "train",
+        "task_id": "scheduling-94de120efbb15488"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 5,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 10169737224264742293,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 1,
+          "num_jobs": 5,
+          "observability": "full",
+          "optimal_total_tardiness": 5
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 5.2,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 16651050609210563656,
+        "split": "train",
+        "task_id": "scheduling-a341e9c922ca5977"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 7,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 7678258690994023807,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 10,
+          "num_jobs": 7,
+          "observability": "full",
+          "optimal_total_tardiness": 9
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 8.428571428571429,
+        "oracle_objective_value": 9,
+        "oracle_steps": 7,
+        "seed": 11839736767388930916,
+        "split": "train",
+        "task_id": "scheduling-05b1be58f09413ac"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 6,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 13111295581206674996,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 4,
+          "num_jobs": 6,
+          "observability": "full",
+          "optimal_total_tardiness": 5
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 6.666666666666667,
+        "oracle_objective_value": 5,
+        "oracle_steps": 6,
+        "seed": 16209425889432742793,
+        "split": "train",
+        "task_id": "scheduling-373fe83fbc22d0b1"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 6,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 14797860419084893674,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 4,
+          "num_jobs": 6,
+          "observability": "full",
+          "optimal_total_tardiness": 13
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 6.666666666666667,
+        "oracle_objective_value": 13,
+        "oracle_steps": 6,
+        "seed": 7476257855913123079,
+        "split": "train",
+        "task_id": "scheduling-7318ca727add1897"
+      }
+    ],
+    "validation": [
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 6,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 15062004847433390269,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 5,
+          "num_jobs": 6,
+          "observability": "full",
+          "optimal_total_tardiness": 4
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 6.833333333333333,
+        "oracle_objective_value": 4,
+        "oracle_steps": 6,
+        "seed": 6484934460686533590,
+        "split": "validation",
+        "task_id": "scheduling-233e9c04e5748951"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 5,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 10498390898576119042,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 2,
+          "num_jobs": 5,
+          "observability": "full",
+          "optimal_total_tardiness": 1
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 5.4,
+        "oracle_objective_value": 1,
+        "oracle_steps": 5,
+        "seed": 17703003116296103450,
+        "split": "validation",
+        "task_id": "scheduling-3daf7660b5566dc4"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 7,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 16332146408690465361,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 7,
+          "num_jobs": 7,
+          "observability": "full",
+          "optimal_total_tardiness": 11
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 8.0,
+        "oracle_objective_value": 11,
+        "oracle_steps": 7,
+        "seed": 10175879183067434009,
+        "split": "validation",
+        "task_id": "scheduling-bc40230f8a9541ed"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 7,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 10525191412461087773,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 7,
+          "num_jobs": 7,
+          "observability": "full",
+          "optimal_total_tardiness": 4
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 8.0,
+        "oracle_objective_value": 4,
+        "oracle_steps": 7,
+        "seed": 3688009678545108367,
+        "split": "validation",
+        "task_id": "scheduling-6e0b6e35104bb063"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 6,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 18078608034136094701,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 2,
+          "num_jobs": 6,
+          "observability": "full",
+          "optimal_total_tardiness": 2
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 6.333333333333333,
+        "oracle_objective_value": 2,
+        "oracle_steps": 6,
+        "seed": 12884356782581710345,
+        "split": "validation",
+        "task_id": "scheduling-420190a4c77ae14c"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 5,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 6884032688121665415,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 4,
+          "num_jobs": 5,
+          "observability": "full",
+          "optimal_total_tardiness": 3
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 5.8,
+        "oracle_objective_value": 3,
+        "oracle_steps": 5,
+        "seed": 15076126121861584427,
+        "split": "validation",
+        "task_id": "scheduling-999a1d8a13a8f7d2"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 5,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 10117923859171674227,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 2,
+          "num_jobs": 5,
+          "observability": "full",
+          "optimal_total_tardiness": 4
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 5.4,
+        "oracle_objective_value": 4,
+        "oracle_steps": 5,
+        "seed": 13275244471486295626,
+        "split": "validation",
+        "task_id": "scheduling-6908f5f4b7ea6b00"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 7,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 7548744596060085908,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 4,
+          "num_jobs": 7,
+          "observability": "full",
+          "optimal_total_tardiness": 1
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 7.571428571428571,
+        "oracle_objective_value": 1,
+        "oracle_steps": 7,
+        "seed": 7000943786569049871,
+        "split": "validation",
+        "task_id": "scheduling-f775040460e433c4"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 6,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 1322372013655619245,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 5,
+          "num_jobs": 6,
+          "observability": "full",
+          "optimal_total_tardiness": 6
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 6.833333333333333,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 8932658918849822118,
+        "split": "validation",
+        "task_id": "scheduling-609888fa72717cef"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 5,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 12885832203337934556,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 3,
+          "num_jobs": 5,
+          "observability": "full",
+          "optimal_total_tardiness": 5
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 5.6,
+        "oracle_objective_value": 5,
+        "oracle_steps": 5,
+        "seed": 8146044716348046482,
+        "split": "validation",
+        "task_id": "scheduling-ad1cf4d7e80b9e54"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 6,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 11855301746973014586,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 3,
+          "num_jobs": 6,
+          "observability": "full",
+          "optimal_total_tardiness": 5
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 6.5,
+        "oracle_objective_value": 5,
+        "oracle_steps": 6,
+        "seed": 16017949659880611370,
+        "split": "validation",
+        "task_id": "scheduling-31f8440559f6a076"
+      },
+      {
+        "generation_params": {
+          "duration_range": [
+            1,
+            4
+          ],
+          "num_jobs": 6,
+          "observability": "full",
+          "prerequisite_probability": 0.25
+        },
+        "generation_seed": 5344492908423287969,
+        "metadata": {
+          "difficulty": "medium",
+          "num_constraints": 4,
+          "num_jobs": 6,
+          "observability": "full",
+          "optimal_total_tardiness": 6
+        },
+        "objective_name": "minimize_total_tardiness",
+        "oracle_difficulty_estimate": 6.666666666666667,
+        "oracle_objective_value": 6,
+        "oracle_steps": 6,
+        "seed": 587062121338026621,
+        "split": "validation",
+        "task_id": "scheduling-a689795baa2ecde2"
+      }
+    ]
+  },
+  "version": "v1"
+}

@@ -1,5 +1,12 @@
 # Scheduling Benchmark Card
 
+## Artifact bundle
+
+- Spec: [../benchmark_artifacts/scheduling/benchmark_spec.json](../benchmark_artifacts/scheduling/benchmark_spec.json)
+- Split manifest: [../benchmark_artifacts/scheduling/split_manifest.json](../benchmark_artifacts/scheduling/split_manifest.json)
+- Diversity summary: [../benchmark_artifacts/scheduling/diversity_summary.md](../benchmark_artifacts/scheduling/diversity_summary.md)
+- Baseline table: [../benchmark_artifacts/scheduling/baseline_results.md](../benchmark_artifacts/scheduling/baseline_results.md)
+
 ## Capability
 
 This family measures constrained sequential decision making under precedence structure, deadlines, and cumulative objective tradeoffs.

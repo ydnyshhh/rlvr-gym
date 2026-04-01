@@ -1,0 +1,1744 @@
+{
+  "family_name": "graph_planning",
+  "splits": {
+    "ood_directed_shift": [
+      {
+        "generation_params": {
+          "directed": true,
+          "edge_probability": 0.45,
+          "max_cost": 9,
+          "num_nodes": 10,
+          "observability": "full"
+        },
+        "generation_seed": 4640402276909632667,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 44,
+          "num_nodes": 10,
+          "observability": "full",
+          "optimal_cost": 8
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 14.4,
+        "oracle_objective_value": 8,
+        "oracle_steps": 2,
+        "seed": 8162411069937633708,
+        "split": "ood_directed_shift",
+        "task_id": "graph_planning-5701e5ac5250c65b"
+      },
+      {
+        "generation_params": {
+          "directed": true,
+          "edge_probability": 0.45,
+          "max_cost": 9,
+          "num_nodes": 10,
+          "observability": "full"
+        },
+        "generation_seed": 589083966273582884,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 37,
+          "num_nodes": 10,
+          "observability": "full",
+          "optimal_cost": 8
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 13.7,
+        "oracle_objective_value": 8,
+        "oracle_steps": 2,
+        "seed": 14563534603794597009,
+        "split": "ood_directed_shift",
+        "task_id": "graph_planning-b1130b22aa1bc12b"
+      },
+      {
+        "generation_params": {
+          "directed": true,
+          "edge_probability": 0.45,
+          "max_cost": 9,
+          "num_nodes": 10,
+          "observability": "full"
+        },
+        "generation_seed": 5427586001822094458,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 37,
+          "num_nodes": 10,
+          "observability": "full",
+          "optimal_cost": 5
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 13.7,
+        "oracle_objective_value": 5,
+        "oracle_steps": 1,
+        "seed": 13103306184359986680,
+        "split": "ood_directed_shift",
+        "task_id": "graph_planning-26c4348fe5531acd"
+      },
+      {
+        "generation_params": {
+          "directed": true,
+          "edge_probability": 0.45,
+          "max_cost": 9,
+          "num_nodes": 10,
+          "observability": "full"
+        },
+        "generation_seed": 4423941965789906753,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 40,
+          "num_nodes": 10,
+          "observability": "full",
+          "optimal_cost": 9
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 14.0,
+        "oracle_objective_value": 9,
+        "oracle_steps": 2,
+        "seed": 7893853584325315405,
+        "split": "ood_directed_shift",
+        "task_id": "graph_planning-9b5af8e145ca2e09"
+      },
+      {
+        "generation_params": {
+          "directed": true,
+          "edge_probability": 0.45,
+          "max_cost": 9,
+          "num_nodes": 10,
+          "observability": "full"
+        },
+        "generation_seed": 13745575888102526856,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 40,
+          "num_nodes": 10,
+          "observability": "full",
+          "optimal_cost": 6
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 14.0,
+        "oracle_objective_value": 6,
+        "oracle_steps": 4,
+        "seed": 10310317375214134763,
+        "split": "ood_directed_shift",
+        "task_id": "graph_planning-967967fb2c530521"
+      },
+      {
+        "generation_params": {
+          "directed": true,
+          "edge_probability": 0.45,
+          "max_cost": 9,
+          "num_nodes": 10,
+          "observability": "full"
+        },
+        "generation_seed": 3943556342907200622,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 45,
+          "num_nodes": 10,
+          "observability": "full",
+          "optimal_cost": 7
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 14.5,
+        "oracle_objective_value": 7,
+        "oracle_steps": 2,
+        "seed": 15784958934300762716,
+        "split": "ood_directed_shift",
+        "task_id": "graph_planning-48ef52206032e36c"
+      },
+      {
+        "generation_params": {
+          "directed": true,
+          "edge_probability": 0.45,
+          "max_cost": 9,
+          "num_nodes": 10,
+          "observability": "full"
+        },
+        "generation_seed": 8433713077561955965,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 38,
+          "num_nodes": 10,
+          "observability": "full",
+          "optimal_cost": 11
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 13.8,
+        "oracle_objective_value": 11,
+        "oracle_steps": 3,
+        "seed": 15274262862886203833,
+        "split": "ood_directed_shift",
+        "task_id": "graph_planning-0c482449dd221620"
+      },
+      {
+        "generation_params": {
+          "directed": true,
+          "edge_probability": 0.45,
+          "max_cost": 9,
+          "num_nodes": 10,
+          "observability": "full"
+        },
+        "generation_seed": 13200637099826182066,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 43,
+          "num_nodes": 10,
+          "observability": "full",
+          "optimal_cost": 6
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 14.3,
+        "oracle_objective_value": 6,
+        "oracle_steps": 2,
+        "seed": 11210849258115425363,
+        "split": "ood_directed_shift",
+        "task_id": "graph_planning-0b2374bbb691ab3c"
+      },
+      {
+        "generation_params": {
+          "directed": true,
+          "edge_probability": 0.45,
+          "max_cost": 9,
+          "num_nodes": 10,
+          "observability": "full"
+        },
+        "generation_seed": 5124810288840052755,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 41,
+          "num_nodes": 10,
+          "observability": "full",
+          "optimal_cost": 3
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 14.1,
+        "oracle_objective_value": 3,
+        "oracle_steps": 1,
+        "seed": 18121341837427155575,
+        "split": "ood_directed_shift",
+        "task_id": "graph_planning-b0a3cf336150a111"
+      },
+      {
+        "generation_params": {
+          "directed": true,
+          "edge_probability": 0.45,
+          "max_cost": 9,
+          "num_nodes": 10,
+          "observability": "full"
+        },
+        "generation_seed": 17958628385204212774,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 46,
+          "num_nodes": 10,
+          "observability": "full",
+          "optimal_cost": 5
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 14.6,
+        "oracle_objective_value": 5,
+        "oracle_steps": 2,
+        "seed": 3989346032818175105,
+        "split": "ood_directed_shift",
+        "task_id": "graph_planning-c722d7ee3e1fcb8f"
+      },
+      {
+        "generation_params": {
+          "directed": true,
+          "edge_probability": 0.45,
+          "max_cost": 9,
+          "num_nodes": 10,
+          "observability": "full"
+        },
+        "generation_seed": 13905980606119256744,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 32,
+          "num_nodes": 10,
+          "observability": "full",
+          "optimal_cost": 4
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 13.2,
+        "oracle_objective_value": 4,
+        "oracle_steps": 1,
+        "seed": 3725443343709934225,
+        "split": "ood_directed_shift",
+        "task_id": "graph_planning-87021548dfbdbc87"
+      },
+      {
+        "generation_params": {
+          "directed": true,
+          "edge_probability": 0.45,
+          "max_cost": 9,
+          "num_nodes": 10,
+          "observability": "full"
+        },
+        "generation_seed": 8513156738699176971,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 45,
+          "num_nodes": 10,
+          "observability": "full",
+          "optimal_cost": 7
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 14.5,
+        "oracle_objective_value": 7,
+        "oracle_steps": 1,
+        "seed": 15712821036793913144,
+        "split": "ood_directed_shift",
+        "task_id": "graph_planning-a26642bb6e2f8e82"
+      }
+    ],
+    "ood_larger_graphs": [
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.55,
+          "max_cost": 9,
+          "num_nodes": 12,
+          "observability": "full"
+        },
+        "generation_seed": 969298077265359392,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 82,
+          "num_nodes": 12,
+          "observability": "full",
+          "optimal_cost": 5
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 18.833333333333332,
+        "oracle_objective_value": 5,
+        "oracle_steps": 1,
+        "seed": 15774668424225124734,
+        "split": "ood_larger_graphs",
+        "task_id": "graph_planning-496abfa9ac4c9443"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.55,
+          "max_cost": 9,
+          "num_nodes": 12,
+          "observability": "full"
+        },
+        "generation_seed": 4691079691786538939,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 96,
+          "num_nodes": 12,
+          "observability": "full",
+          "optimal_cost": 3
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 20.0,
+        "oracle_objective_value": 3,
+        "oracle_steps": 1,
+        "seed": 12555258656161787727,
+        "split": "ood_larger_graphs",
+        "task_id": "graph_planning-a385f3471dac1268"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.55,
+          "max_cost": 9,
+          "num_nodes": 12,
+          "observability": "full"
+        },
+        "generation_seed": 1820490625660846042,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 82,
+          "num_nodes": 12,
+          "observability": "full",
+          "optimal_cost": 4
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 18.833333333333332,
+        "oracle_objective_value": 4,
+        "oracle_steps": 3,
+        "seed": 17691962228020384255,
+        "split": "ood_larger_graphs",
+        "task_id": "graph_planning-61263f6a99602508"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.55,
+          "max_cost": 9,
+          "num_nodes": 12,
+          "observability": "full"
+        },
+        "generation_seed": 9712159785305555266,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 86,
+          "num_nodes": 12,
+          "observability": "full",
+          "optimal_cost": 3
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 19.166666666666668,
+        "oracle_objective_value": 3,
+        "oracle_steps": 1,
+        "seed": 10487156722917585928,
+        "split": "ood_larger_graphs",
+        "task_id": "graph_planning-27be932d5f040224"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.55,
+          "max_cost": 9,
+          "num_nodes": 12,
+          "observability": "full"
+        },
+        "generation_seed": 10306532072811462133,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 66,
+          "num_nodes": 12,
+          "observability": "full",
+          "optimal_cost": 3
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 17.5,
+        "oracle_objective_value": 3,
+        "oracle_steps": 2,
+        "seed": 873019772010613425,
+        "split": "ood_larger_graphs",
+        "task_id": "graph_planning-ac532c52944f42c7"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.55,
+          "max_cost": 9,
+          "num_nodes": 12,
+          "observability": "full"
+        },
+        "generation_seed": 7613884853357405704,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 80,
+          "num_nodes": 12,
+          "observability": "full",
+          "optimal_cost": 6
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 18.666666666666668,
+        "oracle_objective_value": 6,
+        "oracle_steps": 5,
+        "seed": 4711429887299920935,
+        "split": "ood_larger_graphs",
+        "task_id": "graph_planning-9c0c51aa5c9c0bcb"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.55,
+          "max_cost": 9,
+          "num_nodes": 12,
+          "observability": "full"
+        },
+        "generation_seed": 10727337270633360609,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 82,
+          "num_nodes": 12,
+          "observability": "full",
+          "optimal_cost": 7
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 18.833333333333332,
+        "oracle_objective_value": 7,
+        "oracle_steps": 2,
+        "seed": 16193446657590976849,
+        "split": "ood_larger_graphs",
+        "task_id": "graph_planning-bf6386826b533b60"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.55,
+          "max_cost": 9,
+          "num_nodes": 12,
+          "observability": "full"
+        },
+        "generation_seed": 14862322543643219802,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 84,
+          "num_nodes": 12,
+          "observability": "full",
+          "optimal_cost": 5
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 19.0,
+        "oracle_objective_value": 5,
+        "oracle_steps": 2,
+        "seed": 18168099377665576443,
+        "split": "ood_larger_graphs",
+        "task_id": "graph_planning-66e67b31f6d23a3c"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.55,
+          "max_cost": 9,
+          "num_nodes": 12,
+          "observability": "full"
+        },
+        "generation_seed": 11414681279646442152,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 98,
+          "num_nodes": 12,
+          "observability": "full",
+          "optimal_cost": 4
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 20.166666666666664,
+        "oracle_objective_value": 4,
+        "oracle_steps": 2,
+        "seed": 18021991115790682287,
+        "split": "ood_larger_graphs",
+        "task_id": "graph_planning-bcd919e189c366b1"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.55,
+          "max_cost": 9,
+          "num_nodes": 12,
+          "observability": "full"
+        },
+        "generation_seed": 6002754390177146679,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 80,
+          "num_nodes": 12,
+          "observability": "full",
+          "optimal_cost": 3
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 18.666666666666668,
+        "oracle_objective_value": 3,
+        "oracle_steps": 2,
+        "seed": 15379135101291486462,
+        "split": "ood_larger_graphs",
+        "task_id": "graph_planning-ec0fb6a2c7de524c"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.55,
+          "max_cost": 9,
+          "num_nodes": 12,
+          "observability": "full"
+        },
+        "generation_seed": 16881130395968342092,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 68,
+          "num_nodes": 12,
+          "observability": "full",
+          "optimal_cost": 10
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 17.666666666666668,
+        "oracle_objective_value": 10,
+        "oracle_steps": 2,
+        "seed": 118016630464044234,
+        "split": "ood_larger_graphs",
+        "task_id": "graph_planning-fa8098ad9a9bac22"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.55,
+          "max_cost": 9,
+          "num_nodes": 12,
+          "observability": "full"
+        },
+        "generation_seed": 7532674736193153890,
+        "metadata": {
+          "difficulty": "hard",
+          "num_edges": 96,
+          "num_nodes": 12,
+          "observability": "full",
+          "optimal_cost": 7
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 20.0,
+        "oracle_objective_value": 7,
+        "oracle_steps": 1,
+        "seed": 5586253921177922565,
+        "split": "ood_larger_graphs",
+        "task_id": "graph_planning-1e7a213a1fd39f5e"
+      }
+    ],
+    "test": [
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 7,
+          "observability": "full"
+        },
+        "generation_seed": 1965713224817306548,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 32,
+          "num_nodes": 7,
+          "observability": "full",
+          "optimal_cost": 1
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 11.571428571428571,
+        "oracle_objective_value": 1,
+        "oracle_steps": 1,
+        "seed": 6460617150440419710,
+        "split": "test",
+        "task_id": "graph_planning-7b4eeebf53ab741c"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 9,
+          "observability": "full"
+        },
+        "generation_seed": 10568500968100481454,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 36,
+          "num_nodes": 9,
+          "observability": "full",
+          "optimal_cost": 4
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 13.0,
+        "oracle_objective_value": 4,
+        "oracle_steps": 2,
+        "seed": 15553186412817356307,
+        "split": "test",
+        "task_id": "graph_planning-8de5985492948deb"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 8,
+          "observability": "full"
+        },
+        "generation_seed": 1293856282827525774,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 32,
+          "num_nodes": 8,
+          "observability": "full",
+          "optimal_cost": 7
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 12.0,
+        "oracle_objective_value": 7,
+        "oracle_steps": 3,
+        "seed": 16788979486741306903,
+        "split": "test",
+        "task_id": "graph_planning-6ef36dc5d3f7476d"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 9,
+          "observability": "full"
+        },
+        "generation_seed": 3591233368681581463,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 38,
+          "num_nodes": 9,
+          "observability": "full",
+          "optimal_cost": 2
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 13.222222222222221,
+        "oracle_objective_value": 2,
+        "oracle_steps": 2,
+        "seed": 901520073031279308,
+        "split": "test",
+        "task_id": "graph_planning-8f59e85b80ca72ff"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 7,
+          "observability": "full"
+        },
+        "generation_seed": 16269538367526471045,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 16,
+          "num_nodes": 7,
+          "observability": "full",
+          "optimal_cost": 1
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 9.285714285714285,
+        "oracle_objective_value": 1,
+        "oracle_steps": 1,
+        "seed": 874728553501233717,
+        "split": "test",
+        "task_id": "graph_planning-505ba891c546e8a1"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 6,
+          "observability": "full"
+        },
+        "generation_seed": 5969266417396249022,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 18,
+          "num_nodes": 6,
+          "observability": "full",
+          "optimal_cost": 9
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 9.0,
+        "oracle_objective_value": 9,
+        "oracle_steps": 2,
+        "seed": 1698020498862553138,
+        "split": "test",
+        "task_id": "graph_planning-fc2717e1014372c6"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 8,
+          "observability": "full"
+        },
+        "generation_seed": 11343031087943760442,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 34,
+          "num_nodes": 8,
+          "observability": "full",
+          "optimal_cost": 2
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 12.25,
+        "oracle_objective_value": 2,
+        "oracle_steps": 1,
+        "seed": 7019296391879978199,
+        "split": "test",
+        "task_id": "graph_planning-215d202b431dec6e"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 6,
+          "observability": "full"
+        },
+        "generation_seed": 1823967860438734907,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 26,
+          "num_nodes": 6,
+          "observability": "full",
+          "optimal_cost": 5
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 10.333333333333332,
+        "oracle_objective_value": 5,
+        "oracle_steps": 2,
+        "seed": 5417428927232192132,
+        "split": "test",
+        "task_id": "graph_planning-91fffaa732c61c01"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 9,
+          "observability": "full"
+        },
+        "generation_seed": 8616750587331672657,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 36,
+          "num_nodes": 9,
+          "observability": "full",
+          "optimal_cost": 5
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 13.0,
+        "oracle_objective_value": 5,
+        "oracle_steps": 1,
+        "seed": 13387217325272917901,
+        "split": "test",
+        "task_id": "graph_planning-be8c50e85e5ccc13"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 9,
+          "observability": "full"
+        },
+        "generation_seed": 13915622578731548902,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 52,
+          "num_nodes": 9,
+          "observability": "full",
+          "optimal_cost": 5
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 14.777777777777779,
+        "oracle_objective_value": 5,
+        "oracle_steps": 2,
+        "seed": 4986002672307469454,
+        "split": "test",
+        "task_id": "graph_planning-02761aa09e136c9f"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 9,
+          "observability": "full"
+        },
+        "generation_seed": 1106878468410579439,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 46,
+          "num_nodes": 9,
+          "observability": "full",
+          "optimal_cost": 7
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 14.11111111111111,
+        "oracle_objective_value": 7,
+        "oracle_steps": 2,
+        "seed": 3273461179727239678,
+        "split": "test",
+        "task_id": "graph_planning-97bfbc56dbf4eeb0"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 6,
+          "observability": "full"
+        },
+        "generation_seed": 16451154871351963497,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 20,
+          "num_nodes": 6,
+          "observability": "full",
+          "optimal_cost": 2
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 9.333333333333334,
+        "oracle_objective_value": 2,
+        "oracle_steps": 1,
+        "seed": 9469890180834678035,
+        "split": "test",
+        "task_id": "graph_planning-f2aeb784db20a652"
+      }
+    ],
+    "train": [
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 7,
+          "observability": "full"
+        },
+        "generation_seed": 4560379840056378028,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 28,
+          "num_nodes": 7,
+          "observability": "full",
+          "optimal_cost": 3
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 11.0,
+        "oracle_objective_value": 3,
+        "oracle_steps": 2,
+        "seed": 17586906965523940296,
+        "split": "train",
+        "task_id": "graph_planning-20ee648ed6b89b43"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 6,
+          "observability": "full"
+        },
+        "generation_seed": 8239992694269681729,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 18,
+          "num_nodes": 6,
+          "observability": "full",
+          "optimal_cost": 3
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 9.0,
+        "oracle_objective_value": 3,
+        "oracle_steps": 2,
+        "seed": 12910540968560399162,
+        "split": "train",
+        "task_id": "graph_planning-ae4f6adf6c70780b"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 6,
+          "observability": "full"
+        },
+        "generation_seed": 9080175813975222285,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 12,
+          "num_nodes": 6,
+          "observability": "full",
+          "optimal_cost": 27
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 8.0,
+        "oracle_objective_value": 27,
+        "oracle_steps": 4,
+        "seed": 5482794915861272214,
+        "split": "train",
+        "task_id": "graph_planning-9ed296f39f6554c1"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 8,
+          "observability": "full"
+        },
+        "generation_seed": 8948690503098291269,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 32,
+          "num_nodes": 8,
+          "observability": "full",
+          "optimal_cost": 8
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 12.0,
+        "oracle_objective_value": 8,
+        "oracle_steps": 2,
+        "seed": 10918956790547904182,
+        "split": "train",
+        "task_id": "graph_planning-fa5bd650864143ca"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 9,
+          "observability": "full"
+        },
+        "generation_seed": 15970284061108305367,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 42,
+          "num_nodes": 9,
+          "observability": "full",
+          "optimal_cost": 3
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 13.666666666666668,
+        "oracle_objective_value": 3,
+        "oracle_steps": 2,
+        "seed": 4127790868059335661,
+        "split": "train",
+        "task_id": "graph_planning-6d88f45009a6ea46"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 8,
+          "observability": "full"
+        },
+        "generation_seed": 12612685748479649126,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 26,
+          "num_nodes": 8,
+          "observability": "full",
+          "optimal_cost": 4
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 11.25,
+        "oracle_objective_value": 4,
+        "oracle_steps": 2,
+        "seed": 5757041662500080934,
+        "split": "train",
+        "task_id": "graph_planning-bad9a7e51ea706ad"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 9,
+          "observability": "full"
+        },
+        "generation_seed": 16877492769940755537,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 36,
+          "num_nodes": 9,
+          "observability": "full",
+          "optimal_cost": 3
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 13.0,
+        "oracle_objective_value": 3,
+        "oracle_steps": 2,
+        "seed": 11204359343894233249,
+        "split": "train",
+        "task_id": "graph_planning-d14bac70535218a0"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 8,
+          "observability": "full"
+        },
+        "generation_seed": 4283645347271770435,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 32,
+          "num_nodes": 8,
+          "observability": "full",
+          "optimal_cost": 2
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 12.0,
+        "oracle_objective_value": 2,
+        "oracle_steps": 1,
+        "seed": 12386050760854954505,
+        "split": "train",
+        "task_id": "graph_planning-de15be555849f7d9"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 7,
+          "observability": "full"
+        },
+        "generation_seed": 8004044539562006909,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 22,
+          "num_nodes": 7,
+          "observability": "full",
+          "optimal_cost": 3
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 10.142857142857142,
+        "oracle_objective_value": 3,
+        "oracle_steps": 1,
+        "seed": 16142614735351083222,
+        "split": "train",
+        "task_id": "graph_planning-d49af90697f56b47"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 7,
+          "observability": "full"
+        },
+        "generation_seed": 2475618167725344506,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 24,
+          "num_nodes": 7,
+          "observability": "full",
+          "optimal_cost": 11
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 10.428571428571429,
+        "oracle_objective_value": 11,
+        "oracle_steps": 3,
+        "seed": 15260957726178314505,
+        "split": "train",
+        "task_id": "graph_planning-defde2d05df57817"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 8,
+          "observability": "full"
+        },
+        "generation_seed": 17883333064029482979,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 20,
+          "num_nodes": 8,
+          "observability": "full",
+          "optimal_cost": 14
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 10.5,
+        "oracle_objective_value": 14,
+        "oracle_steps": 4,
+        "seed": 866687643163310566,
+        "split": "train",
+        "task_id": "graph_planning-1845bab89dd94600"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 6,
+          "observability": "full"
+        },
+        "generation_seed": 6097932063941734546,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 20,
+          "num_nodes": 6,
+          "observability": "full",
+          "optimal_cost": 1
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 9.333333333333334,
+        "oracle_objective_value": 1,
+        "oracle_steps": 1,
+        "seed": 16594877758117017962,
+        "split": "train",
+        "task_id": "graph_planning-04128a660463622b"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 7,
+          "observability": "full"
+        },
+        "generation_seed": 7897159665353742064,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 20,
+          "num_nodes": 7,
+          "observability": "full",
+          "optimal_cost": 2
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 9.857142857142858,
+        "oracle_objective_value": 2,
+        "oracle_steps": 2,
+        "seed": 9642682637529419979,
+        "split": "train",
+        "task_id": "graph_planning-3f4f61fcf3437088"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 7,
+          "observability": "full"
+        },
+        "generation_seed": 4827459479503283059,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 24,
+          "num_nodes": 7,
+          "observability": "full",
+          "optimal_cost": 8
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 10.428571428571429,
+        "oracle_objective_value": 8,
+        "oracle_steps": 3,
+        "seed": 13172306057999036893,
+        "split": "train",
+        "task_id": "graph_planning-84fd1a0770598be5"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 8,
+          "observability": "full"
+        },
+        "generation_seed": 17655742207664789530,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 36,
+          "num_nodes": 8,
+          "observability": "full",
+          "optimal_cost": 2
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 12.5,
+        "oracle_objective_value": 2,
+        "oracle_steps": 1,
+        "seed": 1689887195862616565,
+        "split": "train",
+        "task_id": "graph_planning-a63c4ac879388f54"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 6,
+          "observability": "full"
+        },
+        "generation_seed": 5983215604416737055,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 20,
+          "num_nodes": 6,
+          "observability": "full",
+          "optimal_cost": 4
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 9.333333333333334,
+        "oracle_objective_value": 4,
+        "oracle_steps": 2,
+        "seed": 12019948517367043052,
+        "split": "train",
+        "task_id": "graph_planning-fb30be130be3415e"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 8,
+          "observability": "full"
+        },
+        "generation_seed": 17965922984605090312,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 26,
+          "num_nodes": 8,
+          "observability": "full",
+          "optimal_cost": 2
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 11.25,
+        "oracle_objective_value": 2,
+        "oracle_steps": 1,
+        "seed": 2904305747070431417,
+        "split": "train",
+        "task_id": "graph_planning-b7090cf701c8ed1a"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 6,
+          "observability": "full"
+        },
+        "generation_seed": 17682620529018190623,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 16,
+          "num_nodes": 6,
+          "observability": "full",
+          "optimal_cost": 10
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 8.666666666666666,
+        "oracle_objective_value": 10,
+        "oracle_steps": 3,
+        "seed": 13564468583351379791,
+        "split": "train",
+        "task_id": "graph_planning-ad074879db4665de"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 9,
+          "observability": "full"
+        },
+        "generation_seed": 6261892151877422660,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 38,
+          "num_nodes": 9,
+          "observability": "full",
+          "optimal_cost": 9
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 13.222222222222221,
+        "oracle_objective_value": 9,
+        "oracle_steps": 2,
+        "seed": 2473800682058292185,
+        "split": "train",
+        "task_id": "graph_planning-a5c5be5910a78f1a"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 6,
+          "observability": "full"
+        },
+        "generation_seed": 17019123763597122311,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 20,
+          "num_nodes": 6,
+          "observability": "full",
+          "optimal_cost": 6
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 9.333333333333334,
+        "oracle_objective_value": 6,
+        "oracle_steps": 3,
+        "seed": 8556645186267971744,
+        "split": "train",
+        "task_id": "graph_planning-bc65c894dd793a46"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 8,
+          "observability": "full"
+        },
+        "generation_seed": 5599373250322301256,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 28,
+          "num_nodes": 8,
+          "observability": "full",
+          "optimal_cost": 11
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 11.5,
+        "oracle_objective_value": 11,
+        "oracle_steps": 3,
+        "seed": 9549070971544920349,
+        "split": "train",
+        "task_id": "graph_planning-27e6e9e0754ebfcd"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 6,
+          "observability": "full"
+        },
+        "generation_seed": 2885413621042336327,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 20,
+          "num_nodes": 6,
+          "observability": "full",
+          "optimal_cost": 8
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 9.333333333333334,
+        "oracle_objective_value": 8,
+        "oracle_steps": 2,
+        "seed": 3602358803599891720,
+        "split": "train",
+        "task_id": "graph_planning-b5f91cb0de350bb7"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 9,
+          "observability": "full"
+        },
+        "generation_seed": 6713834276154795050,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 46,
+          "num_nodes": 9,
+          "observability": "full",
+          "optimal_cost": 5
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 14.11111111111111,
+        "oracle_objective_value": 5,
+        "oracle_steps": 2,
+        "seed": 7540258770979600029,
+        "split": "train",
+        "task_id": "graph_planning-8f287ded019e4086"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 7,
+          "observability": "full"
+        },
+        "generation_seed": 8243993688585658635,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 18,
+          "num_nodes": 7,
+          "observability": "full",
+          "optimal_cost": 14
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 9.571428571428571,
+        "oracle_objective_value": 14,
+        "oracle_steps": 3,
+        "seed": 10751170541809212925,
+        "split": "train",
+        "task_id": "graph_planning-1a330775f47b0341"
+      }
+    ],
+    "validation": [
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 9,
+          "observability": "full"
+        },
+        "generation_seed": 8278349924187460486,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 52,
+          "num_nodes": 9,
+          "observability": "full",
+          "optimal_cost": 3
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 14.777777777777779,
+        "oracle_objective_value": 3,
+        "oracle_steps": 1,
+        "seed": 5605928843386382831,
+        "split": "validation",
+        "task_id": "graph_planning-983c828c56ff94a6"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 9,
+          "observability": "full"
+        },
+        "generation_seed": 12908225028227149724,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 44,
+          "num_nodes": 9,
+          "observability": "full",
+          "optimal_cost": 2
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 13.88888888888889,
+        "oracle_objective_value": 2,
+        "oracle_steps": 2,
+        "seed": 8834987504151867071,
+        "split": "validation",
+        "task_id": "graph_planning-898766c217d13a4f"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 8,
+          "observability": "full"
+        },
+        "generation_seed": 3292978624414337222,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 30,
+          "num_nodes": 8,
+          "observability": "full",
+          "optimal_cost": 8
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 11.75,
+        "oracle_objective_value": 8,
+        "oracle_steps": 3,
+        "seed": 16848653747143266593,
+        "split": "validation",
+        "task_id": "graph_planning-fbb31ce56abb6667"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 9,
+          "observability": "full"
+        },
+        "generation_seed": 9615564409074058998,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 36,
+          "num_nodes": 9,
+          "observability": "full",
+          "optimal_cost": 6
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 13.0,
+        "oracle_objective_value": 6,
+        "oracle_steps": 3,
+        "seed": 8453712254965628053,
+        "split": "validation",
+        "task_id": "graph_planning-6e654c7f890aad1b"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 9,
+          "observability": "full"
+        },
+        "generation_seed": 13915441409549530443,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 46,
+          "num_nodes": 9,
+          "observability": "full",
+          "optimal_cost": 6
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 14.11111111111111,
+        "oracle_objective_value": 6,
+        "oracle_steps": 3,
+        "seed": 4334885899515295405,
+        "split": "validation",
+        "task_id": "graph_planning-894c0705c54ed92b"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 7,
+          "observability": "full"
+        },
+        "generation_seed": 3348083051188630270,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 20,
+          "num_nodes": 7,
+          "observability": "full",
+          "optimal_cost": 10
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 9.857142857142858,
+        "oracle_objective_value": 10,
+        "oracle_steps": 2,
+        "seed": 10230128570388921174,
+        "split": "validation",
+        "task_id": "graph_planning-4c6e3517ae8f20d3"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 6,
+          "observability": "full"
+        },
+        "generation_seed": 16616677855833799340,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 20,
+          "num_nodes": 6,
+          "observability": "full",
+          "optimal_cost": 7
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 9.333333333333334,
+        "oracle_objective_value": 7,
+        "oracle_steps": 1,
+        "seed": 2414950050813433357,
+        "split": "validation",
+        "task_id": "graph_planning-040194a1ae8a1e73"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 9,
+          "observability": "full"
+        },
+        "generation_seed": 12354907931313969485,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 42,
+          "num_nodes": 9,
+          "observability": "full",
+          "optimal_cost": 8
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 13.666666666666668,
+        "oracle_objective_value": 8,
+        "oracle_steps": 2,
+        "seed": 12572300919846541199,
+        "split": "validation",
+        "task_id": "graph_planning-918465669672ff65"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 9,
+          "observability": "full"
+        },
+        "generation_seed": 592501175319210658,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 36,
+          "num_nodes": 9,
+          "observability": "full",
+          "optimal_cost": 6
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 13.0,
+        "oracle_objective_value": 6,
+        "oracle_steps": 1,
+        "seed": 4568530987590709619,
+        "split": "validation",
+        "task_id": "graph_planning-489afc8adb7730f0"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 9,
+          "observability": "full"
+        },
+        "generation_seed": 1004402702882378311,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 48,
+          "num_nodes": 9,
+          "observability": "full",
+          "optimal_cost": 3
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 14.333333333333332,
+        "oracle_objective_value": 3,
+        "oracle_steps": 2,
+        "seed": 13025206007525871583,
+        "split": "validation",
+        "task_id": "graph_planning-7fa29289ffdc6024"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 9,
+          "observability": "full"
+        },
+        "generation_seed": 4451201596327828289,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 36,
+          "num_nodes": 9,
+          "observability": "full",
+          "optimal_cost": 7
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 13.0,
+        "oracle_objective_value": 7,
+        "oracle_steps": 3,
+        "seed": 8550006491718569253,
+        "split": "validation",
+        "task_id": "graph_planning-b90573a2dd71dad4"
+      },
+      {
+        "generation_params": {
+          "directed": false,
+          "edge_probability": 0.4,
+          "max_cost": 7,
+          "num_nodes": 6,
+          "observability": "full"
+        },
+        "generation_seed": 2761576771538381809,
+        "metadata": {
+          "difficulty": "medium",
+          "num_edges": 14,
+          "num_nodes": 6,
+          "observability": "full",
+          "optimal_cost": 6
+        },
+        "objective_name": "reach_goal_with_min_cost",
+        "oracle_difficulty_estimate": 8.333333333333334,
+        "oracle_objective_value": 6,
+        "oracle_steps": 1,
+        "seed": 9784636078632891607,
+        "split": "validation",
+        "task_id": "graph_planning-bba9372c83175fb3"
+      }
+    ]
+  },
+  "version": "v1"
+}
