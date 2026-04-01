@@ -281,6 +281,11 @@ class RLVRGymTests(unittest.TestCase):
         self.assertTrue(rollout["oracle_solution"]["optimal"])
         self.assertTrue(rollout["oracle_solution"]["certificate"]["optimal"])
         self.assertEqual(rollout["trace_outcome"]["final_verification"]["kind_scores"]["feasibility"], 1.0)
+        result_names = {
+            result["name"] for result in rollout["trace_outcome"]["final_verification"]["results"]
+        }
+        self.assertIn("sokoban_move_efficiency", result_names)
+        self.assertIn("sokoban_push_efficiency", result_names)
 
     def test_sokoban_invalid_move_is_rejected(self) -> None:
         family = get_family("sokoban")
@@ -298,6 +303,13 @@ class RLVRGymTests(unittest.TestCase):
         self.assertFalse(step_info["verification"]["passed"])
         self.assertTrue(step_info["verification"]["hard_failed"])
         self.assertIn("reason", step_info)
+
+    def test_sokoban_medium_generation_avoids_pre_solved_starts(self) -> None:
+        family = get_family("sokoban")
+        task = family.sample_instance(seed=73, config=FamilyConfig(difficulty="medium"))
+        self.assertEqual(task.metadata["boxes_on_goals_at_start"], 0)
+        self.assertEqual(task.metadata["unsolved_boxes_at_start"], task.metadata["num_boxes"])
+        self.assertGreaterEqual(task.metadata["box_interaction_pair_count"], 1)
 
 
 if __name__ == "__main__":

@@ -10,19 +10,19 @@ This family measures long-horizon spatial planning under delayed consequences. A
 - Action space: `move_up`, `move_down`, `move_left`, `move_right`
 - Success condition: every box occupies a goal cell
 - Primary quality target: minimize primitive move count
-- Secondary analysis target: compare push count to the oracle plan
+- Secondary quality target: compare push count to the oracle plan
 
 ## Verification guarantees
 
 - Step legality: every primitive move is checked against exact Sokoban transition rules
 - State validity: successor states must preserve wall, floor, player, and box consistency exactly
-- Deadlock diagnostics: static dead-square detection flags known impossible box placements
+- Deadlock diagnostics: static dead-square and conservative freeze-deadlock detection flag known impossible box placements
 - Goal verification: terminal success is exact and depends only on the final box-goal configuration
 - Trajectory verification: completion, deadlock-free execution, and efficiency relative to the oracle are all reported
 
 ## Oracle quality
 
-The oracle is an exact A* planner over primitive Sokoban states. It returns a certified feasible and optimal primitive-move plan for the sampled board, along with push count and search-expansion metadata.
+The oracle is an exact A* planner over primitive Sokoban states. It returns a certified feasible and optimal primitive-move plan for the sampled board, along with push count, search-expansion metadata, and the active deadlock-pruning model.
 
 ## Metrics
 
@@ -33,7 +33,11 @@ The oracle is an exact A* planner over primitive Sokoban states. It returns a ce
 - move count
 - push count
 - move-count gap to oracle
+- push-count gap to oracle
 - deadlock rate
+- boxes-on-goals-at-start
+- unsolved-boxes-at-start
+- box interaction pair count
 
 ## Recommended ID split
 
@@ -41,6 +45,8 @@ The oracle is an exact A* planner over primitive Sokoban states. It returns a ce
 - 2 boxes
 - medium reverse-scramble depth
 - bounded oracle solution length
+- no boxes pre-solved at start
+- at least one interacting box pair
 
 ## Recommended OOD splits
 
@@ -54,6 +60,7 @@ The oracle is an exact A* planner over primitive Sokoban states. It returns a ce
 - always-push heuristics can look good locally while creating irreversible deadlocks
 - greedy distance-to-goal heuristics can fail in narrow corridors
 - policies that ignore player positioning may underestimate the true planning burden
+- puzzle generators can accidentally produce weak multi-box interaction if start-state filtering is too permissive
 
 ## Baseline heuristics
 

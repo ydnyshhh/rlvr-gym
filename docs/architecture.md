@@ -74,8 +74,8 @@ RLVR-Gym is organized around the idea that an environment family defines a distr
 
 - latent world: static grid board with walls and goals plus dynamic player and box positions
 - objective: push every box onto a goal cell while minimizing primitive move count
-- oracle: exact A* planning over deterministic Sokoban states with static deadlock pruning
-- verification: action legality, exact state updates, deadlock detection, goal completion, plan efficiency
+- oracle: exact A* planning over deterministic Sokoban states with static and conservative freeze-deadlock pruning
+- verification: action legality, exact state updates, deadlock detection, goal completion, and both move-count and push-count efficiency reporting
 
 ## Research uses
 

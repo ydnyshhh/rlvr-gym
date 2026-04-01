@@ -70,6 +70,7 @@ BENCHMARK_SPECS: dict[str, dict[str, Any]] = {
         "version": "v1",
         "description": "Frozen Sokoban benchmark with ID and long-horizon planning OOD splits.",
         "objective_gap_name": "move_count_gap",
+        "secondary_objective_gap_name": "push_count_gap",
         "splits": {
             "train": {"group": "id", "count": 24, "difficulty": "medium", "observability": "full", "generation_overrides": {}},
             "validation": {"group": "id", "count": 12, "difficulty": "medium", "observability": "full", "generation_overrides": {}},
@@ -309,14 +310,18 @@ def _evaluate_policy(family_name: str, task: Any, baseline_name: str) -> dict[st
     total_reward = sum(step["reward"] for step in trace["steps"])
     invalid_action_rate = 0.0 if num_steps == 0 else sum(1 for step in trace["steps"] if step["info"].get("invalid_action")) / num_steps
     objective_gap: float | None = None
+    secondary_objective_gap: float | None = None
     if family_name == "graph_planning":
         final_cost = getattr(env.state, "total_cost", None)
         if final_cost is not None:
             objective_gap = float(final_cost - task.world.shortest_cost)
     elif family_name == "sokoban":
         final_moves = getattr(env.state, "move_count", None)
+        final_pushes = getattr(env.state, "push_count", None)
         if final_moves is not None:
             objective_gap = float(final_moves - task.world.oracle_move_count)
+        if final_pushes is not None:
+            secondary_objective_gap = float(final_pushes - task.world.oracle_push_count)
     elif family_name == "scheduling":
         final_tardiness = getattr(env.state, "total_tardiness", None)
         if final_tardiness is not None:
@@ -331,6 +336,7 @@ def _evaluate_policy(family_name: str, task: Any, baseline_name: str) -> dict[st
         "steps": float(num_steps),
         "total_reward": float(total_reward),
         "objective_gap": objective_gap,
+        "secondary_objective_gap": secondary_objective_gap,
     }
 
 
@@ -340,6 +346,7 @@ def _mean(values: list[float]) -> float:
 
 def _aggregate_baseline_results(records: list[dict[str, Any]]) -> dict[str, float]:
     gaps = [record["objective_gap"] for record in records if record["objective_gap"] is not None]
+    secondary_gaps = [record["secondary_objective_gap"] for record in records if record["secondary_objective_gap"] is not None]
     return {
         "success_rate": _mean([record["success"] for record in records]),
         "mean_feasibility_score": _mean([record["feasibility_score"] for record in records]),
@@ -348,6 +355,7 @@ def _aggregate_baseline_results(records: list[dict[str, Any]]) -> dict[str, floa
         "mean_steps": _mean([record["steps"] for record in records]),
         "mean_total_reward": _mean([record["total_reward"] for record in records]),
         "mean_objective_gap": _mean(gaps),
+        "mean_secondary_objective_gap": _mean(secondary_gaps),
     }
 
 
@@ -395,6 +403,10 @@ def _family_summary_row(family_name: str, split_name: str, records: list[dict[st
                 "board_width_mean": round(_mean([record["metadata"]["board_width"] for record in records]), 2),
                 "oracle_steps_mean": round(_mean([record["metadata"]["oracle_steps"] for record in records]), 2),
                 "oracle_push_count_mean": round(_mean([record["metadata"]["oracle_push_count"] for record in records]), 2),
+                "boxes_on_goals_at_start_mean": round(_mean([record["metadata"]["boxes_on_goals_at_start"] for record in records]), 2),
+                "unsolved_boxes_at_start_mean": round(_mean([record["metadata"]["unsolved_boxes_at_start"] for record in records]), 2),
+                "box_interaction_pair_count_mean": round(_mean([record["metadata"]["box_interaction_pair_count"] for record in records]), 2),
+                "box_interaction_component_count_mean": round(_mean([record["metadata"]["box_interaction_component_count"] for record in records]), 2),
             }
         )
     elif family_name == "deduction_grid":
@@ -508,6 +520,7 @@ def build_family_artifacts(family_name: str, spec: dict[str, Any], output_root: 
         "mean_steps",
         "mean_total_reward",
         "mean_objective_gap",
+        "mean_secondary_objective_gap",
     ]
     baseline_text = "\n".join(
         [
@@ -516,6 +529,11 @@ def build_family_artifacts(family_name: str, spec: dict[str, Any], output_root: 
             f"Benchmark version: `{version}`",
             "",
             f"Objective gap column corresponds to `{spec['objective_gap_name']}`.",
+            (
+                f"Secondary objective gap column corresponds to `{spec['secondary_objective_gap_name']}`."
+                if "secondary_objective_gap_name" in spec
+                else "Secondary objective gap column is unused for this family."
+            ),
             "",
             _markdown_table(baseline_rows, baseline_headers),
         ]

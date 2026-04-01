@@ -297,25 +297,125 @@ def _boxes_on_goals(boxes: tuple[Coord, ...], goals: tuple[Coord, ...]) -> int:
     return sum(1 for box in boxes if box in goal_cells)
 
 
-def _detect_deadlock(boxes: tuple[Coord, ...], goals: tuple[Coord, ...], taboo_cells: tuple[Coord, ...]) -> str | None:
+def _manhattan_distance(left: Coord, right: Coord) -> int:
+    return abs(left[0] - right[0]) + abs(left[1] - right[1])
+
+
+def _box_interaction_pair_count(boxes: tuple[Coord, ...]) -> int:
+    count = 0
+    for index, left in enumerate(boxes):
+        for right in boxes[index + 1 :]:
+            if _manhattan_distance(left, right) <= 4:
+                count += 1
+    return count
+
+
+def _box_interaction_component_count(boxes: tuple[Coord, ...]) -> int:
+    if not boxes:
+        return 0
+    neighbors = {
+        box: {other for other in boxes if other != box and _manhattan_distance(box, other) <= 4}
+        for box in boxes
+    }
+    remaining = set(boxes)
+    components = 0
+    while remaining:
+        components += 1
+        start = remaining.pop()
+        queue: deque[Coord] = deque([start])
+        while queue:
+            current = queue.popleft()
+            for neighbor in neighbors[current]:
+                if neighbor in remaining:
+                    remaining.remove(neighbor)
+                    queue.append(neighbor)
+    return components
+
+
+def _freeze_axis_blocked(
+    box: Coord,
+    axis: str,
+    box_cells: set[Coord],
+    wall_cells: set[Coord],
+    goal_cells: set[Coord],
+    cache: dict[tuple[Coord, str], bool],
+    visiting: set[tuple[Coord, str]],
+) -> bool:
+    key = (box, axis)
+    if key in cache:
+        return cache[key]
+    if key in visiting:
+        return False
+    visiting.add(key)
+    if axis == "horizontal":
+        neighbors = [(box[0], box[1] - 1), (box[0], box[1] + 1)]
+        other_axis = "vertical"
+    else:
+        neighbors = [(box[0] - 1, box[1]), (box[0] + 1, box[1])]
+        other_axis = "horizontal"
+
+    blocked_sides: list[bool] = []
+    for neighbor in neighbors:
+        if neighbor in wall_cells:
+            blocked_sides.append(True)
+        elif neighbor in box_cells and neighbor not in goal_cells:
+            blocked_sides.append(
+                _freeze_axis_blocked(neighbor, other_axis, box_cells, wall_cells, goal_cells, cache, visiting)
+            )
+        else:
+            blocked_sides.append(False)
+    visiting.remove(key)
+    cache[key] = blocked_sides[0] and blocked_sides[1]
+    return cache[key]
+
+
+def _freeze_deadlock_box(
+    boxes: tuple[Coord, ...],
+    goals: tuple[Coord, ...],
+    walls: tuple[Coord, ...],
+) -> Coord | None:
+    box_cells = set(boxes)
+    goal_cells = set(goals)
+    wall_cells = set(walls)
+    cache: dict[tuple[Coord, str], bool] = {}
+    for box in boxes:
+        if box in goal_cells:
+            continue
+        horizontal_blocked = _freeze_axis_blocked(box, "horizontal", box_cells, wall_cells, goal_cells, cache, set())
+        vertical_blocked = _freeze_axis_blocked(box, "vertical", box_cells, wall_cells, goal_cells, cache, set())
+        if horizontal_blocked and vertical_blocked:
+            return box
+    return None
+
+
+def _detect_deadlock(
+    boxes: tuple[Coord, ...],
+    goals: tuple[Coord, ...],
+    taboo_cells: tuple[Coord, ...],
+    walls: tuple[Coord, ...],
+) -> str | None:
     taboo = set(taboo_cells)
     goal_cells = set(goals)
     for box in boxes:
         if box not in goal_cells and box in taboo:
             return "static_dead_square"
+    frozen_box = _freeze_deadlock_box(boxes, goals, walls)
+    if frozen_box is not None:
+        return "freeze_deadlock"
     return None
 
 
 def _build_state(
     player: Coord,
     boxes: tuple[Coord, ...],
+    walls: tuple[Coord, ...],
     goals: tuple[Coord, ...],
     taboo_cells: tuple[Coord, ...],
     move_count: int = 0,
     push_count: int = 0,
 ) -> SokobanState:
     solved = all(box in set(goals) for box in boxes)
-    deadlock = False if solved else _detect_deadlock(boxes, goals, taboo_cells) is not None
+    deadlock = False if solved else _detect_deadlock(boxes, goals, taboo_cells, walls) is not None
     return SokobanState(
         player=player,
         boxes=_sorted_coords(list(boxes)),
@@ -385,6 +485,7 @@ def _simulate_action(
     next_state = _build_state(
         player=next_player,
         boxes=_sorted_coords(next_boxes),
+        walls=world.walls,
         goals=world.goals,
         taboo_cells=world.taboo_cells,
         move_count=state.move_count + 1,
@@ -394,7 +495,7 @@ def _simulate_action(
     next_boxes_on_goals = _boxes_on_goals(next_state.boxes, world.goals)
     previous_heuristic = _heuristic(world, state)
     next_heuristic = _heuristic(world, next_state)
-    deadlock_reason = _detect_deadlock(next_state.boxes, world.goals, world.taboo_cells)
+    deadlock_reason = _detect_deadlock(next_state.boxes, world.goals, world.taboo_cells, world.walls)
     terminated = next_state.solved or (next_state.deadlock and deadlock_terminal)
     termination_reason = "solved" if next_state.solved else "deadlock" if next_state.deadlock and deadlock_terminal else None
 
@@ -468,7 +569,7 @@ def _scramble_from_solved(
     steps: int,
     player_start: Coord,
 ) -> SokobanState:
-    state = _build_state(player_start, world.goals, world.goals, world.taboo_cells)
+    state = _build_state(player_start, world.goals, world.walls, world.goals, world.taboo_cells)
     previous_key: tuple[Coord, tuple[Coord, ...]] | None = None
     for _ in range(steps):
         candidates = _reverse_action_candidates(world, state)
@@ -486,6 +587,7 @@ def _scramble_from_solved(
         state = _build_state(
             player=chosen.next_player,
             boxes=chosen.next_boxes,
+            walls=world.walls,
             goals=world.goals,
             taboo_cells=world.taboo_cells,
             move_count=0,
@@ -672,9 +774,11 @@ class SokobanTrajectoryVerifier(BaseVerifier):
         oracle_pushes = context.world.oracle_push_count
         move_gap = abs(observed_moves - oracle_moves)
         push_gap = abs(observed_pushes - oracle_pushes)
-        efficiency_score = 0.0
+        move_efficiency_score = 0.0
+        push_efficiency_score = 0.0
         if context.success:
-            efficiency_score = max(0.0, 1.0 - move_gap / max(1, oracle_moves))
+            move_efficiency_score = max(0.0, 1.0 - move_gap / max(1, oracle_moves))
+            push_efficiency_score = max(0.0, 1.0 - push_gap / max(1, oracle_pushes))
         return (
             VerificationResult(
                 name="sokoban_completion",
@@ -697,20 +801,34 @@ class SokobanTrajectoryVerifier(BaseVerifier):
                 message="Trajectory diagnostics record whether the agent ever entered a known deadlock state.",
             ),
             VerificationResult(
-                name="sokoban_plan_efficiency",
+                name="sokoban_move_efficiency",
                 scope=VerificationScope.TRAJECTORY,
                 passed=context.success and observed_moves == oracle_moves,
-                score=efficiency_score,
+                score=move_efficiency_score,
+                kind=VerificationKind.QUALITY,
+                weight=1.5,
+                hard=False,
+                message="Primary Sokoban quality tracks how closely primitive move count matches the solver-backed oracle.",
+                metadata={
+                    "primary_metric": True,
+                    "observed_moves": observed_moves,
+                    "oracle_moves": oracle_moves,
+                    "move_gap": move_gap,
+                },
+            ),
+            VerificationResult(
+                name="sokoban_push_efficiency",
+                scope=VerificationScope.TRAJECTORY,
+                passed=context.success and observed_pushes == oracle_pushes,
+                score=push_efficiency_score,
                 kind=VerificationKind.QUALITY,
                 weight=1.0,
                 hard=False,
-                message="Quality measures how closely the primitive move count matches the solver-backed oracle.",
+                message="Secondary Sokoban quality tracks how closely push count matches the oracle plan.",
                 metadata={
-                    "observed_moves": observed_moves,
-                    "oracle_moves": oracle_moves,
+                    "primary_metric": False,
                     "observed_pushes": observed_pushes,
                     "oracle_pushes": oracle_pushes,
-                    "move_gap": move_gap,
                     "push_gap": push_gap,
                 },
             ),
@@ -735,7 +853,7 @@ class SokobanOracle(Oracle):
                 "template_name": self.world.template_name,
                 "push_count": self.world.oracle_push_count,
                 "solver_expansions": self.world.solver_expansions,
-                "deadlock_detector": "static_dead_square",
+                "deadlock_detector": "static_dead_square+freeze_deadlock",
             },
             objective_value=self.world.oracle_move_count,
             feasible=True,
@@ -744,7 +862,7 @@ class SokobanOracle(Oracle):
             certificate=ProofCertificate(
                 feasible=True,
                 optimal=True,
-                summary="Optimal primitive-move plan found with A* over exact Sokoban states using static deadlock pruning.",
+                summary="Optimal primitive-move plan found with A* over exact Sokoban states using static and conservative freeze deadlock pruning.",
                 witness={
                     "template_name": self.world.template_name,
                     "move_count": self.world.oracle_move_count,
@@ -767,6 +885,8 @@ class SokobanFamily(EnvironmentFamily):
                 "reverse_scramble_steps": (6, 10),
                 "min_solution_length": 4,
                 "max_solution_length": 18,
+                "max_boxes_on_goals_at_start": 0,
+                "min_interaction_pairs": 0,
                 "template_pool": ["compact_cross", "side_rooms"],
                 "solver_expansion_limit": 12000,
             },
@@ -775,6 +895,8 @@ class SokobanFamily(EnvironmentFamily):
                 "reverse_scramble_steps": (10, 16),
                 "min_solution_length": 8,
                 "max_solution_length": 36,
+                "max_boxes_on_goals_at_start": 0,
+                "min_interaction_pairs": 1,
                 "template_pool": ["compact_cross", "side_rooms", "warehouse_large"],
                 "solver_expansion_limit": 30000,
             },
@@ -783,6 +905,8 @@ class SokobanFamily(EnvironmentFamily):
                 "reverse_scramble_steps": (14, 22),
                 "min_solution_length": 12,
                 "max_solution_length": 60,
+                "max_boxes_on_goals_at_start": 0,
+                "min_interaction_pairs": 2,
                 "template_pool": ["warehouse_large", "rooms_and_halls"],
                 "solver_expansion_limit": 80000,
             },
@@ -793,6 +917,8 @@ class SokobanFamily(EnvironmentFamily):
             "reverse_scramble_steps": rng.randint(*settings["reverse_scramble_steps"]),
             "min_solution_length": settings["min_solution_length"],
             "max_solution_length": settings["max_solution_length"],
+            "max_boxes_on_goals_at_start": settings["max_boxes_on_goals_at_start"],
+            "min_interaction_pairs": settings["min_interaction_pairs"],
             "template_pool": list(settings["template_pool"]),
             "solver_expansion_limit": settings["solver_expansion_limit"],
             "deadlock_ends_episode": True,
@@ -806,6 +932,8 @@ class SokobanFamily(EnvironmentFamily):
         reverse_steps = int(generation_params["reverse_scramble_steps"])
         min_solution_length = int(generation_params["min_solution_length"])
         max_solution_length = int(generation_params["max_solution_length"])
+        max_boxes_on_goals_at_start = int(generation_params.get("max_boxes_on_goals_at_start", 0))
+        min_interaction_pairs = int(generation_params.get("min_interaction_pairs", 0))
         solver_expansion_limit = int(generation_params["solver_expansion_limit"])
 
         for _ in range(96):
@@ -843,10 +971,21 @@ class SokobanFamily(EnvironmentFamily):
             initial_state = _build_state(
                 player=candidate_world.initial_player,
                 boxes=candidate_world.initial_boxes,
+                walls=candidate_world.walls,
                 goals=candidate_world.goals,
                 taboo_cells=candidate_world.taboo_cells,
             )
             if initial_state.deadlock or initial_state.solved:
+                continue
+            boxes_on_goals_at_start = _boxes_on_goals(initial_state.boxes, candidate_world.goals)
+            interaction_pairs = _box_interaction_pair_count(initial_state.boxes)
+            effective_min_interaction_pairs = min_interaction_pairs if num_boxes <= 1 else max(
+                0,
+                min_interaction_pairs - 1 if _ >= 48 else min_interaction_pairs,
+            )
+            if boxes_on_goals_at_start > max_boxes_on_goals_at_start:
+                continue
+            if interaction_pairs < effective_min_interaction_pairs:
                 continue
             solver_result = _solve_sokoban(candidate_world, initial_state, expansion_limit=solver_expansion_limit)
             if solver_result is None:
@@ -876,7 +1015,8 @@ class SokobanFamily(EnvironmentFamily):
             constraint_spec={
                 "deterministic_push_dynamics": True,
                 "primitive_actions_only": True,
-                "deadlock_detection": "static_dead_square",
+                "deadlock_detection": ["static_dead_square", "freeze_deadlock"],
+                "reported_quality_metrics": ["move_count_gap", "push_count_gap"],
             },
             quality_metric="move_count_gap",
         )
@@ -887,7 +1027,7 @@ class SokobanFamily(EnvironmentFamily):
         objective: TaskObjective,
         generation_params: dict[str, Any],
     ) -> SokobanState:
-        return _build_state(world.initial_player, world.initial_boxes, world.goals, world.taboo_cells)
+        return _build_state(world.initial_player, world.initial_boxes, world.walls, world.goals, world.taboo_cells)
 
     def observe(
         self,
@@ -1015,6 +1155,7 @@ class SokobanFamily(EnvironmentFamily):
         return int(generation_params["max_solution_length"]) * 3 + 12
 
     def export_world(self, world: SokobanWorld) -> dict[str, Any]:
+        boxes_on_goals_at_start = _boxes_on_goals(world.initial_boxes, world.goals)
         return {
             "template_name": world.template_name,
             "width": world.width,
@@ -1028,6 +1169,10 @@ class SokobanFamily(EnvironmentFamily):
             "oracle_move_count": world.oracle_move_count,
             "oracle_push_count": world.oracle_push_count,
             "solver_expansions": world.solver_expansions,
+            "boxes_on_goals_at_start": boxes_on_goals_at_start,
+            "unsolved_boxes_at_start": len(world.initial_boxes) - boxes_on_goals_at_start,
+            "box_interaction_pair_count": _box_interaction_pair_count(world.initial_boxes),
+            "box_interaction_component_count": _box_interaction_component_count(world.initial_boxes),
             "static_board_ascii": _render_ascii(world.width, world.height, world.walls, world.goals),
         }
 
@@ -1048,6 +1193,7 @@ class SokobanFamily(EnvironmentFamily):
         generation_params: dict[str, Any],
     ) -> dict[str, Any]:
         total_cells = world.width * world.height
+        boxes_on_goals_at_start = _boxes_on_goals(world.initial_boxes, world.goals)
         return {
             "template_name": world.template_name,
             "board_height": world.height,
@@ -1060,4 +1206,10 @@ class SokobanFamily(EnvironmentFamily):
             "oracle_steps": world.oracle_move_count,
             "oracle_push_count": world.oracle_push_count,
             "reverse_scramble_steps": world.reverse_scramble_steps,
+            "boxes_on_goals_at_start": boxes_on_goals_at_start,
+            "unsolved_boxes_at_start": len(world.initial_boxes) - boxes_on_goals_at_start,
+            "box_interaction_pair_count": _box_interaction_pair_count(world.initial_boxes),
+            "box_interaction_component_count": _box_interaction_component_count(world.initial_boxes),
+            "primary_quality_metric": "move_count_gap",
+            "secondary_quality_metric": "push_count_gap",
         }
