@@ -416,37 +416,54 @@ def _build_oracle_plan(
     relation_categories: tuple[DeductionCategory, ...],
     clues: tuple[DeductionClue, ...],
 ) -> tuple[dict[str, Any], ...]:
+    world = DeductionGridWorld(
+        base_category=base_category,
+        relation_categories=relation_categories,
+        assignment={},
+        clues=clues,
+        oracle_plan=(),
+    )
     state = DeductionGridState()
     actions: list[dict[str, Any]] = []
     budget = len(base_category.values) * len(relation_categories) * 3 + 8
     for _ in range(budget):
-        analysis = _analyze_state(base_category, relation_categories, clues, state)
-        if analysis.contradiction:
-            raise ValueError(f"Contradictory puzzle during oracle planning: {analysis.contradiction_reason}")
-        if _commit_ready(analysis):
-            actions.append({"name": "commit_solution", "arguments": {"assignment": analysis.resolved_assignment}})
+        closure = _analyze_state(base_category, relation_categories, clues, state)
+        pending_true, pending_false, contradiction, contradiction_reason = _immediate_pending(world, state)
+        if contradiction or closure.contradiction:
+            raise ValueError(f"Contradictory puzzle during oracle planning: {contradiction_reason or closure.contradiction_reason}")
+        if _commit_ready(world, state):
+            visible_possible, _, _ = _visible_possible_sets(world, state)
+            resolved_assignment = {
+                category.name: {
+                    entity: next(iter(visible_possible[category.name][entity]))
+                    for entity in base_category.values
+                }
+                for category in relation_categories
+            }
+            actions.append({"name": "commit_solution", "arguments": {"assignment": resolved_assignment}})
             return tuple(actions)
-        if analysis.pending_true:
-            fact = analysis.pending_true[0]
+        if pending_true:
+            fact = pending_true[0]
             actions.append({"name": "assert_pair", "arguments": _fact_to_dict(fact)})
             state = DeductionGridState(
                 known_true=_sorted_facts(set(state.known_true) | {fact}),
                 known_false=state.known_false,
             )
             continue
-        if analysis.pending_false:
+        if pending_false:
+            next_update = _next_propagation_update(world, state)
+            if next_update is None:
+                raise ValueError("Expected a propagation update but found none.")
+            update_name, fact = next_update
             actions.append(
                 {
                     "name": "propagate",
-                    "arguments": {
-                        "num_true_updates": len(analysis.pending_true),
-                        "num_false_updates": len(analysis.pending_false),
-                    },
+                    "arguments": {"update_name": update_name, "update": _fact_to_dict(fact)},
                 }
             )
             state = DeductionGridState(
-                known_true=_sorted_facts(set(state.known_true) | set(analysis.pending_true)),
-                known_false=_sorted_facts(set(state.known_false) | set(analysis.pending_false)),
+                known_true=_sorted_facts(set(state.known_true) | ({fact} if update_name == "assert_pair" else set())),
+                known_false=_sorted_facts(set(state.known_false) | ({fact} if update_name == "rule_out_pair" else set())),
             )
             continue
         raise ValueError("Unable to derive an oracle plan for the deduction grid puzzle.")
@@ -504,6 +521,46 @@ def _build_candidate_clues(
     if prefer_relational:
         return positive_links + negative_links + positive_direct + negative_direct
     return positive_direct + negative_direct + positive_links + negative_links
+
+
+def _count_positive_direct_clues(clues: tuple[DeductionClue, ...]) -> int:
+    return sum(1 for clue in clues if clue.clue_type == "entity_value" and clue.positive)
+
+
+def _count_relational_clues(clues: tuple[DeductionClue, ...]) -> int:
+    return sum(1 for clue in clues if clue.clue_type == "linked_values")
+
+
+def _simulate_propagate_first_steps(
+    base_category: DeductionCategory,
+    relation_categories: tuple[DeductionCategory, ...],
+    clues: tuple[DeductionClue, ...],
+) -> int | None:
+    world = DeductionGridWorld(
+        base_category=base_category,
+        relation_categories=relation_categories,
+        assignment={},
+        clues=clues,
+        oracle_plan=(),
+    )
+    state = DeductionGridState()
+    budget = len(base_category.values) * len(relation_categories) * 4 + 8
+    steps = 0
+    for _ in range(budget):
+        pending_true, pending_false, contradiction, _ = _immediate_pending(world, state)
+        if contradiction:
+            return None
+        if pending_true or pending_false:
+            state = DeductionGridState(
+                known_true=_sorted_facts(set(state.known_true) | set(pending_true)),
+                known_false=_sorted_facts(set(state.known_false) | set(pending_false)),
+            )
+            steps += 1
+            continue
+        if _commit_ready(world, state):
+            return steps + 1
+        return None
+    return None
 
 
 def _select_clues(
@@ -578,6 +635,14 @@ def _observation_table(world: DeductionGridWorld, analysis: DeductionAnalysis) -
 
 
 def _visible_analysis_from_state(world: DeductionGridWorld, state: DeductionGridState) -> tuple[dict[str, dict[str, tuple[str, ...]]], bool, str]:
+    possible, contradiction, contradiction_reason = _visible_possible_sets(world, state)
+    return _possible_snapshot(possible, world.relation_categories), contradiction, contradiction_reason
+
+
+def _visible_possible_sets(
+    world: DeductionGridWorld,
+    state: DeductionGridState,
+) -> tuple[dict[str, dict[str, set[str]]], bool, str]:
     relation_lookup = _relation_lookup(world)
     possible = _init_possible(world.base_category, world.relation_categories)
     contradiction = False
@@ -596,11 +661,99 @@ def _visible_analysis_from_state(world: DeductionGridWorld, state: DeductionGrid
                 contradiction = True
                 contradiction_reason = reason
                 break
-    return _possible_snapshot(possible, world.relation_categories), contradiction, contradiction_reason
+    return possible, contradiction, contradiction_reason
 
 
-def _commit_ready(analysis: DeductionAnalysis) -> bool:
-    return analysis.solved and not analysis.pending_true and not analysis.pending_false
+def _immediate_pending(world: DeductionGridWorld, state: DeductionGridState) -> tuple[tuple[DeductionFact, ...], tuple[DeductionFact, ...], bool, str]:
+    possible, contradiction, contradiction_reason = _visible_possible_sets(world, state)
+    if contradiction:
+        return (), (), True, contradiction_reason
+
+    pending_true: set[DeductionFact] = set()
+    pending_false: set[DeductionFact] = set()
+    entities = _entities(world)
+    known_true_set = set(state.known_true)
+    known_false_set = set(state.known_false)
+
+    for clue in world.clues:
+        if clue.clue_type == "entity_value":
+            fact = DeductionFact(category=str(clue.category), entity=str(clue.entity), value=str(clue.value))
+            if clue.positive:
+                if fact not in known_true_set:
+                    pending_true.add(fact)
+            elif fact not in known_false_set:
+                pending_false.add(fact)
+            continue
+
+        left_category = str(clue.left_category)
+        left_value = str(clue.left_value)
+        right_category = str(clue.right_category)
+        right_value = str(clue.right_value)
+        for entity in entities:
+            left_options = possible[left_category][entity]
+            right_options = possible[right_category][entity]
+            left_fact = DeductionFact(category=left_category, entity=entity, value=left_value)
+            right_fact = DeductionFact(category=right_category, entity=entity, value=right_value)
+            left_true = left_options == {left_value}
+            right_true = right_options == {right_value}
+            left_excluded = left_value not in left_options
+            right_excluded = right_value not in right_options
+            if clue.positive:
+                if left_true and right_fact not in known_true_set:
+                    pending_true.add(right_fact)
+                if right_true and left_fact not in known_true_set:
+                    pending_true.add(left_fact)
+                if left_true and right_excluded and left_fact not in known_false_set:
+                    pending_false.add(left_fact)
+                if right_true and left_excluded and right_fact not in known_false_set:
+                    pending_false.add(right_fact)
+            else:
+                if left_true and right_fact not in known_false_set:
+                    pending_false.add(right_fact)
+                if right_true and left_fact not in known_false_set:
+                    pending_false.add(left_fact)
+
+    for category in world.relation_categories:
+        for entity in entities:
+            options = possible[category.name][entity]
+            if len(options) == 1:
+                fact = DeductionFact(category=category.name, entity=entity, value=next(iter(options)))
+                if fact not in known_true_set:
+                    pending_true.add(fact)
+        for value in category.values:
+            candidate_entities = [entity for entity in entities if value in possible[category.name][entity]]
+            if len(candidate_entities) == 1:
+                fact = DeductionFact(category=category.name, entity=candidate_entities[0], value=value)
+                if fact not in known_true_set:
+                    pending_true.add(fact)
+
+    pending_true -= known_true_set
+    pending_false -= known_false_set
+    return _sorted_facts(pending_true), _sorted_facts(pending_false), False, ""
+
+
+def _commit_ready(world: DeductionGridWorld, state: DeductionGridState) -> bool:
+    pending_true, pending_false, contradiction, _ = _immediate_pending(world, state)
+    if contradiction or pending_true or pending_false:
+        return False
+    possible, contradiction, _ = _visible_possible_sets(world, state)
+    if contradiction:
+        return False
+    for category in world.relation_categories:
+        for entity in _entities(world):
+            if len(possible[category.name][entity]) != 1:
+                return False
+    return True
+
+
+def _next_propagation_update(world: DeductionGridWorld, state: DeductionGridState) -> tuple[str, DeductionFact] | None:
+    pending_true, pending_false, contradiction, _ = _immediate_pending(world, state)
+    if contradiction:
+        return None
+    candidates = [( "rule_out_pair", fact) for fact in pending_false] + [( "assert_pair", fact) for fact in pending_true]
+    if not candidates:
+        return None
+    return min(candidates, key=lambda item: (0 if item[0] == "rule_out_pair" else 1, _fact_key(item[1])))
 
 
 class DeductionActionVerifier(BaseVerifier):
@@ -626,20 +779,17 @@ class DeductionStateUpdateVerifier(BaseVerifier):
     name = "deduction_state_update_correctness"
 
     def evaluate_step(self, context: StepContext) -> tuple[VerificationResult, ...]:
-        previous_analysis = _analyze_state(
-            context.world.base_category,
-            context.world.relation_categories,
-            context.world.clues,
-            context.previous_state,
-        )
+        pending_true, pending_false, contradiction, _ = _immediate_pending(context.world, context.previous_state)
         passed = False
         if context.transition.invalid_action:
             passed = context.next_state == context.previous_state
         elif context.action.name == "assert_pair":
             fact = _fact_from_action(context.action)
             passed = (
+                not contradiction
+                and
                 fact is not None
-                and fact in set(previous_analysis.pending_true)
+                and fact in set(pending_true)
                 and fact in set(context.next_state.known_true)
                 and set(context.next_state.known_true) == set(context.previous_state.known_true) | {fact}
                 and set(context.next_state.known_false) == set(context.previous_state.known_false)
@@ -647,16 +797,31 @@ class DeductionStateUpdateVerifier(BaseVerifier):
         elif context.action.name == "rule_out_pair":
             fact = _fact_from_action(context.action)
             passed = (
+                not contradiction
+                and
                 fact is not None
-                and fact in set(previous_analysis.pending_false)
+                and fact in set(pending_false)
                 and fact in set(context.next_state.known_false)
                 and set(context.next_state.known_false) == set(context.previous_state.known_false) | {fact}
                 and set(context.next_state.known_true) == set(context.previous_state.known_true)
             )
         elif context.action.name == "propagate":
+            next_update = _next_propagation_update(context.world, context.previous_state)
             passed = (
-                set(context.next_state.known_true) == set(context.previous_state.known_true) | set(previous_analysis.pending_true)
-                and set(context.next_state.known_false) == set(context.previous_state.known_false) | set(previous_analysis.pending_false)
+                not contradiction
+                and next_update is not None
+                and (
+                    (
+                        next_update[0] == "assert_pair"
+                        and set(context.next_state.known_true) == set(context.previous_state.known_true) | {next_update[1]}
+                        and set(context.next_state.known_false) == set(context.previous_state.known_false)
+                    )
+                    or (
+                        next_update[0] == "rule_out_pair"
+                        and set(context.next_state.known_false) == set(context.previous_state.known_false) | {next_update[1]}
+                        and set(context.next_state.known_true) == set(context.previous_state.known_true)
+                    )
+                )
             )
         elif context.action.name == "commit_solution":
             assignment = _normalize_assignment(context.action.arguments.get("assignment"), context.world)
@@ -742,7 +907,7 @@ class DeductionTrajectoryVerifier(BaseVerifier):
                 name="deduction_trajectory_efficiency",
                 scope=VerificationScope.TRAJECTORY,
                 passed=efficient,
-                score=1.0 if efficient else max(0.0, 1.0 - max(0, observed_steps - oracle_steps) / max(1, oracle_steps)),
+                score=1.0 if efficient else max(0.0, 1.0 - abs(observed_steps - oracle_steps) / max(1, oracle_steps)),
                 kind=VerificationKind.QUALITY,
                 weight=1.0,
                 hard=False,
@@ -799,9 +964,33 @@ class DeductionGridFamily(EnvironmentFamily):
 
     def sample_generation_params(self, config: FamilyConfig, rng: random.Random) -> dict[str, Any]:
         difficulty_specs = {
-            "easy": {"num_entities": 3, "num_relation_categories": 2, "num_distractor_clues": (0, 1), "prefer_relational": False},
-            "medium": {"num_entities": 4, "num_relation_categories": 3, "num_distractor_clues": (1, 2), "prefer_relational": True},
-            "hard": {"num_entities": 5, "num_relation_categories": 4, "num_distractor_clues": (2, 3), "prefer_relational": True},
+            "easy": {
+                "num_entities": 3,
+                "num_relation_categories": 2,
+                "num_distractor_clues": (0, 1),
+                "prefer_relational": False,
+                "max_positive_direct_clues": 3,
+                "min_relational_clues": 0,
+                "min_propagate_first_steps": 1,
+            },
+            "medium": {
+                "num_entities": 4,
+                "num_relation_categories": 3,
+                "num_distractor_clues": (1, 2),
+                "prefer_relational": True,
+                "max_positive_direct_clues": 3,
+                "min_relational_clues": 3,
+                "min_propagate_first_steps": 3,
+            },
+            "hard": {
+                "num_entities": 5,
+                "num_relation_categories": 4,
+                "num_distractor_clues": (2, 3),
+                "prefer_relational": True,
+                "max_positive_direct_clues": 3,
+                "min_relational_clues": 5,
+                "min_propagate_first_steps": 4,
+            },
         }
         spec = difficulty_specs.get(config.difficulty, difficulty_specs["medium"])
         return {
@@ -809,44 +998,78 @@ class DeductionGridFamily(EnvironmentFamily):
             "num_relation_categories": spec["num_relation_categories"],
             "num_distractor_clues": rng.randint(*spec["num_distractor_clues"]),
             "prefer_relational": spec["prefer_relational"],
+            "max_positive_direct_clues": spec["max_positive_direct_clues"],
+            "min_relational_clues": spec["min_relational_clues"],
+            "min_propagate_first_steps": spec["min_propagate_first_steps"],
             "observability": config.observability,
         }
 
     def sample_world(self, generation_params: dict[str, Any], rng: random.Random) -> DeductionGridWorld:
         num_entities = int(generation_params["num_entities"])
         num_relation_categories = int(generation_params["num_relation_categories"])
+        base_max_positive_direct_clues = int(generation_params["max_positive_direct_clues"])
+        base_min_relational_clues = int(generation_params["min_relational_clues"])
+        base_min_propagate_first_steps = int(generation_params["min_propagate_first_steps"])
         base_template = CATEGORY_LIBRARY[0]
         base_category = DeductionCategory(base_template.name, base_template.values[:num_entities])
         candidate_relations = [DeductionCategory(category.name, category.values[:num_entities]) for category in CATEGORY_LIBRARY[1:]]
-        relation_categories = tuple(rng.sample(candidate_relations, num_relation_categories))
-        entities = base_category.values
-        assignment: dict[str, dict[str, str]] = {}
-        for category in relation_categories:
-            shuffled_values = list(category.values)
-            rng.shuffle(shuffled_values)
-            assignment[category.name] = {entity: shuffled_values[index] for index, entity in enumerate(entities)}
-        candidate_clues = _build_candidate_clues(
-            relation_categories,
-            assignment,
-            entities,
-            rng,
-            prefer_relational=bool(generation_params["prefer_relational"]),
-        )
-        clues = _select_clues(
-            base_category,
-            relation_categories,
-            candidate_clues,
-            rng,
-            num_distractor_clues=int(generation_params["num_distractor_clues"]),
-        )
-        oracle_plan = _build_oracle_plan(base_category, relation_categories, clues)
-        return DeductionGridWorld(
-            base_category=base_category,
-            relation_categories=relation_categories,
-            assignment=assignment,
-            clues=clues,
-            oracle_plan=oracle_plan,
-        )
+        total_pairs = num_entities * num_relation_categories
+        relaxation_profiles = [
+            {
+                "max_positive_direct_clues": base_max_positive_direct_clues,
+                "min_relational_clues": base_min_relational_clues,
+                "min_propagate_first_steps": base_min_propagate_first_steps,
+            },
+            {
+                "max_positive_direct_clues": base_max_positive_direct_clues + 1,
+                "min_relational_clues": max(0, base_min_relational_clues - 1),
+                "min_propagate_first_steps": max(1, base_min_propagate_first_steps - 1),
+            },
+            {
+                "max_positive_direct_clues": total_pairs,
+                "min_relational_clues": 0,
+                "min_propagate_first_steps": 1,
+            },
+        ]
+        for profile in relaxation_profiles:
+            for _ in range(192):
+                relation_categories = tuple(rng.sample(candidate_relations, num_relation_categories))
+                entities = base_category.values
+                assignment: dict[str, dict[str, str]] = {}
+                for category in relation_categories:
+                    shuffled_values = list(category.values)
+                    rng.shuffle(shuffled_values)
+                    assignment[category.name] = {entity: shuffled_values[index] for index, entity in enumerate(entities)}
+                candidate_clues = _build_candidate_clues(
+                    relation_categories,
+                    assignment,
+                    entities,
+                    rng,
+                    prefer_relational=bool(generation_params["prefer_relational"]),
+                )
+                clues = _select_clues(
+                    base_category,
+                    relation_categories,
+                    candidate_clues,
+                    rng,
+                    num_distractor_clues=int(generation_params["num_distractor_clues"]),
+                )
+                if _count_positive_direct_clues(clues) > profile["max_positive_direct_clues"]:
+                    continue
+                if _count_relational_clues(clues) < profile["min_relational_clues"]:
+                    continue
+                propagate_first_steps = _simulate_propagate_first_steps(base_category, relation_categories, clues)
+                if propagate_first_steps is None or propagate_first_steps < profile["min_propagate_first_steps"]:
+                    continue
+                oracle_plan = _build_oracle_plan(base_category, relation_categories, clues)
+                return DeductionGridWorld(
+                    base_category=base_category,
+                    relation_categories=relation_categories,
+                    assignment=assignment,
+                    clues=clues,
+                    oracle_plan=oracle_plan,
+                )
+        raise ValueError("Unable to generate a nontrivial deduction-grid puzzle under the current difficulty settings.")
 
     def derive_objective(
         self,
@@ -968,22 +1191,37 @@ class DeductionGridFamily(EnvironmentFamily):
         objective: TaskObjective,
         generation_params: dict[str, Any],
     ) -> list[CanonicalAction]:
-        analysis = _analyze_state(world.base_category, world.relation_categories, world.clues, state)
+        pending_true, pending_false, contradiction, _ = _immediate_pending(world, state)
+        if contradiction:
+            return []
         actions: list[CanonicalAction] = []
-        actions.extend(CanonicalAction(name="assert_pair", arguments=_fact_to_dict(fact)) for fact in analysis.pending_true)
-        actions.extend(CanonicalAction(name="rule_out_pair", arguments=_fact_to_dict(fact)) for fact in analysis.pending_false)
-        if analysis.pending_true or analysis.pending_false:
+        actions.extend(CanonicalAction(name="assert_pair", arguments=_fact_to_dict(fact)) for fact in pending_true)
+        actions.extend(CanonicalAction(name="rule_out_pair", arguments=_fact_to_dict(fact)) for fact in pending_false)
+        if pending_true or pending_false:
+            next_update = _next_propagation_update(world, state)
+            propagate_arguments = {}
+            if next_update is not None:
+                update_name, fact = next_update
+                propagate_arguments = {
+                    "update_name": update_name,
+                    "update": _fact_to_dict(fact),
+                }
             actions.append(
                 CanonicalAction(
                     name="propagate",
-                    arguments={
-                        "num_true_updates": len(analysis.pending_true),
-                        "num_false_updates": len(analysis.pending_false),
-                    },
+                    arguments=propagate_arguments,
                 )
             )
-        if _commit_ready(analysis):
-            actions.append(CanonicalAction(name="commit_solution", arguments={"assignment": analysis.resolved_assignment}))
+        if _commit_ready(world, state):
+            possible, _, _ = _visible_possible_sets(world, state)
+            assignment = {
+                category.name: {
+                    entity: next(iter(possible[category.name][entity]))
+                    for entity in _entities(world)
+                }
+                for category in world.relation_categories
+            }
+            actions.append(CanonicalAction(name="commit_solution", arguments={"assignment": assignment}))
         return actions
 
     def transition(
@@ -994,12 +1232,20 @@ class DeductionGridFamily(EnvironmentFamily):
         objective: TaskObjective,
         generation_params: dict[str, Any],
     ) -> TransitionResult:
-        analysis = _analyze_state(world.base_category, world.relation_categories, world.clues, state)
+        pending_true, pending_false, contradiction, contradiction_reason = _immediate_pending(world, state)
+        closure_analysis = _analyze_state(world.base_category, world.relation_categories, world.clues, state)
         total_true_pairs = len(world.base_category.values) * len(world.relation_categories)
+        if contradiction:
+            return TransitionResult(
+                next_state=state,
+                invalid_action=True,
+                reward_hints={"deduction_progress": -0.5},
+                info={"invalid_action": True, "reason": contradiction_reason or "inconsistent_deduction_table"},
+            )
 
         if action.name == "assert_pair":
             fact = _fact_from_action(action)
-            if fact is None or fact not in set(analysis.pending_true):
+            if fact is None or fact not in set(pending_true):
                 return TransitionResult(
                     next_state=state,
                     invalid_action=True,
@@ -1013,13 +1259,13 @@ class DeductionGridFamily(EnvironmentFamily):
             next_analysis = _analyze_state(world.base_category, world.relation_categories, world.clues, next_state)
             return TransitionResult(
                 next_state=next_state,
-                reward_hints={"deduction_progress": _progress_score(analysis, next_analysis, total_true_pairs)},
+                reward_hints={"deduction_progress": _progress_score(closure_analysis, next_analysis, total_true_pairs)},
                 info={"applied_operation": "assert_pair", "fact": _fact_to_dict(fact)},
             )
 
         if action.name == "rule_out_pair":
             fact = _fact_from_action(action)
-            if fact is None or fact not in set(analysis.pending_false):
+            if fact is None or fact not in set(pending_false):
                 return TransitionResult(
                     next_state=state,
                     invalid_action=True,
@@ -1033,30 +1279,32 @@ class DeductionGridFamily(EnvironmentFamily):
             next_analysis = _analyze_state(world.base_category, world.relation_categories, world.clues, next_state)
             return TransitionResult(
                 next_state=next_state,
-                reward_hints={"deduction_progress": _progress_score(analysis, next_analysis, total_true_pairs)},
+                reward_hints={"deduction_progress": _progress_score(closure_analysis, next_analysis, total_true_pairs)},
                 info={"applied_operation": "rule_out_pair", "fact": _fact_to_dict(fact)},
             )
 
         if action.name == "propagate":
-            if not analysis.pending_true and not analysis.pending_false:
+            next_update = _next_propagation_update(world, state)
+            if next_update is None:
                 return TransitionResult(
                     next_state=state,
                     invalid_action=True,
                     reward_hints={"deduction_progress": -0.1},
                     info={"invalid_action": True, "reason": "no_pending_propagation"},
                 )
+            update_name, fact = next_update
             next_state = DeductionGridState(
-                known_true=_sorted_facts(set(state.known_true) | set(analysis.pending_true)),
-                known_false=_sorted_facts(set(state.known_false) | set(analysis.pending_false)),
+                known_true=_sorted_facts(set(state.known_true) | ({fact} if update_name == "assert_pair" else set())),
+                known_false=_sorted_facts(set(state.known_false) | ({fact} if update_name == "rule_out_pair" else set())),
             )
             next_analysis = _analyze_state(world.base_category, world.relation_categories, world.clues, next_state)
             return TransitionResult(
                 next_state=next_state,
-                reward_hints={"deduction_progress": _progress_score(analysis, next_analysis, total_true_pairs)},
+                reward_hints={"deduction_progress": _progress_score(closure_analysis, next_analysis, total_true_pairs)},
                 info={
                     "applied_operation": "propagate",
-                    "num_true_updates": len(analysis.pending_true),
-                    "num_false_updates": len(analysis.pending_false),
+                    "propagated_update_name": update_name,
+                    "propagated_update": _fact_to_dict(fact),
                 },
             )
 
@@ -1069,7 +1317,7 @@ class DeductionGridFamily(EnvironmentFamily):
                     reward_hints={"deduction_progress": -0.5},
                     info={"invalid_action": True, "reason": "malformed_commit_assignment"},
                 )
-            if not _commit_ready(analysis):
+            if not _commit_ready(world, state):
                 return TransitionResult(
                     next_state=state,
                     invalid_action=True,
@@ -1091,7 +1339,7 @@ class DeductionGridFamily(EnvironmentFamily):
                 info={
                     "applied_operation": "commit_solution",
                     "commit_valid": success,
-                    "resolved_ready": _commit_ready(analysis),
+                    "resolved_ready": _commit_ready(world, state),
                 },
             )
 

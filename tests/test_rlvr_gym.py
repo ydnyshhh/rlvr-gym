@@ -254,6 +254,18 @@ class RLVRGymTests(unittest.TestCase):
         self.assertFalse(info["verification"]["passed"])
         self.assertTrue(info["verification"]["hard_failed"])
 
+    def test_deduction_grid_propagate_is_local_not_macro(self) -> None:
+        family = get_family("deduction_grid")
+        task = family.sample_instance(seed=19, config=FamilyConfig(difficulty="medium"))
+        env = RLVREnv(task)
+        _, info = env.reset()
+        propagate_action = next(action for action in info["valid_actions"] if action["name"] == "propagate")
+        next_obs, _, terminated, truncated, _ = env.step(propagate_action)
+        self.assertFalse(terminated)
+        self.assertFalse(truncated)
+        total_recorded = len(next_obs["known_true"]) + len(next_obs["known_false"])
+        self.assertEqual(total_recorded, 1)
+
 
 if __name__ == "__main__":
     unittest.main()

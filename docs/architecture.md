@@ -53,6 +53,7 @@ RLVR-Gym is organized around the idea that an environment family defines a distr
 - objective: recover the full assignment by exact symbolic table updates and a final solution commit
 - observation: exposes clues plus the agent-built deduction table, while hiding internal closure-derived pending updates and resolved assignments
 - oracle: deterministic closure-driven deduction policy ending in a formally checked complete assignment
+- propagation semantics: `propagate` performs one deterministic local closure update rather than collapsing the entire table in a single macro-step
 - verification: action legality, table-update correctness, final assignment validity, trajectory efficiency
 
 ### Graph planning

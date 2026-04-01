@@ -36,6 +36,8 @@ The agent interacts with a deduction table using canonical actions:
 
 The public observation exposes the clue set, the current explicit table state, and recorded true/false facts. It does not expose the internally derived closure state, pending oracle deductions, or the hidden resolved assignment before commit.
 
+`propagate` is a local deterministic closure action. It applies one verifier-checkable deduction-table update at a time rather than collapsing the full puzzle in a single step.
+
 The task is solved when the agent commits a complete assignment that satisfies every clue and all bijection constraints.
 
 ## Verification guarantees
@@ -65,6 +67,7 @@ The oracle returns:
 - a proof-style certificate describing the deduction policy and puzzle size
 
 The oracle is exact with respect to the family’s formal deduction semantics and final-solution verification.
+The benchmark generator also rejects strongly propagation-collapsed puzzle instances, so trivial one- or two-step closure policies are less likely to dominate the benchmark product layer.
 
 ## Metrics to report
 
